@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  {% block title %}
+    
+  {% endblock title %}
+
+  {% block style %}
+    
+  {% endblock style %}
+
+  <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
+  <!-- fontawesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+
+<body>
+  <div class="container-scroller">
+
+
+    {% include "backend/admin-header.html" %}
+
+
+
+
+    <div class="container-fluid page-body-wrapper">
+
+        {% include "backend/admin-sidebar.html" %}
+
+        <div class="main-panel">
+
+            {% block content %}
+          
+            {% endblock content %}
+        
+            {% include "backend/admin-footer.html" %}
+        </div>
+
+    </div>
+
+
+  
+    <script>
+      var elem = document.querySelector("body");
+      function openFullscreen() {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
+    </script>
+  {% block script %}
+    
+  {% endblock script %}
+
+</body>
+</html>
+

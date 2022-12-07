@@ -1,0 +1,2547 @@
+{% extends "backend/admin-base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Dashboard </title>
+{% endblock title %}
+
+{% block style %}  
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="toggle">
+    <div class="px-5 tabs">
+        <button class="active tab">All</button>
+        <button class="tab">Premium</button>
+        <button class="tab">Featured</button>
+        <button class="tab">Standard</button>
+        <button class="tab">Buy</button>
+        <button class="tab">Rent</button>
+        <button class="tab">International</button>
+    </div>
+
+    <div class="panels">
+        <div class="panel">
+            <h4 class="panel-head">All Properties</h4>
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+                <input type="text" placeholder="Search here" class="search-input" id="search__input">
+            </div>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4 class="panel-head">Premium Properties</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Chelari</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4 class="panel-head">Featured Properties</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Chemmad</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4 class="panel-head">Standard Properties</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Thalappara</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4 class="panel-head">Properties For Buy</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Ramanattukara</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4 class="panel-head">Properties for Rent</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Kannur</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4 class="panel-head">International Properties</h4>
+            <div class="px-5 property-head">
+                <div class="row">
+                    <div class="col-1">
+                        <span>SI.NO</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Property Name</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Location</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Ref Id</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Actions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="px-5 property-parent">
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Kottakkal</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="row 2 each-property">
+                    <div class="col-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-4">
+                        <span>Apartment with Modern Furniture</span>
+                    </div>
+                    <div class="col-3">
+                        <span>Malappuram</span>
+                    </div>
+                    <div class="col-2">
+                        <span>KNK1002</span>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <!-- sweetalert js -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+        var m = "{{ message }}";
+        Swal.fire({
+            icon: 'success',
+            iconHtml: '<i class="fa fa-check"></i>',
+            text: m,
+            confirmButtonColor: 'black',
+            color: 'black',
+            background: 'white',
+            allowEscapeKey: false,
+            showClass: {
+            popup: 'my-icon'                     // disable popup animation css
+            },
+        });
+        </script>
+    {% else %}
+    <!-- sweetalert js -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var m = "{{ message }}";
+        Swal.fire({
+        icon: 'error',
+        iconHtml: '<i class="fa fa-warning"></i>',
+        text: m,
+        confirmButtonColor: 'black',
+        color: 'black',
+        background: 'white',
+        allowEscapeKey: false,
+        showClass: {
+            popup: 'my-icon'                     // disable popup animation css
+        },
+        });
+    </script>
+    {% endif %}
+    {% endfor %}
+
+    <script>
+        document.querySelector('.properties-nav').classList.add('active')
+    </script>
+
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/chart.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+
+    <script src="{% static 'js/admin.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+
+{% endblock script %}
+

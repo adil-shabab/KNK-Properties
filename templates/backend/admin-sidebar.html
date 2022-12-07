@@ -1,0 +1,113 @@
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="mt-3 nav">
+      <li class="nav-item dash-nav">
+        <a class="nav-link" href="{% url 'dashboard' %}">
+          <i class="sidebar-icon fa-solid fa-border-all"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      
+      <li class="nav-item properties-nav">
+        <a class="nav-link" href="{% url 'properties'  %}">
+          <i class="sidebar-icon fa-solid fa-city"></i>
+          <span class="menu-title">Properties</span>
+        </a>
+      </li>
+      
+      <li class="nav-item amenities-nav">
+        <a class="nav-link"  href="{% url 'amenities' %}">
+          <i class="sidebar-icon fa-solid fa-ribbon"></i>
+          <span class="menu-title">Amenities</span>
+        </a>
+      </li>
+
+      <li class="nav-item places-nav">
+        <a class="nav-link" href="{% url 'places' %}">
+          <i class="sidebar-icon fa-solid fa-map-location-dot"></i>
+          <span class="menu-title">Places</span>
+        </a>
+      </li>
+
+      <li class="nav-item ads-nav">
+        <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+          <i class="sidebar-icon fa-solid fa-volume-high"></i>
+          <span class="menu-title">Ads</span>
+          <i class="fa-solid fa-caret-down down-arrow"></i>
+        </a>
+        <div class="collapse" id="charts">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="">Desktop Ad</a></li>
+            <li class="nav-item"> <a class="nav-link" href="">Mobile Ad</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item faq-nav">
+        <a class="nav-link" href="{% url 'faq'  %}">
+          <i class="sidebar-icon fa-solid fa-question"></i>
+          <span class="menu-title">FAQ</span>
+        </a>
+      </li>
+
+      <li class="nav-item testimonial-nav">
+        <a class="nav-link" href="{% url 'testimonials' %}">
+          <i class="sidebar-icon fa-solid fa-quote-left"></i>
+          <span class="menu-title">Testimonial</span>
+        </a>
+      </li>
+
+      <li class="nav-item messages-nav">
+        <a class="nav-link" href="{% url 'messages' %}">
+          <i class="sidebar-icon fa-solid fa-message"></i>
+          <span class="menu-title">Messages</span>
+        </a>
+      </li>
+
+
+      <li class="form-txt">Forms</li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add Property</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add Amenities</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add Place</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add Testimonial</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add FAQ</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="sidebar-icon fa-solid fa-plus"></i>
+          <span class="menu-title">Add Testimonial</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
