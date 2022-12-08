@@ -107,3 +107,6 @@ main .login-parent.mobile .logo{
     width: 80px;
     left: 45%;
 }
+.swal2-container.swal2-center>.swal2-popup{
+    padding-top: 25px;
+}

@@ -42,6 +42,11 @@ def messages(request):
     return render(request, 'backend/messages.html')
 
 
+@login_required(login_url='login')
+def amenities_form(request):
+    return render(request, 'backend/forms/amenities-form.html')
+
+
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -52,14 +57,21 @@ def login(request):
         if user is not None:
             auth_login(request, user)
             mp.success(request, "Logged In")
-            print('logged')
             return redirect('dashboard') 
         else:
             mp.error(request, 'Invalid Credential')
-            print('error')
             return render(request, 'backend/login.html')
 
     
     return render(request, 'backend/login.html')
+
+
+# logout 
+@login_required(login_url='login')
+def logout_user(request):
+    logout(request)
+    mp.success(request, "Sign Out")
+    return redirect('login')
+
 
 

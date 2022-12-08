@@ -274,8 +274,12 @@ a:hover{
     font-weight: bold;
     padding-left: 60px;
 }
-
-
+.sm-icon{
+    font-size: 15px !important;
+}
+.swal2-container.swal2-center>.swal2-popup{
+    padding-top: 25px;
+}
 
 
 
