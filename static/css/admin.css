@@ -12,6 +12,12 @@ body{
     scroll-behavior: smooth;
     background: #f4f5f7;
 }
+.faq-span{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
 a{
     text-decoration: none;
     color: black;

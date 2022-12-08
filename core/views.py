@@ -51,7 +51,13 @@ def places(request):
 
 @login_required(login_url='login')
 def faq(request):
-    return render(request, 'backend/faq.html')
+    faq = Faq.objects.all()
+    count = Faq.objects.all().count()
+    context = {
+        'faq': faq,
+        'count' : count
+    }
+    return render(request, 'backend/faq.html',context)
 
 
 @login_required(login_url='login')
@@ -218,6 +224,55 @@ def testimonial_delete(request,pk):
     testimonial.delete()
     mp.success(request, 'Testimonial Deleted')
     return redirect('testimonials')
+
+
+
+
+
+# create faq 
+@login_required(login_url='login')
+def faq_form(request):
+    form = FaqForm()
+    if request.method == 'POST':
+        form = FaqForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            mp.success(request, 'Faq Added')
+            return redirect('faq')
+        else:
+            return redirect('faq-form')
+
+    context = {'form':form}
+    return render(request, 'backend/forms/faq-form.html', context)
+
+
+# update faq 
+@login_required(login_url='login')
+def faq_edit(request, pk):
+    faq = Faq.objects.get(id=pk)
+    form = FaqForm(instance=faq)
+    if request.method == 'POST':
+        form= FaqForm(request.POST, request.FILES, instance=faq)
+        if form.is_valid():
+            faq = form.save()
+            mp.success(request, 'Faq Updated')
+            return redirect('faq')
+        else:
+            return redirect('faq-edit')
+    
+    context = {'form':form, 'faq': faq}
+    return render(request, 'backend/forms/faq-edit.html', context)
+
+
+# delete faq 
+@login_required(login_url='login')
+def faq_delete(request,pk):
+    faq = Faq.objects.get(id=pk)
+    faq.delete()
+    mp.success(request, 'Faq Deleted')
+    return redirect('faq')
+
+
 
 
 

@@ -15,20 +15,19 @@
 
 
 {% block content %}
-<div class="row">
+
+<div class="row w-100 px-5">
     <div class="col-12">
       <form action="" id="faq-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
       <fieldset class="row">    
-        <legend class="mb-4"><span class="number">1</span>Testimonial Form</legend>
       
-
         <div class=" col-12">
           <label>Question :</label><br>
           {{form.question}}
         </div>
-        <div class=" col-12">
+        <div class="col-12">
           <label>Answer :</label><br>
           {{form.answer}}
         </div>
@@ -37,11 +36,12 @@
         
        </fieldset>
 
-        <button type="submit">Add Faq</button>
+        <button type="submit" class="mb-3 mt-1">Add Faq</button>
         
        </form>
         </div>
       </div>
+
 
 {% endblock content %}
 

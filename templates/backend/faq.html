@@ -42,21 +42,23 @@
 
 
           <div class="px-5 property-parent">
-              <div class="row each-property">
-                  <div class="col-2">
-                      <span>1</span>
-                  </div>
-                  <div class="col-4">
-                      <span>How Does It Works ?</span>
-                  </div>
-                  <div class="col-4">
-                      <span>Lorem ipsum dolor sit and that is amet ...</span>
-                  </div>
-                  <div class="col-2 d-flex">
-                      <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href=""><i class="fa-solid fa-trash"></i></a>
-                  </div>
-              </div>
+            {% for x in faq %}
+             <div class="row each-property">
+                <div class="col-2">
+                    <span>{{forloop.counter}}</span>
+                </div>
+                <div class="col-4">
+                    <span>{{x.question}} ?</span>
+                </div>
+                <div class="col-4">
+                    <span class="faq-span">{{x.answer}}</span>
+                </div>
+                <div class="col-2 d-flex">
+                    <a href="{% url 'faq-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'faq-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                </div>
+             </div>
+            {% endfor %}
           </div>
       </div>
   </div>

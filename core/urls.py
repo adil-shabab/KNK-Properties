@@ -25,4 +25,8 @@ urlpatterns = [
     path('account/form/testimonials', views.testimonial_form, name='testimonial-form'),
     path('account/form/testimonials/<str:pk>', views.testimonial_edit, name='testimonial-edit'),
     path('account/delete/testimonials/<str:pk>', views.testimonial_delete, name='testimonial-delete'),
+
+    path('account/form/faq', views.faq_form, name='faq-form'),
+    path('account/form/faq/<str:pk>', views.faq_edit, name='faq-edit'),
+    path('account/delete/faq/<str:pk>', views.faq_delete, name='faq-delete'),
 ]
