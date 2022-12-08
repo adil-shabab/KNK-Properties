@@ -40,21 +40,23 @@
 
 
           <div class="px-5 property-parent">
-              <div class="row each-property">
-                  <div class="col-2">
-                      <span>1</span>
-                  </div>
-                  <div class="col-5">
-                      <span>Parking Facility</span>
-                  </div>
-                  <div class="col-3">
-                      <img class="amenities-icon" src="https://cdn-icons-png.flaticon.com/512/708/708949.png" alt="">
-                  </div>
-                  <div class="col-2 d-flex">
-                      <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href=""><i class="fa-solid fa-trash"></i></a>
-                  </div>
-              </div>
+              {% for x in amenities %}
+                <div class="row each-property">
+                    <div class="col-2">
+                        <span>{{forloop.counter}}</span>
+                    </div>
+                    <div class="col-5">
+                        <span>{{x.amenities_name}}</span>
+                    </div>
+                    <div class="col-3">
+                        <img class="amenities-icon" src="{{x.amenities_icon.url}}" alt="">
+                    </div>
+                    <div class="col-2 d-flex">
+                        <a href="{% url 'amenities-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{% url 'amenities-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+              {% endfor %}
           </div>
       </div>
   </div>

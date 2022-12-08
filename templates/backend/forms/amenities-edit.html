@@ -16,29 +16,33 @@
 
 {% block content %}
 
-<div class="amenities-form-parent mb-5 pb-5">
-    <form id="amenities-form" class="mb-5 pb-5 d-flex justify-content-center align-items-center" action="" method="POST" enctype="multipart/form-data">
+<div class="amenities-form-parent">
+    <form id="amenities-update" class="mb-5 pb-5 d-flex justify-content-center align-items-center" action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-       <div class="shadow w-100 row py-3" style="max-width: 400px; border-radius: 10px;">
+       <div class="shadow w-100 row py-3" style="max-width: 420px; border-radius: 10px;">
         <div class="col-12">
           <p class="form-head">Amenities Name</p>
           {{ form.amenities_name }}
         </div>
+    
+        
         <div class="col-12">
-          <p class="form-head">Amenities Icon  (512px*512px)</p>
+          <p class="form-head">Amenities Icon</p>
           <div>
-            <div class="m-0 box">
-              <div class="js--image-preview"></div>
-              <div class="upload-options">
-                <label>
-                  {{form.amenities_icon}}
-                </label>
+            <div class="containers d-flex justify-content-center align-items-center p-3" >
+                <div class="imageWrapper">
+                  <img class="img-fluid image" src="{{amenities.amenities_icon.url}}">
+                </div>
               </div>
-            </div>
+              <button class="file-upload">            
+                {{form.amenities_icon}}
+              </button>
           </div>
         <input class="sub-btn" type="submit">
        </div>
+        
     </form>
+    
 </div>
 
 {% endblock content %}
@@ -47,8 +51,11 @@
 
 {% block script %}
 
+
     <script>
-        document.querySelector('.amenities-add').classList.add('active')
+        document.querySelector('.amenities-nav').classList.add('active')
+        let amenities_icon = document.getElementById('id_amenities_icon')
+        amenities_icon.classList.add('file-input')
     </script>
 
     <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
