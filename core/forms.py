@@ -19,3 +19,10 @@ class AmenitiesForm(ModelForm):
             'amenities_icon' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
         }
 
+
+
+class PlaceForm(ModelForm):
+    class Meta:
+        model = Places
+        fields = '__all__'
+

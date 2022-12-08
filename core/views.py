@@ -32,7 +32,13 @@ def amenities(request):
 
 @login_required(login_url='login')
 def places(request):
-    return render(request, 'backend/places.html')
+    places = Places.objects.all()
+    places_count = Places.objects.all().count
+    context = {
+        'places': places,
+        'places_count': places_count
+    }
+    return render(request, 'backend/places.html', context)
 
 
 @login_required(login_url='login')
@@ -101,6 +107,59 @@ def amenities_delete(request,pk):
     return redirect('amenities')
 
 
+
+
+
+
+
+
+
+# place form 
+# create place 
+@login_required(login_url='login')
+def place_form(request):
+    form = PlaceForm()
+    places = Places.objects.all()
+    if request.method == 'POST':
+        form =PlaceForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            mp.success(request,  "Place Added Successfully")
+            return redirect('places')
+        else:
+            return redirect('place-form')
+
+    context = {'form':form}
+    return render(request, 'backend/forms/places-form.html', context)
+
+
+
+# update place 
+@login_required(login_url='login')
+def place_edit(request, pk):
+    place = Places.objects.get(id=pk)
+
+    form = PlaceForm(instance=place)
+    if request.method == 'POST':
+        form = PlaceForm(request.POST, request.FILES, instance=place)
+        if form.is_valid():
+            form.save()
+            mp.success(request, place.name + ' ' + "Updated Successfully")
+            return redirect('places')
+        else:
+            return redirect('place-edit')
+    context = {'form':form}
+    return render(request, 'backend/forms/places-edit.html', context)
+
+
+# delete place 
+# delete form 
+@login_required(login_url='login')
+def place_delete(request, pk):
+    place = Places.objects.get(id=pk)
+    place.delete()
+    mp.success(request, place.name + ' ' + "deleted Successfully")
+    return redirect('places')
 
 
 

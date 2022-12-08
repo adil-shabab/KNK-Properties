@@ -37,18 +37,20 @@
 
 
           <div class="px-5 property-parent">
-              <div class="row each-property">
-                  <div class="col-3">
-                      <span>1</span>
-                  </div>
-                  <div class="col-6">
-                      <span>Padikkal, Malappuram, Kerala</span>
-                  </div>
-                  <div class="col-3 d-flex">
-                      <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href=""><i class="fa-solid fa-trash"></i></a>
-                  </div>
-              </div>
+              {% for x in places  %}
+                <div class="row each-property">
+                    <div class="col-3">
+                        <span>{{forloop.counter}}</span>
+                    </div>
+                    <div class="col-6">
+                        <span>{{x.name}}</span>
+                    </div>
+                    <div class="col-3 d-flex">
+                        <a href="{% url 'place-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{% url 'place-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+              {% endfor %}
           </div>
       </div>
   </div>

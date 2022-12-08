@@ -17,4 +17,8 @@ urlpatterns = [
     path('account/form/amenities', views.amenities_form, name='amenities-form'),
     path('account/form/amenities/<str:pk>', views.amenities_edit, name='amenities-edit'),
     path('account/delete/amenities/<str:pk>', views.amenities_delete, name='amenities-delete'),
+
+    path('account/form/places', views.place_form, name='place-form'),
+    path('account/form/places/<str:pk>', views.place_edit, name='place-edit'),
+    path('account/delete/places/<str:pk>', views.place_delete, name='place-delete'),
 ]
