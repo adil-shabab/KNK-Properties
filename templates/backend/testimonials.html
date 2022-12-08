@@ -23,11 +23,14 @@
           </div>
           <div class="px-5 property-head">
               <div class="row">
-                  <div class="col-2">
+                  <div class="col-1">
                       <span>SI.NO</span>
                   </div>
-                  <div class="col-3">
+                  <div class="col-2">
                       <span>Name</span>
+                  </div>
+                  <div class="col-2">
+                      <span>Profile</span>
                   </div>
                   <div class="col-2">
                       <span>Designation</span>
@@ -43,28 +46,33 @@
 
 
           <div class="px-5 property-parent">
-              <div class="row each-property">
-                  <div class="col-2">
-                      <span>1</span>
-                  </div>
-                  <div class="col-3">
-                      <span>Adil Shabab</span>
-                  </div>
-                  <div class="col-2">
-                      <span>Manager</span>
-                  </div>
-                  <div class="col-3">
-                      <i class="fa-solid fa-star testimonial-star"></i>
-                      <i class="fa-solid fa-star testimonial-star"></i>
-                      <i class="fa-solid fa-star testimonial-star"></i>
-                      <i class="fa-solid fa-star testimonial-star"></i>
-                      <i class="fa-solid fa-star testimonial-star"></i>
-                  </div>
-                  <div class="col-2 d-flex">
-                      <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href=""><i class="fa-solid fa-trash"></i></a>
-                  </div>
-              </div>
+            {% for x in testimonials %}
+            <div class="d-flex justify-content-center align-items-center row each-property">
+                <div class="col-1">
+                  <span>{{forloop.counter}}</span>
+                </div>
+                <div class="col-2">
+                  <span>{{x.name}}</span>
+                </div>
+                <div class="col-2">
+                    <img src="{{x.photo.url}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-2">
+                  <span>{{x.designation}}</span>
+                </div>
+                <div class="col-3">
+                    {% with ''|center:x.rating as range %}
+                    {% for _ in range %}
+                    <i class="fa-solid fa-star testimonial-star"></i>
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+                <div class="col-2 d-flex">
+                  <a href="{% url 'testimonial-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                  <a href="{% url 'testimonial-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+            {% endfor %}
           </div>
       </div>
   </div>

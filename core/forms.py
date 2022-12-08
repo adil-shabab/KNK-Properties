@@ -26,3 +26,29 @@ class PlaceForm(ModelForm):
         model = Places
         fields = '__all__'
 
+
+
+class TestimonialForm(ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = '__all__'
+
+        widgets = {
+            'photo' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'name' : forms.TextInput(),
+            'designation' : forms.TextInput(),
+            'review' : forms.Textarea(),
+        }
+
+
+
+
+class FaqForm(ModelForm):
+    class Meta:
+        model = Faq
+        fields = '__all__'
+
+        widgets = {
+            'question' : forms.TextInput(),
+            'answer' : forms.Textarea()
+        }

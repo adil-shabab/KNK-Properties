@@ -5,6 +5,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages as mp
 from .forms import *
 from .models import *
+from django import template
+
+
+register = template.Library()
+@register.filter()
+def range(min=5):
+    return range(min)
+
 # Create your views here.
 
 
@@ -48,7 +56,13 @@ def faq(request):
 
 @login_required(login_url='login')
 def testimonials(request):
-    return render(request, 'backend/testimonials.html')
+    testimonials = Testimonial.objects.all()
+    count = Testimonial.objects.all().count()
+    context={
+        'testimonials':testimonials,
+        'count': count
+    }
+    return render(request, 'backend/testimonials.html', context)
 
 
 @login_required(login_url='login')
@@ -153,13 +167,62 @@ def place_edit(request, pk):
 
 
 # delete place 
-# delete form 
 @login_required(login_url='login')
 def place_delete(request, pk):
     place = Places.objects.get(id=pk)
     place.delete()
     mp.success(request, place.name + ' ' + "deleted Successfully")
     return redirect('places')
+
+
+
+
+# create testimonial 
+@login_required(login_url='login')
+def testimonial_form(request):
+    form = TestimonialForm()
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            mp.success(request, 'Testimonial Created')
+            return redirect('testimonials')
+        else:
+            return redirect('testimonialform')
+
+    context = {'form':form}
+    return render(request, 'backend/forms/testimonials-form.html', context)
+
+
+# update testimonial 
+@login_required(login_url='login')
+def testimonial_edit(request, pk):
+    testimonial = Testimonial.objects.get(id=pk)
+    form = TestimonialForm(instance=testimonial)
+    if request.method == 'POST':
+        form= TestimonialForm(request.POST, request.FILES, instance=testimonial)
+        if form.is_valid():
+            form.save()
+            mp.success(request, 'Testimonial Updated')
+            return redirect('testimonials')
+    
+    context = {'form':form, 'testimonial': testimonial}
+    return render(request, 'backend/forms/testimonials-edit.html', context)
+
+
+
+# delete testimonial 
+@login_required(login_url='login')
+def testimonial_delete(request,pk):
+    testimonial = Testimonial.objects.get(id=pk)
+    testimonial.delete()
+    mp.success(request, 'Testimonial Deleted')
+    return redirect('testimonials')
+
+
+
+
+
 
 
 
