@@ -8,6 +8,71 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
+Type = [
+    ('Apartment', 'Apartment'),
+    ('Short Term & Hotel', 'Short Term & Hotel'),
+    ('Villa', 'Villa'),
+    ('Commercial Spaces ', 'Commercial Spaces '),
+    ('Hotel Apartment', 'Hotel Apartment'),
+    ('Staff Accommodation ', 'Staff Accommodation '),
+    ('Duplex', 'Duplex'),
+    ('Whole building', 'Whole building'),
+]
+
+BuyOrRent = [
+   ('Rent', 'Rent'),
+   ('Buy', 'Buy')
+]
+List = [
+    ('Premium Listing', 'Premium Listing'),
+    ('Standard Listing', 'Standard Listing'),
+    ('Featured Listing', 'Featured Listing'),
+]
+Water = [
+    ('Inclusive', 'Inclusive'),
+    ('Exclusive', 'Exclusive')
+]
+Furnished = [
+    ('Furnished', 'Furnished'),
+    ('Semi Furnished', 'Semi Furnished'),
+    ('Unfurnished', 'Unfurnished')
+]
+
+
+
+
+
+
+
+class PropertyForm(ModelForm):
+    class Meta:
+        model = Property
+        fields = '__all__'
+
+        widgets = {
+            'property_type' : forms.Select(choices=Type),
+            'furnished_type' : forms.Select(choices=Furnished),
+            'water_and_electricity' : forms.Select(choices=Water),
+            'buy_rent' : forms.RadioSelect(choices=BuyOrRent, attrs={'class': 'mt-2'}),
+            'property_listing' : forms.RadioSelect(choices=List, attrs={'class':'mt-2'}),
+            'property_amenities' : forms.CheckboxSelectMultiple(attrs={'class': 'mt-2'}),
+            'property_image' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_two' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_three' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_four' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_five' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_six' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_seven' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_eight' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_nine' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_ten' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+        }
+
+
+
+
+
+
 
 class AmenitiesForm(ModelForm):
     class Meta:

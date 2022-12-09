@@ -29,4 +29,14 @@ urlpatterns = [
     path('account/form/faq', views.faq_form, name='faq-form'),
     path('account/form/faq/<str:pk>', views.faq_edit, name='faq-edit'),
     path('account/delete/faq/<str:pk>', views.faq_delete, name='faq-delete'),
+
+    path('account/form/property', views.property_form, name='property-form'),
+    # path('account/form/property/<str:pk>', views.property_edit, name='property-edit'),
+    # path('account/delete/property/<str:pk>', views.property_delete, name='property-delete'),
+
+    path('account/delete/messages/<str:pk>', views.message_delete, name='message-delete'),
+
+    # api route 
+    path('account/create/message', views.MessageView, name='create-message'),
+    path('account/api/places', views.PlaceView, name='place-view'),
 ]

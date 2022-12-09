@@ -1,4 +1,6 @@
 from django.db import models
+from tinymce.models import HTMLField
+
 
 # Create your models here.
 
@@ -36,4 +38,77 @@ class Testimonial(models.Model):
 class Faq(models.Model):
     question = models.CharField(max_length=200)
     answer = models.TextField()
+
+
+
+
+
+class Messages(models.Model):
+    name = models.CharField(max_length=180)
+    email = models.EmailField()
+    number = models.CharField(max_length=250,null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    message = models.TextField()
+
+
+    def __str__ (self):
+        return self.name
+
+
+
+
+
+
+class Property(models.Model):
+    property_name = models.CharField(max_length=300)
+    property_location = models.CharField(max_length=150)
+    property_type = models.CharField(max_length=150, default='Villa')
+    buy_rent = models.CharField(max_length=150, default='Buy')
+    total_bedroom = models.IntegerField()
+    total_bathroom = models.IntegerField()
+    property_price = models.IntegerField()
+    property_listing = models.CharField(max_length=150, default='Standard Listing',null=True, blank=True)
+    property_area = models.IntegerField()
+    property_keyword = models.TextField(null=True, blank=True)
+    # is_commercial_property = models.BooleanField(default=False)
+    property_description = HTMLField(null=True, blank=True)
+    property_video_link = models.CharField(max_length=200, null=True, blank=True)
+    is_international_property = models.BooleanField(default=False)
+    property_image = models.ImageField(upload_to='media')
+    property_image_two = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_three = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_four = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_five = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_six = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_seven = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_eight = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_nine = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_ten = models.ImageField(upload_to='media', null=True, blank=True)
+    upload_date = models.DateTimeField(auto_now_add=True, null=True)
+    property_map_location = models.CharField(max_length=150, null=True, blank=True)
+    property_amenities = models.ManyToManyField('Amenities')
+    slug = models.TextField(null=True, blank=True, unique=True)
+    property_status =  models.BooleanField(default=True)
+    water_and_electricity = models.CharField(max_length=150, default='Exclusive')
+    parking_slot = models.IntegerField(null=True, blank=True)
+    furnished_type = models.CharField(max_length=150, default='Furnished')
+
+
+
+    is_premium = models.BooleanField(default=False)
+    is_standard = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=False)
+
+
+    meta_title = models.CharField(max_length=150, null=True, blank=True)
+    meta_keyword = models.TextField(null=True, blank=True)
+    meta_description = models.TextField(null=True, blank=True)
+
+    ref_id = models.CharField(max_length=200,null=True, blank=True)
+
+
+    def __str__(self):
+        return self.property_name
+
+
 

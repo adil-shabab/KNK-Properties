@@ -6,6 +6,14 @@ from django.contrib import messages as mp
 from .forms import *
 from .models import *
 from django import template
+from rest_framework.decorators import api_view
+from rest_framework import status
+from django.http.response import JsonResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.utils.text import slugify
+import random
+
 
 
 register = template.Library()
@@ -14,6 +22,88 @@ def range(min=5):
     return range(min)
 
 # Create your views here.
+
+
+
+
+
+# api view 
+
+class PlaceView(APIView):
+    def get(self, request):
+        response = {}
+        response['status'] = 500
+        response['message'] = "Something Went Wrong"
+
+        try:
+            places = Places.objects.all()
+            payload = []
+            for place in places:
+                payload.append({
+                    'name': place.name
+                })
+
+            response['status'] = 200
+            response['message'] = "All Places"
+            response['data'] = payload
+
+        except Exception as e:
+            print(e)
+
+        return Response(response)
+    
+
+    
+    def post(self, request):
+        response = {}
+        response['status'] = 500
+        response['message'] = "Something Went Wrong"
+
+        try:
+            data = request.data
+            print(data.get('name'))
+            Places.objects.create(name=data.get('name'))
+            response['status'] = 200
+            response['message'] = "Place Added"
+
+        except Exception as e:
+            print(e)
+
+        return Response(response)
+
+
+
+
+PlaceView = PlaceView.as_view()
+
+
+
+
+class MessageView(APIView):
+    def post(self, request):
+        response = {}
+        response['status'] = 500
+        response['message'] = "Something Went Wrong"
+
+        try:
+            data = request.data
+            Messages.objects.create(name=data.get('name'),message=data.get('message'),email=data.get('email'),number=data.get('number'))
+            response['status'] = 200
+            response['message'] = "Message Sent"
+
+        except Exception as e:
+            print(e)
+
+        return Response(response)
+
+MessageView = MessageView.as_view()
+
+
+
+
+
+
+
 
 
 
@@ -73,7 +163,13 @@ def testimonials(request):
 
 @login_required(login_url='login')
 def messages(request):
-    return render(request, 'backend/messages.html')
+    messages = Messages.objects.all()
+    messages_count = Messages.objects.all().count()
+    context = {
+        'messages' : messages,
+        'count': messages_count
+    }
+    return render(request, 'backend/messages.html', context)
 
 
 
@@ -275,10 +371,105 @@ def faq_delete(request,pk):
 
 
 
+# delete message 
+def message_delete(request,pk):
+    msg = Messages.objects.get(id=pk)
+    msg.delete()
+    mp.success(request, 'Message Deleted')
+    return redirect('messages')
 
 
 
 
+
+
+# creation form 
+@login_required(login_url='login')
+def property_form(request):
+    form = PropertyForm()
+    places = Places.objects.all()
+    if request.method == 'POST':
+        form =PropertyForm(request.POST, request.FILES)
+        if form.is_valid():
+            form1 = form.save(commit=False)
+            arr1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+            arr2 = ['1','2','3','4','5','6','7','8','9','0']
+            slug_name = form1.property_name + '-' + random.choice(arr1) + '-' + random.choice(arr2)
+            slug = slugify(slug_name)
+            form1.slug = slug
+            form1.property_status = True
+
+
+            # edited 
+            # water_mark = media+'small-logo.png'
+
+            # img1 = watermark_image(form1.property_image,form1.property_image,water_mark)
+
+            # if form1.property_image_two:
+            #     img2 = watermark_image(form1.property_image_two,form1.property_image_two,water_mark)
+            #     form1.property_image_two = img2
+
+            # if form1.property_image_three:
+            #     img3 = watermark_image(form1.property_image_three,form1.property_image_three,water_mark)
+            #     form1.property_image_three = img3
+
+            # if form1.property_image_four:
+            #     img4 = watermark_image(form1.property_image_four,form1.property_image_four,water_mark)
+            #     form1.property_image_four = img4
+
+            # if form1.property_image_five:
+            #     img5 = watermark_image(form1.property_image_five,form1.property_image_five,water_mark)
+            #     form1.property_image_five = img5
+
+            # if form1.property_image_six:
+            #     img6 = watermark_image(form1.property_image_six,form1.property_image_six,water_mark)
+            #     form1.property_image_six = img6
+
+            # if form1.property_image_seven:
+            #     img7 = watermark_image(form1.property_image_seven,form1.property_image_seven,water_mark)
+            #     form1.property_image_seven = img7
+
+            # if form1.property_image_eight:
+            #     img8 = watermark_image(form1.property_image_eight,form1.property_image_eight,water_mark)
+            #     form1.property_image_eight = img8
+
+            # if form1.property_image_nine:
+            #     img9 = watermark_image(form1.property_image_nine,form1.property_image_nine,water_mark)
+            #     form1.property_image_nine = img9
+
+            # if form1.property_image_ten:
+            #     img10 = watermark_image(form1.property_image_ten,form1.property_image_ten,water_mark)
+            #     form1.property_image_ten = img10
+
+
+            # form1.property_image = img1
+
+
+
+            latest_property = Property.objects.order_by('-upload_date')[:1]
+            print(latest_property)
+            
+            if len(latest_property) > 0:
+                for x in latest_property:
+                    reference_id = x.id + 1
+                    start = 1000
+                    ref_id = start + reference_id 
+                    form1.ref_id = (f"{'KNK'}{ref_id}")
+            else:
+                start = 1000
+                ref_id = start
+                form1.ref_id = (f"{'KNK'}{ref_id}")
+
+
+            form1.save()
+            form1 = form.save()
+            mp.success(request, "Property Added Successfully")
+            return redirect('properties')
+        else:
+            return redirect('property-form')
+            
+    context = {'form':form,'places':places}
+    return render(request, 'backend/forms/property-form.html', context)
 
 
 
