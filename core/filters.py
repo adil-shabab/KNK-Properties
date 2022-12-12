@@ -36,14 +36,14 @@ class PropertyFilter(django_filters.FilterSet):
     ref_id = django_filters.CharFilter(widget=TextInput(attrs={'class':'input','placeholder': 'Ref Id'}), lookup_expr='icontains')
     property_type = django_filters.ChoiceFilter(lookup_expr='icontains',choices=Type)
     
-    min_count_bedroom = django_filters.NumberFilter(field_name='total_bedroom', lookup_expr='gte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Min Bedroom'}))
-    max_count_bedroom = django_filters.NumberFilter(field_name='total_bedroom', lookup_expr='lte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Max Bedroom'}))
+    min_count_bedroom = django_filters.NumberFilter(field_name='total_bedroom', lookup_expr='gte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Min Bedroom'}))
+    max_count_bedroom = django_filters.NumberFilter(field_name='total_bedroom', lookup_expr='lte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Max Bedroom'}))
 
-    min_count_area = django_filters.NumberFilter(field_name='property_area', lookup_expr='gte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Min Area'}))
-    max_count_area = django_filters.NumberFilter(field_name='property_area', lookup_expr='lte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Max Area'}))
+    min_count_area = django_filters.NumberFilter(field_name='property_area', lookup_expr='gte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Min Area'}))
+    max_count_area = django_filters.NumberFilter(field_name='property_area', lookup_expr='lte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Max Area'}))
 
-    min_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='gte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Min Bathroom'}))
-    max_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='lte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Max Bathroom'}))
+    min_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='gte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Min Bathroom'}))
+    max_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='lte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Max Bathroom'}))
 
     min_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='gte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Min Price'}))
     max_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='lte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Max Price'}))

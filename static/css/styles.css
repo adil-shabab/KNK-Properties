@@ -390,6 +390,7 @@ li{
     }
     .hero-section .left-box .input-box i{
         top: 19px;
+        left: 12px;
     }
     .dots{
         display: none !important;
@@ -1913,3 +1914,13 @@ footer .social-icons i:hover{
     }
 }
 /* ------------------------------------------ Buy / Rent / International / Premium / Standard / Featured css end ---------------------------------- */
+
+
+
+
+#id_buy_rent{
+    display: none;
+}
+#id_property_location{
+    padding-left: 40px;
+}

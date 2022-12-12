@@ -56,11 +56,73 @@ def about(request):
 
 
 def buy(request):
-    return render(request, 'frontend/buy.html')
+    properties = Property.objects.filter(buy_rent='Buy').filter(property_status = True).filter(is_international_property=False)
+    title = 'Buy'
+    txt = 'Properties For'
+    span = "Buy"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
+
+
+def premium(request):
+    properties = Property.objects.filter(is_premium = True).filter(property_status = True).filter(is_international_property=False)
+    title = 'Premium'
+    txt = 'Premium'
+    span = "Properties"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
+
+
+def standard(request):
+    properties = Property.objects.filter(is_standard =True).filter(property_status = True).filter(is_international_property=False)
+    title = 'Standard'
+    txt = 'Standard'
+    span = "Properties"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
+
+
+def featured(request):
+    properties = Property.objects.filter(is_featured = True).filter(property_status = True).filter(is_international_property=False)
+    title = 'Featured'
+    txt = 'Featured'
+    span = "Properties"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
 
 
 def rent(request):
-    return render(request, 'frontend/buy.html')
+    properties = Property.objects.filter(buy_rent='Rent').filter(property_status = True).filter(is_international_property=False)
+    title = 'Rent'
+    txt = 'Properties For'
+    span = "Rent"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
 
 
 def contact(request):
@@ -68,7 +130,16 @@ def contact(request):
 
 
 def search(request):
-    return render(request, 'frontend/search.html')
+    places = Places.objects.all()
+    properties = Property.objects.filter(property_status = True).filter(is_international_property=False)
+    myFilter = PropertyFilter(request.GET, queryset = properties)
+    properties = myFilter.qs
+    context = {
+        'properties': properties,
+        'myFilter': myFilter,
+        'places':places
+    }
+    return render(request, 'frontend/search.html',context)
 
 
 
