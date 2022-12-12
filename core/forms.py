@@ -117,3 +117,13 @@ class FaqForm(ModelForm):
             'question' : forms.TextInput(),
             'answer' : forms.Textarea()
         }
+
+
+
+
+class MessageForm(ModelForm):
+    class Meta:
+        model = Messages
+        fields = '__all__'
+
+

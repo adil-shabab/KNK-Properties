@@ -33,34 +33,28 @@
                 <div class="col-sm-12">
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
-                      <p class="statistics-title">Bounce Rate</p>
-                      <h3 class="rate-percentage">32.53%</h3>
-                      <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+                      <p class="statistics-title">Total Properties</p>
+                      <h3 class="rate-percentage">{{totalCount}}</h3>
                     </div>
                     <div>
-                      <p class="statistics-title">Page Views</p>
-                      <h3 class="rate-percentage">7,682</h3>
-                      <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
+                      <p class="statistics-title">International Properties</p>
+                      <h3 class="rate-percentage">{{internationalCount}}</h3>
                     </div>
                     <div>
-                      <p class="statistics-title">New Sessions</p>
-                      <h3 class="rate-percentage">68.8</h3>
-                      <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+                      <p class="statistics-title">National Propertis</p>
+                      <h3 class="rate-percentage">{{nationalCount}}</h3>
                     </div>
                     <div class="d-none d-md-block">
-                      <p class="statistics-title">Avg. Time on Site</p>
-                      <h3 class="rate-percentage">2m:35s</h3>
-                      <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                      <p class="statistics-title">Premium Properties</p>
+                      <h3 class="rate-percentage">{{premium_count}}</h3>
                     </div>
                     <div class="d-none d-md-block">
-                      <p class="statistics-title">New Sessions</p>
-                      <h3 class="rate-percentage">68.8</h3>
-                      <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+                      <p class="statistics-title">Featured Listing</p>
+                      <h3 class="rate-percentage">{{featured_count}}</h3>
                     </div>
                     <div class="d-none d-md-block">
-                      <p class="statistics-title">Avg. Time on Site</p>
-                      <h3 class="rate-percentage">2m:35s</h3>
-                      <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                      <p class="statistics-title">Standard Listing</p>
+                      <h3 class="rate-percentage">{{standard_count}}</h3>
                     </div>
                   </div>
                 </div>
@@ -94,8 +88,8 @@
                           <h4 class="card-title card-title-dash text-white mb-4">Status Summary</h4>
                           <div class="row">
                             <div class="col-sm-4">
-                              <p class="status-summary-ight-white mb-1">Closed Value</p>
-                              <h2 class="text-info">357</h2>
+                              <p class="status-summary-ight-white mb-1">Total Properties</p>
+                              <h2 class="text-info">{{totalCount}}</h2>
                             </div>
                             <div class="col-sm-8">
                               <div class="status-summary-chart-wrapper pb-4">
@@ -112,23 +106,17 @@
                           <div class="row">
                             <div class="col-sm-6">
                               <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                <div class="circle-progress-width">
-                                  <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
-                                </div>
                                 <div>
-                                  <p class="text-small mb-2">Total Visitors</p>
-                                  <h4 class="mb-0 fw-bold">26.80%</h4>
+                                  <p class="text-small mb-2">Total Amenities</p>
+                                  <h4 class="mb-0 fw-bold">{{amenities_count}}</h4>
                                 </div>
                               </div>
                             </div>
                             <div class="col-sm-6">
                               <div class="d-flex justify-content-between align-items-center">
-                                <div class="circle-progress-width">
-                                  <div id="visitperday" class="progressbar-js-circle pr-2"></div>
-                                </div>
                                 <div>
-                                  <p class="text-small mb-2">Visits per day</p>
-                                  <h4 class="mb-0 fw-bold">9065</h4>
+                                  <p class="text-small mb-2">Total Places</p>
+                                  <h4 class="mb-0 fw-bold">{{places_count}}</h4>
                                 </div>
                               </div>
                             </div>
