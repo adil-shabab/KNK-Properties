@@ -31136,3 +31136,23 @@ div.tagsinput span.tag a {
     display: none;
   }
 }
+.b_o_x{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 40px 20px;
+  background: #c4d0e2;
+}
+.b_o_x p:nth-child(1){
+  font-size: 16px;
+  font-weight: bold;
+}
+.b_o_x p:nth-child(2){
+  margin-top: 21px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.b_o_x img{
+  width: 75px;
+}

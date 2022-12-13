@@ -300,8 +300,14 @@ def dashboard(request):
     featured_list_count = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_featured = True).count()
     amenities_count = Amenities.objects.all().count()
     places_count = Places.objects.all().count()
+    testimonial_count = Testimonial.objects.all().count()
+    faq_count = Faq.objects.all().count()
+    message_count = Messages.objects.all().count()
 
     context = {
+                'message_count': message_count,
+                'faq_count': faq_count,
+                'testimonial_count': testimonial_count,
                 'premium_count': premium_list_count,
                 'standard_count': standard_list_count,
                 'featured_count': featured_list_count,

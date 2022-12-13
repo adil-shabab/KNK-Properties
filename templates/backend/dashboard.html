@@ -17,72 +17,122 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="home-tab">
-          <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-            <p></p>
-            <div>
-              <div class="btn-wrapper">
-                <a href="#" class="btn btn-otline-dark align-items-center"><i class="fa-solid fa-share"></i> Share</a>
-                <a href="#" class="btn btn-otline-dark"><i class="fa-solid fa-print"></i> Print</a>
-                <a href="#" class="btn btn-outline-dark me-0"><i class="fa-solid fa-file-export"></i> Export</a>
-              </div>
-            </div>
-          </div>
           <div class="tab-content tab-content-basic">
             <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
               <div class="row">
                 <div class="col-sm-12">
-                  <div class="statistics-details d-flex align-items-center justify-content-between">
-                    <div>
-                      <p class="statistics-title">Total Properties</p>
-                      <h3 class="rate-percentage">{{totalCount}}</h3>
-                    </div>
-                    <div>
-                      <p class="statistics-title">International Properties</p>
-                      <h3 class="rate-percentage">{{internationalCount}}</h3>
-                    </div>
-                    <div>
-                      <p class="statistics-title">National Propertis</p>
-                      <h3 class="rate-percentage">{{nationalCount}}</h3>
-                    </div>
-                    <div class="d-none d-md-block">
-                      <p class="statistics-title">Premium Properties</p>
-                      <h3 class="rate-percentage">{{premium_count}}</h3>
-                    </div>
-                    <div class="d-none d-md-block">
-                      <p class="statistics-title">Featured Listing</p>
-                      <h3 class="rate-percentage">{{featured_count}}</h3>
-                    </div>
-                    <div class="d-none d-md-block">
-                      <p class="statistics-title">Standard Listing</p>
-                      <h3 class="rate-percentage">{{standard_count}}</h3>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-lg-8 d-flex flex-column">
-                  <div class="row flex-grow">
-                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
-                      <div class="card card-rounded">
-                        <div class="card-body">
-                          <div class="d-sm-flex justify-content-between align-items-start">
-                            <div>
-                             <h4 class="card-title card-title-dash">Performance Line Chart</h4>
-                             <h5 class="card-subtitle card-subtitle-dash">Lorem Ipsum is simply dummy text of the printing</h5>
-                            </div>
-                            <div id="performance-line-legend"></div>
-                          </div>
-                          <div class="chartjs-wrapper mt-5">
-                            <canvas id="performaneLine"></canvas>
-                          </div>
+                  <div class="row b_o_x_parent">
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>National Properties</p>
+                          <p>{{nationalCount}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/skyline.png' %}" alt="">
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 d-flex flex-column">
-                  <div class="row flex-grow">
-                    <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>International Properties</p>
+                          <p>{{internationalCount}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/skyline.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Premium Properties</p>
+                          <p>{{premium_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/skyline.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Featured Properties</p>
+                          <p>{{featured_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/skyline.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Standard Properties</p>
+                          <p>{{standard_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/skyline.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Total Amenities</p>
+                          <p>{{amenities_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/cancer.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Total Places</p>
+                          <p>{{places_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/map.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Total Testimonials</p>
+                          <p>{{testimonial_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/quotation.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Total Faq</p>
+                          <p>{{faq_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/question.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-3 col-md-4 col-12 mb-3">
+                      <div class="b_o_x">
+                        <div>
+                          <p>Total Messages</p>
+                          <p>{{message_count}}</p>
+                        </div>
+                        <div>
+                          <img src="{% static 'img/dashboard/conversation.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-12 grid-margin stretch-card">
                       <div class="card bg-primary card-rounded">
                         <div class="card-body pb-0">
                           <h4 class="card-title card-title-dash text-white mb-4">Status Summary</h4>
@@ -100,33 +150,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                      <div class="card card-rounded">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                <div>
-                                  <p class="text-small mb-2">Total Amenities</p>
-                                  <h4 class="mb-0 fw-bold">{{amenities_count}}</h4>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-6">
-                              <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                  <p class="text-small mb-2">Total Places</p>
-                                  <h4 class="mb-0 fw-bold">{{places_count}}</h4>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
-              </div>
+              </div> 
           </div>
         </div>
       </div>
