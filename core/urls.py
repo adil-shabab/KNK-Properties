@@ -9,8 +9,10 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('search/', views.search, name='search'),
     path('premium/', views.premium, name='premium'),
+    path('international/', views.international, name='international'),
     path('standard/', views.standard, name='standard'),
     path('featured/', views.featured, name='featured'),
+    path('property/<slug:slug>', views.single, name='single'),
 
 
 

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="px-lg-2 col-lg-4 col-12">
-                <img src="https://rightmovebh.com/static/img/logo.png" alt="" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="" class="logo">
                 <p class="description">Lorem ipsum dolor sit adipisicing elit. Velit maxime vitae ipsum amet libero placeat quis aliquid qui consequuntur!</p>
                 <div class="social-icons d-flex">
                     <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -19,21 +19,21 @@
             <div class="px-lg-3 col-lg-2 col-12">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Home</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> About</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Buy</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Rent</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Premium</a></li>
+                    <li><a href="{% url 'home' %}"><i class="fa-solid fa-arrow-right"></i> Home</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fa-solid fa-arrow-right"></i> About</a></li>
+                    <li><a href="{% url 'buy' %}"><i class="fa-solid fa-arrow-right"></i> Buy</a></li>
+                    <li><a href="{% url 'rent' %}"><i class="fa-solid fa-arrow-right"></i> Rent</a></li>
+                    <li><a href="{% url 'premium' %}"><i class="fa-solid fa-arrow-right"></i> Premium</a></li>
                 </ul>
             </div>
             <div class="px-lg-3 col-lg-3 col-12">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Standard</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Featured</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> International</a></li>
+                    <li><a href="{% url 'standard' %}"><i class="fa-solid fa-arrow-right"></i> Standard</a></li>
+                    <li><a href="{% url 'featured' %}"><i class="fa-solid fa-arrow-right"></i> Featured</a></li>
+                    <li><a href="{% url 'international' %}"><i class="fa-solid fa-arrow-right"></i> International</a></li>
                     <li><a href=""><i class="fa-solid fa-arrow-right"></i> Privacy & Policy</a></li>
-                    <li><a href=""><i class="fa-solid fa-arrow-right"></i> Contact Us</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fa-solid fa-arrow-right"></i> Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-12">

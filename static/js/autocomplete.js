@@ -16,10 +16,10 @@ document.querySelector('.plus-icon').addEventListener('click',function(){
     .then(res => {
     return res.json()
     })
-    .then(data => console.log(data))
+    // .then(data => console.log(data))
     .then(data=> callapi())
     .then(data => sweetalert())
-    .catch(error => console.log('ERROR'))
+    // .catch(error => console.log('ERROR'))
 
 
 })
@@ -156,7 +156,7 @@ let array = []
 function sweetalert(){
         let txt = document.getElementById('id_property_location').value
         console.log(txt)
-        swal(
+        swal.fire(
             'Success',
             '<b style="color:green;">'+ txt +'</b> Added To Places',
             'success'

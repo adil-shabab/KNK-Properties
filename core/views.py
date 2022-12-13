@@ -14,6 +14,13 @@ from rest_framework.response import Response
 from django.utils.text import slugify
 import random
 from .filters import PropertyFilter
+from django.conf import settings
+from django.conf.urls.static import static
+media = settings.MEDIA_ROOT+settings.MEDIA_URL
+from PIL import Image
+
+
+
 
 
 register = template.Library()
@@ -21,7 +28,33 @@ register = template.Library()
 def range(min=5):
     return range(min)
 
+
+
+
 # Create your views here.
+
+
+def watermark_image(input_image_path,output_path, watermark_image_path):
+    base_image = Image.open(input_image_path)
+    watermark = Image.open(watermark_image_path)
+    width, height = base_image.size
+
+    transparent = Image.new('RGB', (width, height), (0,0,0,0))
+    transparent.paste(base_image, (0,0))
+
+    width = input_image_path.width
+    height = input_image_path.height
+
+
+
+    w1 = int(width/2-75)
+    h1 = int(height/2-19)
+
+    position = (w1,h1)
+
+    transparent.paste(watermark, position, mask=watermark)
+    transparent.save(output_path)
+    return output_path
 
 
 
@@ -52,7 +85,13 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'frontend/about.html')
+    testimonials = Testimonial.objects.all()
+    faq = Faq.objects.all()
+    context = {
+        'testimonials' : testimonials,
+        'faq': faq
+    }
+    return render(request, 'frontend/about.html',context)
 
 
 def buy(request):
@@ -73,6 +112,20 @@ def premium(request):
     properties = Property.objects.filter(is_premium = True).filter(property_status = True).filter(is_international_property=False)
     title = 'Premium'
     txt = 'Premium'
+    span = "Properties"
+    context = {
+        'properties' : properties,
+        'title': title,
+        'span': span,
+        'txt': txt
+    }
+    return render(request, 'frontend/buy.html', context)
+
+
+def international(request):
+    properties = Property.objects.filter(is_international_property=True)
+    title = 'International'
+    txt = 'International'
     span = "Properties"
     context = {
         'properties' : properties,
@@ -123,6 +176,20 @@ def rent(request):
         'txt': txt
     }
     return render(request, 'frontend/buy.html', context)
+
+
+def single(request,slug):
+    property = Property.objects.get(slug=slug)
+    field_object = property._meta.get_field('buy_rent')
+    field_value = getattr(property, field_object.attname)
+    properties = Property.objects.filter(is_international_property=False).filter(buy_rent = field_value)[:6]
+    context = {
+        'property': property,
+        'properties':properties
+    }
+    return render(request, 'frontend/singlepage.html', context)
+
+
 
 
 def contact(request):
@@ -567,48 +634,48 @@ def property_form(request):
 
 
             # edited 
-            # water_mark = media+'small-logo.png'
+            water_mark = media+'small-logo.png'
 
-            # img1 = watermark_image(form1.property_image,form1.property_image,water_mark)
+            img1 = watermark_image(form1.property_image,form1.property_image,water_mark)
 
-            # if form1.property_image_two:
-            #     img2 = watermark_image(form1.property_image_two,form1.property_image_two,water_mark)
-            #     form1.property_image_two = img2
+            if form1.property_image_two:
+                img2 = watermark_image(form1.property_image_two,form1.property_image_two,water_mark)
+                form1.property_image_two = img2
 
-            # if form1.property_image_three:
-            #     img3 = watermark_image(form1.property_image_three,form1.property_image_three,water_mark)
-            #     form1.property_image_three = img3
+            if form1.property_image_three:
+                img3 = watermark_image(form1.property_image_three,form1.property_image_three,water_mark)
+                form1.property_image_three = img3
 
-            # if form1.property_image_four:
-            #     img4 = watermark_image(form1.property_image_four,form1.property_image_four,water_mark)
-            #     form1.property_image_four = img4
+            if form1.property_image_four:
+                img4 = watermark_image(form1.property_image_four,form1.property_image_four,water_mark)
+                form1.property_image_four = img4
 
-            # if form1.property_image_five:
-            #     img5 = watermark_image(form1.property_image_five,form1.property_image_five,water_mark)
-            #     form1.property_image_five = img5
+            if form1.property_image_five:
+                img5 = watermark_image(form1.property_image_five,form1.property_image_five,water_mark)
+                form1.property_image_five = img5
 
-            # if form1.property_image_six:
-            #     img6 = watermark_image(form1.property_image_six,form1.property_image_six,water_mark)
-            #     form1.property_image_six = img6
+            if form1.property_image_six:
+                img6 = watermark_image(form1.property_image_six,form1.property_image_six,water_mark)
+                form1.property_image_six = img6
 
-            # if form1.property_image_seven:
-            #     img7 = watermark_image(form1.property_image_seven,form1.property_image_seven,water_mark)
-            #     form1.property_image_seven = img7
+            if form1.property_image_seven:
+                img7 = watermark_image(form1.property_image_seven,form1.property_image_seven,water_mark)
+                form1.property_image_seven = img7
 
-            # if form1.property_image_eight:
-            #     img8 = watermark_image(form1.property_image_eight,form1.property_image_eight,water_mark)
-            #     form1.property_image_eight = img8
+            if form1.property_image_eight:
+                img8 = watermark_image(form1.property_image_eight,form1.property_image_eight,water_mark)
+                form1.property_image_eight = img8
 
-            # if form1.property_image_nine:
-            #     img9 = watermark_image(form1.property_image_nine,form1.property_image_nine,water_mark)
-            #     form1.property_image_nine = img9
+            if form1.property_image_nine:
+                img9 = watermark_image(form1.property_image_nine,form1.property_image_nine,water_mark)
+                form1.property_image_nine = img9
 
-            # if form1.property_image_ten:
-            #     img10 = watermark_image(form1.property_image_ten,form1.property_image_ten,water_mark)
-            #     form1.property_image_ten = img10
+            if form1.property_image_ten:
+                img10 = watermark_image(form1.property_image_ten,form1.property_image_ten,water_mark)
+                form1.property_image_ten = img10
 
 
-            # form1.property_image = img1
+            form1.property_image = img1
 
 
 
@@ -674,86 +741,86 @@ def property_edit(request, pk):
             form1.property_status = True
 
 
-                       # edited 
-            # water_mark = media+'small-logo.png'
+            # edited 
+            water_mark = media+'small-logo.png'
 
-            # if image_one == form1.property_image:
-            #     pass
-            # else:
-            #     img1 = watermark_image(form1.property_image,form1.property_image,water_mark)
-            #     form1.property_image = img1
+            if image_one == form1.property_image:
+                pass
+            else:
+                img1 = watermark_image(form1.property_image,form1.property_image,water_mark)
+                form1.property_image = img1
                 
 
-            # if form1.property_image_two:
-            #     if image_two == form1.property_image_two:
-            #         pass
-            #     else:
-            #         img2 = watermark_image(form1.property_image_two,form1.property_image_two,water_mark)
-            #         form1.property_image_two = img2
+            if form1.property_image_two:
+                if image_two == form1.property_image_two:
+                    pass
+                else:
+                    img2 = watermark_image(form1.property_image_two,form1.property_image_two,water_mark)
+                    form1.property_image_two = img2
 
-            # if form1.property_image_three:
-            #     if image_three == form1.property_image_three:
-            #         pass
-            #     else:
-            #         img3 = watermark_image(form1.property_image_three,form1.property_image_three,water_mark)
-            #         form1.property_image_three = img3
+            if form1.property_image_three:
+                if image_three == form1.property_image_three:
+                    pass
+                else:
+                    img3 = watermark_image(form1.property_image_three,form1.property_image_three,water_mark)
+                    form1.property_image_three = img3
 
-            # if form1.property_image_four:
-            #     if image_four == form1.property_image_four:
-            #         pass
-            #     else:
-            #         img4 = watermark_image(form1.property_image_four,form1.property_image_four,water_mark)
-            #         form1.property_image_four = img4
-
-
-            # if form1.property_image_five:
-            #     if image_five == form1.property_image_five:
-            #         pass
-            #     else:
-            #         img5 = watermark_image(form1.property_image_five,form1.property_image_five,water_mark)
-            #         form1.property_image_five = img5
+            if form1.property_image_four:
+                if image_four == form1.property_image_four:
+                    pass
+                else:
+                    img4 = watermark_image(form1.property_image_four,form1.property_image_four,water_mark)
+                    form1.property_image_four = img4
 
 
-            # if form1.property_image_six:
-            #     if image_six == form1.property_image_six:
-            #         pass
-            #     else:
-            #         img6 = watermark_image(form1.property_image_six,form1.property_image_six,water_mark)
-            #         form1.property_image_six = img6
+            if form1.property_image_five:
+                if image_five == form1.property_image_five:
+                    pass
+                else:
+                    img5 = watermark_image(form1.property_image_five,form1.property_image_five,water_mark)
+                    form1.property_image_five = img5
+
+
+            if form1.property_image_six:
+                if image_six == form1.property_image_six:
+                    pass
+                else:
+                    img6 = watermark_image(form1.property_image_six,form1.property_image_six,water_mark)
+                    form1.property_image_six = img6
 
             
-            # if form1.property_image_seven:
-            #     if image_seven == form1.property_image_seven:
-            #         pass
-            #     else:
-            #         img7 = watermark_image(form1.property_image_seven,form1.property_image_seven,water_mark)
-            #         form1.property_image_seven = img7
+            if form1.property_image_seven:
+                if image_seven == form1.property_image_seven:
+                    pass
+                else:
+                    img7 = watermark_image(form1.property_image_seven,form1.property_image_seven,water_mark)
+                    form1.property_image_seven = img7
 
 
-            # if form1.property_image_eight:
-            #     if image_eight == form1.property_image_eight:
-            #         pass
-            #     else:
-            #         img8 = watermark_image(form1.property_image_eight,form1.property_image_eight,water_mark)
-            #         form1.property_image_eight = img8
-
-
-
-            # if form1.property_image_nine:
-            #     if image_nine == form1.property_image_nine:
-            #         pass
-            #     else:
-            #         img9 = watermark_image(form1.property_image_nine,form1.property_image_nine,water_mark)
-            #         form1.property_image_nine = img9
+            if form1.property_image_eight:
+                if image_eight == form1.property_image_eight:
+                    pass
+                else:
+                    img8 = watermark_image(form1.property_image_eight,form1.property_image_eight,water_mark)
+                    form1.property_image_eight = img8
 
 
 
-            # if form1.property_image_ten:
-            #     if image_ten == form1.property_image_ten:
-            #         pass
-            #     else:
-            #         img10 = watermark_image(form1.property_image_ten,form1.property_image_ten,water_mark)
-            #         form1.property_image_ten = img10
+            if form1.property_image_nine:
+                if image_nine == form1.property_image_nine:
+                    pass
+                else:
+                    img9 = watermark_image(form1.property_image_nine,form1.property_image_nine,water_mark)
+                    form1.property_image_nine = img9
+
+
+
+            if form1.property_image_ten:
+                if image_ten == form1.property_image_ten:
+                    pass
+                else:
+                    img10 = watermark_image(form1.property_image_ten,form1.property_image_ten,water_mark)
+                    form1.property_image_ten = img10
 
 
 

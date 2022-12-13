@@ -17,7 +17,7 @@
         <div class="row">
             {% for x in properties  %}
             <div class="mb-3 col-sm-6 col-lg-4 col-12 px-md-3">
-                <a href="">
+                <a href="{% url 'single' x.slug %}">
                     <div class="box mt-3">
                         <div class="owl-carousel owl-theme img-box">
                             <div class="item">

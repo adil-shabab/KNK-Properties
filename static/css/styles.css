@@ -203,6 +203,9 @@ li{
     font-size: 24px;
     font-family: var(--head-font);
 }
+.navbar .navbar-brand img{
+    width: 155px;
+}
 .navbar .navbar-nav li{
     margin-right: 12px;
 }
@@ -1224,7 +1227,7 @@ footer .social-icons i:hover{
 }
 
 .testimonial-section .slick-prev{
-    background-image: url("../img/left-arrow.png");
+    background-image: url("../img/frontend/left-arrow.png");
     background-size: contain;
     background-size: 15px;
     background-position: center;
@@ -1237,7 +1240,7 @@ footer .social-icons i:hover{
     right: 80px;
 }
 .testimonial-section .slick-next{
-    background-image: url("../img/right-arrow.png");
+    background-image: url("../img/frontend/right-arrow.png");
     background-size: 15px;
     background-repeat: no-repeat;
     width: 30px !important;
@@ -1252,7 +1255,7 @@ footer .social-icons i:hover{
     opacity: -1;
 }
 .testimonial-section .slick-prev:hover, .slick-prev:focus{
-    background-image: url("../img/left-arrow.png");
+    background-image: url("../img/frontend/left-arrow.png");
     background-size: contain;
     background-size: 15px;
     background-position: center;
@@ -1265,7 +1268,7 @@ footer .social-icons i:hover{
     right: 80px;
 }
 .testimonial-section .slick-next:hover, .slick-next:focus{
-    background-image: url("../img/right-arrow.png");
+    background-image: url("../img/frontend/right-arrow.png");
     background-size: 15px;
     background-repeat: no-repeat;
     width: 30px !important;
@@ -1923,4 +1926,11 @@ footer .social-icons i:hover{
 }
 #id_property_location{
     padding-left: 40px;
+}
+.span-tag{
+    font-family: var(--head-font);
+    color: var(--red);
+}
+.offcanvas-logo{
+    width: 120px;
 }

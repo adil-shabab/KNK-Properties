@@ -158,73 +158,25 @@ About | KNK
             <div class="col-12">
                 <div class="faq" id="accordion" style="overflow-x: hidden;">
                 
+                    {% for x in faq %}
                     <div data-aos="slide-left" class="card">
-                        <div class="card-header" id="faqHeading-1">
+                        <div class="card-header" id="faqHeading-{{forloop.counter}}">
                             <div class="mb-0">
-                                <h5 class="faq-title" data-bs-toggle="collapse" data-bs-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
-                                    <span class="badge">1</span>Is It Trustable?
+                                <h5 class="faq-title" data-bs-toggle="collapse" data-bs-target="#faqCollapse-{{forloop.counter}}" data-aria-expanded="true" data-aria-controls="faqCollapse-{{forloop.counter}}">
+                                    <span class="badge">{{forloop.counter}}</span>{{x.question}}?
                                 </h5>
                             </div>
                         </div>
-                        <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
+                        <div id="faqCollapse-{{forloop.counter}}" class="collapse" aria-labelledby="faqHeading-{{forloop.counter}}" data-parent="#accordion">
                             <div class="card-body">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi nemo eveniet laboriosam voluptatum praesentium esse delectus, quis similique nisi fugit suscipit officiis neque pariatur
+                                    {{x.answer}}
                                 </p>
                             </div>
                         </div>
                     </div>
-
-                    <div data-aos="slide-left" class="card">
-                        <div class="card-header" id="faqHeading-2">
-                            <div class="mb-0">
-                                <h5 class="faq-title" data-bs-toggle="collapse" data-bs-target="#faqCollapse-2" data-aria-expanded="true" data-aria-controls="faqCollapse-2">
-                                    <span class="badge">2</span>Is It Trustable?
-                                </h5>
-                            </div>
-                        </div>
-                        <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi nemo eveniet laboriosam voluptatum praesentium esse delectus, quis similique nisi fugit suscipit officiis neque pariatur
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="slide-left" class="card">
-                        <div class="card-header" id="faqHeading-3">
-                            <div class="mb-0">
-                                <h5 class="faq-title" data-bs-toggle="collapse" data-bs-target="#faqCollapse-3" data-aria-expanded="true" data-aria-controls="faqCollapse-3">
-                                    <span class="badge">3</span>Is It Trustable?
-                                </h5>
-                            </div>
-                        </div>
-                        <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi nemo eveniet laboriosam voluptatum praesentium esse delectus, quis similique nisi fugit suscipit officiis neque pariatur
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="slide-left" class="card">
-                        <div class="card-header" id="faqHeading-4">
-                            <div class="mb-0">
-                                <h5 class="faq-title" data-bs-toggle="collapse" data-bs-target="#faqCollapse-4" data-aria-expanded="true" data-aria-controls="faqCollapse-4">
-                                    <span class="badge">4</span>Is It Trustable?
-                                </h5>
-                            </div>
-                        </div>
-                        <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi nemo eveniet laboriosam voluptatum praesentium esse delectus, quis similique nisi fugit suscipit officiis neque pariatur
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
@@ -242,70 +194,32 @@ About | KNK
                 <div class="left-box">
                     <img src="{% static 'img/frontend/gray-dots.png' %}" class="dots" alt="">
                     <img src="img/quote-left.png" class="quote" alt="">
-                    <h3>Our Happy customers are saying</h3>
+                    <h3>Our Happy <span class="span-tag">customers</span> are saying</h3>
                 </div>
             </div>
             
             <div class="px-lg-0 px-2 col-lg-7" style="position: relative;">
                 <span class="testimonial-txt">Testimonials</span>
                 <div class="testimonial-carousel">
+                    {% for x in testimonials %}
                     <div class="right-box">
                         <div class="mt-3 d-flex justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img class="profile-pic" src="https://rightmovebh.com/media/media/person2_Kz3VLVx.jpg" alt="">
-                                <p class="name m-0 ms-3">John Doe</p>
+                                <img class="profile-pic" src="{{x.photo.url}}" alt="">
+                                <p class="name m-0 ms-3">{{x.name}}</p>
                             </div>
                             <div class="align-items-center d-flex">
+                                {% with ''|center:x.rating as range %} {% for _ in range %}
                                 <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
+                                {% endfor %} {% endwith %}
                             </div>
                         </div>
                         <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ullam aspernatur impedit fugit hic velit laborum officia blanditiis ex eaque. Nesciunt quaerat sequi deleniti! Molestias. Lorem ipsum dolor sit amet.
+                            {{x.review}}
                         </p>
-                        <h5 class="designation">Managing Director - Apple</h5>
+                        <h5 class="designation">{{x.designation}}</h5>
                     </div>
-                    <div class="right-box">
-                        <div class="mt-3 d-flex justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <img class="profile-pic" src="https://rightmovebh.com/media/media/person2_Kz3VLVx.jpg" alt="">
-                                <p class="name m-0 ms-3">John Doe</p>
-                            </div>
-                            <div class="align-items-center d-flex">
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ullam aspernatur impedit fugit hic velit laborum officia blanditiis ex eaque. Nesciunt quaerat sequi deleniti! Molestias. Lorem ipsum dolor sit amet.
-                        </p>
-                        <h5 class="designation">Managing Director - Apple</h5>
-                    </div>
-                    <div class="right-box">
-                        <div class="mt-3 d-flex justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <img class="profile-pic" src="https://rightmovebh.com/media/media/person2_Kz3VLVx.jpg" alt="">
-                                <p class="name m-0 ms-3">John Doe</p>
-                            </div>
-                            <div class="align-items-center d-flex">
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ullam aspernatur impedit fugit hic velit laborum officia blanditiis ex eaque. Nesciunt quaerat sequi deleniti! Molestias. Lorem ipsum dolor sit amet.
-                        </p>
-                        <h5 class="designation">Managing Director - Apple</h5>
-                    </div>
+                    {% endfor %}
                 </div>
                 
             </div>

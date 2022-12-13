@@ -15,27 +15,27 @@ Contact | KNK
                   <span>Let's Meet Over Coffee</span>
                   <h1>CONTACT</h1>
 
-                  <div class="row">
+                  <form id="contact-form" class="row">
                       <div class="col-md-4 col-sm-6 col-12">
                           <label for="">Name</label>
-                          <input type="text">
+                          <input required id="name" type="text">
                       </div>
                       <div class="col-md-4 col-sm-6 col-12">
                           <label for="">Email</label>
-                          <input type="email">
+                          <input required id="email" type="email">
                       </div>
                       <div class="col-md-4 col-12">
                           <label for="">Phone</label>
-                          <input type="tel">
+                          <input required id="phone" type="tel">
                       </div>
                       <div class="col-12">
                           <label for="">Message</label>
-                          <input type="text">
+                          <input required id="message" type="text">
                       </div>
                       <div class="col-12 mt-3 btn-div">
-                          <button class="button">Submit</button>
+                          <button type="submit" class="button">Submit</button>
                       </div>
-                  </div>
+                  </form>
               </div>
           </div>
           <div class="px-md-0 px-sm-5 px-3 col-lg-4">
@@ -69,8 +69,8 @@ Contact | KNK
                           <h4>Providing the simplest solution for your Real Estate</h4>
                       </div>
                       <div class="col-sm-3 col-12 img-section">
-                          <img src="img/Right@300x.png" alt="" class="img-fluid desktop">
-                          <img src="img/Down@300x.png" alt="" class="img-fluid mobile">
+                          <img src="{% static 'img/frontend/Right@300x.png' %}" alt="" class="img-fluid desktop">
+                          <img src="{% static 'img/frontend/Down@300x.png' %}" alt="" class="img-fluid mobile">
                       </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Contact | KNK
 
 
 
-
+<p class="d-none" id="csrf_token">{{csrf_token}}</p>
 
 
 
@@ -135,6 +135,7 @@ Contact | KNK
 
 {% block script %}
 <!-- jquery cdn   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{% static 'js/frontend/jquery.countup.js' %}"></script>
 <script src="{% static 'js/frontend/jquery.waypoints.min.js.js' %}"></script>

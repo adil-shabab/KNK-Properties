@@ -1,576 +1,217 @@
-<!doctype html>
-<html lang="en">
+{% extends "frontend/base.html" %}
+{% load static %}
 
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-  <!-- slick -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
-  <!-- owl cdn  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-  <!-- swiper cdn  -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
-  <!-- custom css  -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- fontawesome cdn  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-
-
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">Logo</a>
-          <img src="img/menu.png" class="menu navbar-toggler" alt="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Buy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Rent</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contact</a>
-              </li>
-              <a class="enquire-btn" href=""><button class="button">Enquire</button></a>
-            </ul>
-          </div>
-        </div>
-    </nav>
-
-
-
-
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <a href="">Logo</a>
-          <img src="img/x-mark.png" class="close" alt="" data-bs-dismiss="offcanvas" aria-label="Close">
-        </div>
-        <div class="offcanvas-body">
-          <ul>
-            <li><a class="active" href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Buy</a></li>
-            <li><a href="">Rent</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-
-          <div class="social-media-icons">
-            <i class="fa-solid fa-brands fa-facebook"></i>
-            <i class="fa-solid fa-brands fa-twitter"></i>
-            <i class="fa-solid fa-brands fa-instagram"></i>
-            <i class="fa-solid fa-brands fa-whatsapp"></i>
-          </div>
+{% block title %}
+Properties | KNK
+{% endblock title %}
+   
+{% block content %}
+<div class="mt-lg-0 mt-4 single-property">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-12">
+                <div class="left-box">
+                    <img src="{{property.property_image.url}}" alt="" class="mainImg img-fluid">
+                    <div class="mt-2 d-flex property-slider">
+                        <img src="{{property.property_image.url}}" alt="" class="smallImg me-1">
+                        {% if property.property_image_two %}  
+                        <img src="{{property.property_image_two.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_three %}  
+                        <img src="{{property.property_image_three.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_four %}  
+                        <img src="{{property.property_image_four.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_five %}  
+                        <img src="{{property.property_image_five.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_six %}  
+                        <img src="{{property.property_image_six.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_seven %}  
+                        <img src="{{property.property_image_seven.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_eight %}  
+                        <img src="{{property.property_image_eight.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_nine %}  
+                        <img src="{{property.property_image_nine.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                        {% if property.property_image_ten %}  
+                        <img src="{{property.property_image_ten.url}}" alt="" class="smallImg me-1">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12">
+                <div class="right-box">
+                    <p class="rent-buy">{{property.buy_rent}}</p>
+                    <h3 class="property-name">{{property.property_name}}</h3>
+                    <p class="location"><i class="location-icon fa-solid fa-location-crosshairs"></i>Juffair, Manama, Bahrain</p>
+                    <p class="price mb-4">{{property.property_price}} AED</p>
+                    <p class="type">{{property.property_type}}</p>
+                    <p class="furnished-type">Furnished Type: {{property.furnished_type}}</p>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="bedroom">
+                                <img src="{% static 'img/frontend/double-bed.png' %}" alt="">
+                                <p>{{property.total_bedroom}} Bed</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="bathroom">
+                                <img src="{% static 'img/frontend/bathtub.png' %}" alt="">
+                                <p>{{property.total_bathroom}} Bath</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="area">
+                                <img src="{% static 'img/frontend/area.png' %}" alt="">
+                                <p>{{property.property_area}} sqft</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 box">
+                        <h5 class="enquire">Enquire Now</h5>
+                        <div class="d-flex">
+                            <button class="call button">Call</button>
+                            <button class="whatsapp button">Whatsapp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </header>
+</div>
 
 
 
 
-  <main>
-    <div class="mt-lg-0 mt-4 single-property">
-        <div class="container">
+<div class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="left-box">
+                    <h4 class="mt-md-2 mt-4">Property Details</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="para">Property Type : {{property.property_type}}</p>
+                            <p class="para">Total Area : {{property.property_area}} sqm</p>
+                            <p class="para">Property Price : {{property.property_price}} AED</p>
+                            <p class="para">Total Bedrooms : {{property.total_bedroom}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="para">Total Bathroom : {{property.total_bathroom}}</p>
+                            <p class="para">Parking Slot : {{property.parking_slot}}</p>
+                            <p class="para">Furnished Type : {{property.furnished_type}}</p>
+                            <p class="para">Water and Electricity: {{property.water_and_electricity}}</p>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-5">Amenities</h4>
+                    <div class="row">
+                        {% for x in property.property_amenities.all  %}  
+                        <div class="col-lg-5 col-md-6 col-12">
+                            <div class="amenities-box">
+                                <img src="{{x.amenities_icon.url}}" alt="">
+                                <span>{{x.amenities_name}}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-box">
+                    <div class="innerad">
+                        <div data-aos="fade-left" class="py-3 swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
+                              </div>
+                              <div class="swiper-slide">
+                                <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
+                              </div>
+                              <div class="swiper-slide">
+                                <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mt-5 description">
+            <h4>Description</h4>
+            <p>{{property.property_description | safe}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="related-properties">
+    <div class="container">
+        <h4 class="heading">Related Properties</h4>
+        <div class="property-box">
             <div class="row">
-                <div class="col-lg-7 col-12">
-                    <div class="left-box">
-                        <img src="https://img.freepik.com/free-photo/leisure-beautiful-health-garden-landscape_1203-4856.jpg?w=996&t=st=1670239330~exp=1670239930~hmac=53a67c0552e648660292f8e537f36499dcab04b1c8cd490bd47443cdbb3083c5" alt="" class="mainImg img-fluid">
-                        <div class="mt-2 d-flex property-slider">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="" class="smallImg me-1">
-                            <img src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="" class="smallImg me-1">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-12">
-                    <div class="right-box">
-                        <p class="rent-buy">Rent</p>
-                        <h3 class="property-name">UNLIMITED EWA | NO DEPOSIT | NEW | READY TO MOVE</h3>
-                        <p class="location"><i class="location-icon fa-solid fa-location-crosshairs"></i>Juffair, Manama, Bahrain</p>
-                        <p class="price mb-4">550 AED</p>
-                        <p class="type">Apartment</p>
-                        <p class="furnished-type">Furnished Type: Semi Furnished</p>
-                        <div class="row">
-                            <div class="col-md-4 col-12">
-                                <div class="bedroom">
-                                    <img src="img/double-bed.png" alt="">
-                                    <p>5 Bed</p>
+                {% for x in properties  %}
+                        <div class="mb-3 col-sm-6 col-lg-4 col-12 px-md-3">
+                            <a href="{% url 'single' x.slug %}">
+                                <div class="box mt-3">
+                                    <div class="owl-carousel owl-theme img-box">
+                                        <div class="item">
+                                            <img class="img-fluid w-100 property-img" src="{{x.property_image.url}}" alt="">    
+                                        </div>
+                                        {% if x.property_image_two %}
+                                        <div class="item">
+                                            <img class="img-fluid w-100 property-img" src="{{x.property_image_two.url}}" alt="">    
+                                        </div>
+                                        {% endif %}
+                                        {% if x.property_image_three %}
+                                        <div class="item">
+                                            <img class="img-fluid w-100 property-img" src="{{x.property_image_three.url}}" alt="">    
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <span class="buy-rent">{{x.buy_rent}}</span>
+                                    <span class="circle"></span>
+                                    <div class="txt-section">
+                                        <h3>{{x.property_name}}</h3>
+                                        <p class="location"><i class="fa-solid fa-location-dot"></i> {{x.property_location}}</p>
+                                        <span class="price">{{x.property_price}} AED</span>
+                                        <div class="mt-3 d-flex align-items-center">
+                                            <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
+                                                <img class="icon" src="{% static 'img/frontend/double-bed.png' %}" alt="">
+                                                <p class="m-0">{{x.total_bedroom}}</p>
+                                            </div>
+                                            <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
+                                                <img class="icon" src="{% static 'img/frontend/bathtub.png' %}" alt="">
+                                                <p class="m-0">{{x.total_bathroom}}</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <img class="icon" src="{% static 'img/frontend/area.png' %}" alt="">
+                                                <p class="m-0">{{x.property_area}}</p>
+                                            </div>
+                                        </div>
+                                        <p class="ref-id">{{x.ref_id}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <div class="bathroom">
-                                    <img src="img/bathtub.png" alt="">
-                                    <p>2 Bath</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <div class="area">
-                                    <img src="img/area.png" alt="">
-                                    <p>50 sqft</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="mt-4 box">
-                            <h5 class="enquire">Enquire Now</h5>
-                            <div class="d-flex">
-                                <button class="call button">Call</button>
-                                <button class="whatsapp button">Whatsapp</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    {% endfor %}
+            </div>                
         </div>
     </div>
+</div>
+{% endblock content %}
 
-
-
-
-    <div class="content-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="left-box">
-                        <h4 class="mt-md-2 mt-4">Property Details</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="para">Property Type : Apartment</p>
-                                <p class="para">Total Area : 60 sqm</p>
-                                <p class="para">Property Price : 400 AED</p>
-                                <p class="para">Total Bedrooms : 2</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="para">Total Bathroom : 2</p>
-                                <p class="para">Parking Slot : 5</p>
-                                <p class="para">Furnished Type : Furnished</p>
-                                <p class="para">Water and Electricity: Inclusive</p>
-                            </div>
-                        </div>
-
-                        <h4 class="mt-5">Amenities</h4>
-                        <div class="row">
-                            <div class="col-lg-5 col-md-6 col-12">
-                                <div class="amenities-box">
-                                    <img src="img/swimming.png" alt="">
-                                    <span>Swimming Pool</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12">
-                                <div class="amenities-box">
-                                    <img src="img/gym.png" alt="">
-                                    <span>Integrated Gym</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12">
-                                <div class="amenities-box">
-                                    <img src="img/restaurant.png" alt="">
-                                    <span>Dining Table</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12">
-                                <div class="amenities-box">
-                                    <img src="img/air-conditioner.png" alt="">
-                                    <span>Air Conditioner</span>
-                                </div>  
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12">
-                                <div class="amenities-box">
-                                    <img src="img/parking.png" alt="">
-                                    <span>Parking Facility</span>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="right-box">
-                        <div class="innerad">
-                            <div data-aos="fade-left" class="py-3 swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                  <div class="swiper-slide">
-                                    <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
-                                  </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="mt-5 description">
-                <h4>Description</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias vero corrupti commodi nihil facere voluptatibus minima dolorum ut excepturi, cupiditate aperiam illum qui minus.</p>
-                <p>Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ab error, non aspernatur doloribus debitis sint iste aliquam numquam hic eum earum, itaque accusamus mollitia ipsam eos quod fugit minima, molestiae beatae suscipit laborum quidem quo soluta. Vero officia aliquam animi rerum doloribus sed! Tempora odio ipsum blanditiis fugit maiores? sit amet consectetur adipisicing elit. Odit, odio.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="related-properties">
-        <div class="container">
-            <h4 class="heading">Related Properties</h4>
-            <div class="property-box">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1001</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1001</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1001</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1002</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1002</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 col-12 px-md-3">
-                        <a href="">
-                            <div class="box mt-3">
-                                <div class="owl-carousel owl-theme img-box">
-                                    <div class="item">
-                                        <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?t=st=1669873494~exp=1669874094~hmac=6b6b2c721a926ffc58a19a70ca9e7752f611a597c95c3a4c3b2505be2c53c8a1" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/free-photo/interior-shot-modern-kitchen-with-decorations-furniture-entrance_181624-60983.jpg?w=996&t=st=1669869993~exp=1669870593~hmac=5c895b2522828baf48550255053a606c0af498101aa0b31f6ee1559704b81c04" alt="">    
-                                    </div>
-                                    <div class="item">
-                                      <img class="img-fluid w-100 property-img" src="https://img.freepik.com/premium-photo/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table_105762-2191.jpg?w=996" alt="">    
-                                    </div>
-                                </div>
-                                <span class="ref-id">KNK1002</span>
-                                <span class="circle"></span>
-                                <div class="txt-section">
-                                    <h3>Modern House With Modern Furniture</h3>
-                                    <p class="location"><i class="fa-solid fa-location-crosshairs"></i> Padikkal, Moonniyur, Kerala</p>
-                                    <span class="price">500 AED</span>
-                                    <div class="mt-3 d-flex align-items-center">
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/double-bed.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                            <img class="icon" src="img/bathtub.png" alt="">
-                                            <p class="m-0">2</p>
-                                        </div>
-                                        <div class="d-flex">
-                                            <img class="icon" src="img/area.png" alt="">
-                                            <p class="m-0">56</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>                
-            </div>
-        </div>
-    </div>
-  </main>
-
-
-
-    <footer>
-        <!-- place footer here -->
-        <div class="container">
-            <div class="row">
-                <div class="px-lg-2 col-lg-4 col-12">
-                    <img src="https://rightmovebh.com/static/img/logo.png" alt="" class="logo">
-                    <p class="description">Lorem ipsum dolor sit adipisicing elit. Velit maxime vitae ipsum amet libero placeat quis aliquid qui consequuntur!</p>
-                    <div class="social-icons d-flex">
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="px-lg-3 col-lg-2 col-12">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Home</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> About</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Buy</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Rent</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Premium</a></li>
-                    </ul>
-                </div>
-                <div class="px-lg-3 col-lg-3 col-12">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Standard</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Featured</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> International</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Privacy & Policy</a></li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right"></i> Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-12">
-                    <h4>Contact Us</h4>
-                    <div class="mb-3 d-flex location">
-                        <i class="fa-solid fa-location-crosshairs"></i>
-                        <p>KNK Properties, <br> Building #1307 <br> Road #533 Block #905 <br> Riffa - Kingdom of Bahrain</p>
-                    </div>
-                    <div class="mb-3 d-flex call">
-                        <i class="fa-solid fa-phone"></i>
-                        <p>+91 66706100</p>
-                    </div>
-                    <div class="mb-3 d-flex mail">
-                        <i class="fa-solid fa-envelope"></i>
-                        <p>knkproperties@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="text-center mt-3 mb-0">©️ KNK Properties. All Rights Deserved | Designed by <a href="https://mentegoz.com">Mentegoz</a></p>
-      </footer>
-    
-    
-      <!-- Swiper JS -->
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-    
-      <!-- jquery cdn   -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-      <!-- owl cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      
-      <!-- slick -->
-      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-      <!-- custom js  -->
-
-      <script src="jquery.countup.js"></script>
-      <script src="jquery.waypoints.min.js.js"></script>
-      <script src="js/single.js"></script>
-      <!-- Bootstrap JavaScript Libraries -->
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
-    </body>
-    
-</html>
+{% block script %}
+<script src="{% static 'js/frontend/single.js' %}"></script>
+{% endblock script %}
+ 
