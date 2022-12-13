@@ -1,0 +1,93 @@
+{% extends "backend/admin-base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Dashboard </title>
+{% endblock title %}
+
+{% block style %}  
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<div class="px-5 w-100 mb-5 container">
+    <div class="w-100 row">
+      <div class="col-md-6 col-12">
+        <p class="head-content">Client Name</p>
+        <input type="text" disabled placeholder="{{requests.name}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Phone Number</p>
+        <input type="text" disabled placeholder="{{requests.country_code}}{{requests.phone}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Email Id</p>
+        <input type="text" disabled placeholder="{{requests.email}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Watsapp Number </p>
+        <input type="text" disabled placeholder="{{requests.country_code}}{{requests.watsapp}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Property Location </p>
+        <input type="text" disabled placeholder="{{requests.property_location}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Property Price </p>
+        <input type="text" disabled placeholder="{{requests.property_price}} BHD">
+      </div>
+      <div class="mt-2 col-md-4 col-12">
+        <img style="border: 1px solid grey;" class="img-fluid rounded" src="{{requests.property_image.url}}" alt="">
+      </div>
+      {% if requests.property_image_two %}
+      <div class="mt-2 col-md-4 col-12">
+        <img style="border: 1px solid grey;" class="img-fluid rounded" src="{{requests.property_image_two.url}}" alt="">
+      </div>
+      {% endif %}
+      {% if requests.property_image_three %}
+      <div class="mt-2 col-md-4 col-12">
+        <img style="border: 1px solid grey;" class="img-fluid rounded" src="{{requests.property_image_three.url}}" alt="">
+      </div>
+      {% endif %}
+      <div class="mb-3 mt-3 col-12">
+        <p class="head-content">Property Description </p>
+        <textarea disabled placeholder="{{requests.property_description}}"></textarea>
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Furnished Type </p>
+        <input type="text" disabled placeholder="{{requests.furnished_type}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <p class="head-content">Property Type </p>
+        <input type="text" disabled placeholder="{{requests.property_type}}">
+      </div>
+  
+    </div>
+  </div>
+{% endblock content %}
+
+
+
+{% block script %}
+    
+
+    <script>
+      document.querySelector('.client-nav').classList.add('active')
+      document.querySelector('.properties-nav').classList.remove('active')
+    </script>
+
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/chart.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+
+    <script src="{% static 'js/amenities-search.js' %}"></script>
+
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+
+{% endblock script %}

@@ -3,16 +3,17 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-    path('buy/', views.buy, name='buy'),
-    path('rent/', views.rent, name='rent'),
-    path('contact/', views.contact, name='contact'),
-    path('search/', views.search, name='search'),
-    path('premium/', views.premium, name='premium'),
-    path('international/', views.international, name='international'),
-    path('standard/', views.standard, name='standard'),
-    path('featured/', views.featured, name='featured'),
+    path('about', views.about, name='about'),
+    path('buy', views.buy, name='buy'),
+    path('rent', views.rent, name='rent'),
+    path('contact', views.contact, name='contact'),
+    path('search', views.search, name='search'),
+    path('premium', views.premium, name='premium'),
+    path('international', views.international, name='international'),
+    path('standard', views.standard, name='standard'),
+    path('featured', views.featured, name='featured'),
     path('property/<slug:slug>', views.single, name='single'),
+    path('listing/porperty', views.list, name='list'),
 
 
 
@@ -83,7 +84,7 @@ urlpatterns = [
 
     path('account/form/ads/mobile/third', views.third_ad_form_mobile, name='third_ad_form_mobile'),
     path('account/form/ads/mobile/third/<str:pk>', views.update_third_ad_mobile, name='update_third_ad_mobile'),
-    path('account/ads/mobile/delete/third/<str:pk>', views.delete_third_ad_mobile, name='delete_third_ad'),
+    path('account/ads/mobile/delete/third/<str:pk>', views.delete_third_ad_mobile, name='delete_third_ad_mobile'),
     
     path('account/ads/mobile/third/delete/image/two/<str:pk>', views.delete_two_of_third_mobile, name='delete_third_ad_two_mobile'),
     path('account/ads/mobile/third/delete/image/three/<str:pk>', views.delete_three_of_third_mobile, name='delete_third_ad_three_mobile'),
@@ -138,6 +139,11 @@ urlpatterns = [
     path('account/property/delete/image/nine/<str:pk>', views.delete_nine_of_ten, name='delete_nine_of_ten'),
     path('account/property/delete/image/ten/<str:pk>', views.delete_ten_of_ten, name='delete_ten_of_ten'),
 
+
+
+    path('account/client/properties', views.client_properties, name='client_request'),
+    path('account/client/properties/delete/<str:pk>', views.delete_client_property, name='delete_client_property'),
+    path('account/client/properties/<str:pk>', views.single_client_property, name='single_client_property'),
 
 
     # api route 

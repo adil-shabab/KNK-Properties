@@ -64,6 +64,9 @@ def home(request):
     master_ad = MasterAd.objects.all()
     second_ad = SecondAd.objects.all()
     third_ad = ThirdAd.objects.all()
+    master_ad_mobile = MasterAdMobile.objects.all()
+    second_ad_mobile = SecondAdMobile.objects.all()
+    third_ad_mobile = ThirdAdMobile.objects.all()
     places = Places.objects.all()
     properties = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_international_property = False)
     national_properties = Property.objects.order_by('-upload_date').filter(is_international_property = False).filter(property_status = True)
@@ -78,6 +81,9 @@ def home(request):
         'master_ad' : master_ad,
         'second_ad' : second_ad,
         'third_ad' : third_ad,
+        'master_ad_mobile' : master_ad_mobile,
+        'second_ad_mobile' : second_ad_mobile,
+        'third_ad_mobile' : third_ad_mobile,
         'premium_listing':premium_listing,
         'standard_listing':standard_listing,
         'featured_listing':featured_listing,
@@ -196,6 +202,27 @@ def single(request,slug):
     return render(request, 'frontend/singlepage.html', context)
 
 
+
+def list(request):
+    form = RequestForm()
+    if request.method == 'POST':
+        code = request.POST.get('demo')
+        print(code)
+        form = RequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            form1 = form.save(commit=False)
+            form1.country_code = code
+            form1.save()
+            form1 = form.save()
+            mp.success(request, "Your Property Will List ASAP")
+
+            return redirect('about')
+        else:
+            error = form.errors
+            print(error)
+            return redirect('list')
+    context = {'form':form}
+    return render(request, 'frontend/listing.html', context)
 
 
 def contact(request):
@@ -1439,6 +1466,35 @@ def delete_inner_ad(request, pk):
 
 
 
+
+
+
+@login_required(login_url='login')
+def client_properties(request):
+    requests = Request.objects.all()
+    count = Request.objects.all().count()
+    context = {
+        'requests': requests,
+        'count' : count
+    }
+    return render(request, 'backend/client-requests.html', context)
+
+
+@login_required(login_url='login')
+def single_client_property(request, pk):
+    requests = Request.objects.get(id=pk)
+    context = {
+        'requests': requests,
+    }
+    return render(request, 'backend/single-client-requests.html', context)
+
+
+@login_required(login_url='login')
+def delete_client_property(request, pk):
+    request = Request.objects.get(id=pk)
+    request.delete()
+    mp.success(request, 'Client Property Deleted')
+    return redirect('client_request')
 
 
 

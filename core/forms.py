@@ -220,3 +220,17 @@ class ThirdAdFormMobile(ModelForm):
 
 
     
+
+class RequestForm(ModelForm):
+    class Meta:
+        model = Request
+        fields = '__all__'
+
+        widgets = {
+            'property_type' : forms.Select(choices=Type),
+            'furnished_type' : forms.Select(choices=Furnished),
+            'buy_rent' : forms.RadioSelect(choices=BuyOrRent, attrs={'class': 'mt-2'}),
+            'property_image' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_two' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+            'property_image_three' : forms.FileInput(attrs={'class': 'image-field image-upload'}),
+        }

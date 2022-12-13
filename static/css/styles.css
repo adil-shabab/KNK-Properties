@@ -1476,7 +1476,7 @@ footer .social-icons i:hover{
 }
 .contact-section .right-box a::after{
     content: '';
-    background: url('../img/right-top.png');
+    background: url('../img/frontend/right-top.png');
     width: 16px;
     height: 16px;
     display: block;
@@ -1934,3 +1934,9 @@ footer .social-icons i:hover{
 .offcanvas-logo{
     width: 120px;
 }
+.br-3{
+    border-radius: 8px !important;
+}
+
+
+

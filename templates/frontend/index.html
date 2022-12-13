@@ -232,15 +232,21 @@
     <div class="container d-md-none d-flex justify-content-center align-items-center">
         <div class="w-100 pb-3 swiper mySwiper1">
             <div class="swiper-wrapper">
+              {% for x in master_ad_mobile %}  
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
+                <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
               </div>
+              {% if x.ad_two %}
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
+                <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
               </div>
+              {% endif %}
+              {% if x.ad_three %}
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
+                <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
               </div>
+              {% endif %}
+              {% endfor %}     
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -307,16 +313,27 @@
 
 
     <div class="mb-5 d-md-flex d-none flex-container ad-one container">
+        {% for x in second_ad %}
         <div class="px-md-3">
-            <a href="">
-                <img src="https://img.freepik.com/free-photo/dining-area-comfortable-studio-flat-hotel-room_1262-12324.jpg?w=996&t=st=1669890290~exp=1669890890~hmac=069490632d2d857410b35e2850a7ead0bb90165a76877e067cc885628c8630e4" class="img-fluid" alt="">
+            <a href="{{x.ad_one_link}}">
+                <img src="{{x.ad_one.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% if x.ad_two %}
         <div class="px-md-3">
-            <a href="">
-                <img src="https://img.freepik.com/free-photo/interior-living-room-with-sofa-empty-dark-blue-wall-3d-rendering_41470-3621.jpg?w=996&t=st=1669890343~exp=1669890943~hmac=252654125f8081dcd51a3d72f92a5849f5e5642244183a2a2c4b00a476e7f304" class="img-fluid" alt="">
+            <a href="{{x.ad_two_link}}">
+                <img src="{{x.ad_two.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
+        {% if x.ad_three %}
+        <div class="px-md-3">
+            <a href="{{x.ad_three_link}}">
+                <img src="{{x.ad_three.url}}" class="img-fluid" alt="">
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
 
 
@@ -324,15 +341,21 @@
     <div class="container d-md-none d-flex justify-content-center align-items-center">
         <div class="w-100 pb-3 swiper mySwiper2">
             <div class="swiper-wrapper">
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
-              </div>
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
-              </div>
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
-              </div>
+                {% for x in second_ad_mobile %}  
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% if x.ad_two %}
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% endif %}
+                {% if x.ad_three %}
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% endif %}
+                {% endfor %}    
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -400,21 +423,27 @@
 
 
     <div class="mb-5 d-md-flex d-none flex-container container">
+        {% for x in third_ad %}
         <div class="px-md-3">
-            <a href="">
-                <img src="https://img.freepik.com/free-photo/old-buildings-gardens-nesebar-bulgaria_627829-14114.jpg?w=996&t=st=1669890603~exp=1669891203~hmac=cd1648fcb1dd1c429506eedfd58bcbfaa4499f50738832d0829351c2a6ea4931" class="img-fluid" alt="">
+            <a href="{{x.ad_one_link}}">
+                <img src="{{x.ad_one.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% if x.ad_two %}
         <div class="px-md-3">
-            <a href="">
-                <img src="https://img.freepik.com/free-photo/empty-floor-front-modern-building_1127-3154.jpg?w=996&t=st=1669890571~exp=1669891171~hmac=352d72d9b01fd63f4c82c4bfb72d6cdd032d8b857cab0f127c38dd29edf1aaeb" class="img-fluid" alt="">
+            <a href="{{x.ad_two_link}}">
+                <img src="{{x.ad_two.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
+        {% if x.ad_three %}
         <div class="px-md-3">
-            <a href="">
-                <img src="https://img.freepik.com/free-photo/living-room-interior-wall-warm-tones-gray-armchair-with-wood-cabinet-3d-rendering_41470-3656.jpg?w=900&t=st=1669890808~exp=1669891408~hmac=db4d0879b22f673c55605f23c17bf0f952f213dd7691b1ed2b1d2dddce0fbca7" class="img-fluid" alt="">
+            <a href="{{x.ad_three_link}}">
+                <img src="{{x.ad_three.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
 
 
@@ -423,15 +452,21 @@
     <div class="container d-md-none d-flex justify-content-center align-items-center">
         <div class="w-100 pb-3 swiper mySwiper3">
             <div class="swiper-wrapper">
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
-              </div>
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
-              </div>
-              <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
-                <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
-              </div>
+                {% for x in third_ad_mobile %}  
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% if x.ad_two %}
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% endif %}
+                {% if x.ad_three %}
+                <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
+                  <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
+                </div>
+                {% endif %}
+                {% endfor %}    
             </div>
             <div class="swiper-pagination"></div>
         </div>

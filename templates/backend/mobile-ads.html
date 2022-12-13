@@ -17,10 +17,10 @@
 {% if master_ad %} 
 {% for x in master_ad %}
 <div class="px-5 mt-5 pr-5 d-flex justify-content-between">
-    <h5 class="h5_txt">Desktop Master Ads</h5>
+    <h5 class="h5_txt">MObile Master Ads</h5>
     <div style="padding-right: 2%;">
-        <a class="text-dark" href="{% url 'update_master_ad' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
-        <a class="text-dark" href="{% url 'delete_master_ad' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
+        <a class="text-dark" href="{% url 'update_master_ad_mobile' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
+        <a class="text-dark" href="{% url 'delete_master_ad_mobile' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
     </div>
 </div>
 <div class="px-5 flex-container">
@@ -41,13 +41,13 @@
 {% endfor %} 
 {% else %}
 <p class="px-5 ad_p">No Master Ad</p>
-<a href="{% url 'master_ad_form' %}" class="px-5"><button class="ad_btn">Add Master Ad</button></a>
+<a href="{% url 'master_ad_form_mobile' %}" class="px-5"><button class="ad_btn">Add Master Ad</button></a>
 {% endif %} {% if second_ad %} {% for x in second_ad %}
 <div class="px-5 mt-5 pr-5 d-flex justify-content-between">
-    <h5 class="h5_txt">Desktop Second Ads</h5>
+    <h5 class="h5_txt">Mobile Second Ads</h5>
     <div style="padding-right: 2%;">
-        <a class="text-dark" href="{% url 'update_second_ad' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
-        <a class="text-dark" href="{% url 'delete_second_ad' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
+        <a class="text-dark" href="{% url 'update_second_ad_mobile' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
+        <a class="text-dark" href="{% url 'delete_second_ad_mobile' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
     </div>
 </div>
 <div class="px-5 flex-container">
@@ -67,18 +67,18 @@
 {% endfor %} 
 {% else %}
 <p class="px-5 mt-5 ad_p">No Second Ads</p>
-<a class="px-5" href="{% url 'second_ad_form' %}"><button class="ad_btn">Add Second Ad</button></a>
+<a class="px-5" href="{% url 'second_ad_form_mobile' %}"><button class="ad_btn">Add Second Ad</button></a>
 {% endif %} 
 {% if third_ad %} 
 {% for x in third_ad %}
 <div class="px-5 mt-5 pr-5 d-flex justify-content-between">
-    <h5 class="h5_txt">Desktop Third Ads</h5>
+    <h5 class="h5_txt">Mobile Third Ads</h5>
     <div style="padding-right: 2%;">
-        <a class="text-dark" href="{% url 'update_third_ad' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
-        <a class="text-dark" href="{% url 'delete_third_ad' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
+        <a class="text-dark" href="{% url 'update_third_ad_mobile' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
+        <a class="text-dark" href="{% url 'delete_third_ad_mobile' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>
     </div>
 </div>
-<div class="px-5 flex-container">
+<div class="mb-5 px-5 flex-container">
     <div>
         <img class="img-fluid rounded shadow" src="{{x.ad_one.url}}" alt="" />
     </div>
@@ -96,7 +96,7 @@
 </div>
 {% else %}
 <p class="px-5 mt-5 ad_p">No Third Ads</p>
-<a class="px-5" href="{% url 'third_ad_form' %}"><button class="ad_btn">Add Third Ad</button></a>
+<a class="px-5 mb-5" href="{% url 'third_ad_form_mobile' %}"><button class="ad_btn">Add Third Ad</button></a>
 {% endif %} 
 
 

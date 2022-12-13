@@ -1,3 +1,11 @@
+$('.counter').countUp(
+    {
+    delay: 5,
+    time: 1500
+    }
+);
+
+
 document.querySelector('#contact-form').addEventListener('submit',function(e){
     e.preventDefault()
      

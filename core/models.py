@@ -199,3 +199,22 @@ class ThirdAdMobile(models.Model):
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
 
+
+
+
+
+
+class Request(models.Model):
+    name = models.CharField(max_length= 150)
+    email = models.EmailField()
+    phone = models.CharField(max_length=250)
+    watsapp = models.CharField(max_length=250, null=True, blank=True)
+    property_location = models.CharField(max_length=150)
+    property_type = models.CharField(max_length=150, default='Villa')
+    furnished_type = models.CharField(max_length=150, default='Furnished')
+    property_description = models.TextField(null=True, blank=True)
+    property_price = models.IntegerField()
+    property_image = models.ImageField(upload_to='media')
+    property_image_two = models.ImageField(upload_to='media', null=True, blank=True)
+    property_image_three = models.ImageField(upload_to='media', null=True, blank=True)
+    country_code = models.CharField(max_length=150, null=True , blank=True)
