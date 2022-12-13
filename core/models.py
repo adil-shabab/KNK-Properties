@@ -158,3 +158,44 @@ class InnerAd(models.Model):
     ad_one_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
+
+
+
+
+
+
+
+class MasterAdMobile(models.Model):
+    ad_one = models.ImageField(upload_to = 'media')
+    ad_two = models.ImageField(upload_to='media', null=True, blank=True)
+    ad_three = models.ImageField(upload_to='media', null=True, blank=True)
+    active = models.BooleanField(default=True)
+    ad_one_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
+
+
+
+
+class SecondAdMobile(models.Model):
+    ad_one = models.ImageField(upload_to = 'media')
+    ad_two = models.ImageField(upload_to='media', null=True, blank=True)
+    ad_three = models.ImageField(upload_to='media', null=True, blank=True)
+    active = models.BooleanField(default=True)
+    ad_one_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
+
+
+
+
+class ThirdAdMobile(models.Model):
+    ad_one = models.ImageField(upload_to = 'media')
+    ad_two = models.ImageField(upload_to='media', null=True, blank=True)
+    ad_three = models.ImageField(upload_to='media', null=True, blank=True)
+    active = models.BooleanField(default=True)
+    ad_one_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
+    ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
+
+

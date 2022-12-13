@@ -30,8 +30,11 @@ urlpatterns = [
 
 
 
-    path('account/ads', views.ads, name='ads'),
+    path('account/ads/desktop', views.ads, name='ads'),
+    path('account/ads/mobile', views.ads_mobile, name='ads_mobile'),
     path('account/innerad', views.inner_ad, name='inner_ad'),
+
+
 
     path('account/form/ads/master', views.master_ad_form, name='master_ad_form'),
     path('account/form/ads/master/<str:pk>', views.update_master_ad, name='update_master_ad'),
@@ -55,6 +58,37 @@ urlpatterns = [
     
     path('account/ads/third/delete/image/two/<str:pk>', views.delete_two_of_third, name='delete_third_ad_two'),
     path('account/ads/third/delete/image/three/<str:pk>', views.delete_three_of_third, name='delete_third_ad_three'),
+
+
+
+
+
+
+    # mobile ad 
+    path('account/form/ads/mobile/master', views.master_ad_form_mobile, name='master_ad_form_mobile'),
+    path('account/form/ads/mobile/master/<str:pk>', views.update_master_ad_mobile, name='update_master_ad_mobile'),
+    path('account/ads/mobile/delete/master/<str:pk>', views.delete_master_ad_mobile, name='delete_master_ad_mobile'),
+
+    path('account/ads/mobile/master/delete/image/two/<str:pk>', views.delete_two_of_master_mobile, name='delete_master_ad_two_mobile'),
+    path('account/ads/mobile/master/delete/image/three/<str:pk>', views.delete_three_of_master_mobile, name='delete_master_ad_three_mobile'),
+
+
+    path('account/form/ads/mobile/second', views.second_ad_form_mobile, name='second_ad_form_mobile'),
+    path('account/form/ads/mobile/second/<str:pk>', views.update_second_ad_mobile, name='update_second_ad_mobile'),
+    path('account/ads/delete/mobile/second/<str:pk>', views.delete_second_ad_mobile, name='delete_second_ad_mobile'),
+
+    path('account/ads/mobile/second/delete/image/two/<str:pk>', views.delete_two_of_second_mobile, name='delete_second_ad_two_mobile'),
+    path('account/ads/mobile/second/delete/image/three/<str:pk>', views.delete_three_of_second_mobile, name='delete_second_ad_three_mobile'),
+
+
+    path('account/form/ads/mobile/third', views.third_ad_form_mobile, name='third_ad_form_mobile'),
+    path('account/form/ads/mobile/third/<str:pk>', views.update_third_ad_mobile, name='update_third_ad_mobile'),
+    path('account/ads/mobile/delete/third/<str:pk>', views.delete_third_ad_mobile, name='delete_third_ad'),
+    
+    path('account/ads/mobile/third/delete/image/two/<str:pk>', views.delete_two_of_third_mobile, name='delete_third_ad_two_mobile'),
+    path('account/ads/mobile/third/delete/image/three/<str:pk>', views.delete_three_of_third_mobile, name='delete_third_ad_three_mobile'),
+
+
 
 
     path('account/form/ads/inner', views.inner_ad_form, name='inner_ad_form'),
