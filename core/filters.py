@@ -45,8 +45,8 @@ class PropertyFilter(django_filters.FilterSet):
     min_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='gte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Min Bathroom'}))
     max_count_bathroom = django_filters.NumberFilter(field_name='total_bathroom', lookup_expr='lte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Max Bathroom'}))
 
-    min_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='gte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Min Price'}))
-    max_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='lte', widget=TextInput(attrs={'class':'input', 'placeholder': 'Max Price'}))
+    min_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='gte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Min Price'}))
+    max_price = django_filters.NumberFilter(field_name='property_price', lookup_expr='lte', widget=TextInput(attrs={'class':'in-put m-0 mt-3', 'placeholder': 'Max Price'}))
 
 
     widgets = {

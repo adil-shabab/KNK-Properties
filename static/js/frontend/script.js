@@ -1,49 +1,3 @@
-
-
-
-
-// // modal 
-// document.getElementById('price_range_selector_btn').addEventListener('click', function(){
-//     let min_value = document.getElementById('min_price_input').value
-//     let max_value = document.getElementById('max_price_input').value
-//     document.getElementById('price_modal_btn').innerHTML = min_value + ' - ' + max_value + ' AED '
-// })
-
-
-// document.getElementById('bed_range_selector_btn').addEventListener('click', function(){
-//     let min_bed = document.getElementById('min_bed_input').value
-//     let max_bed = document.getElementById('max_bed_input').value
-//     let min_bath = document.getElementById('min_bath_input').value
-//     let max_bath = document.getElementById('max_bath_input').value
-
-    
-//     if (max_bed != "" & max_bath !=0 ){
-//         document.getElementById('bed_modal_btn').innerHTML = min_bed + " - " + max_bed + " | " + min_bath + " - " + max_bath
-//     }else{
-//         document.getElementById('bed_modal_btn').innerHTML = "Bed | Bath"
-//     }
-// })
-
-
-// document.getElementById('area_range_selector_btn').addEventListener('click', function(){
-//     let min_area = document.getElementById('min_area_input').value
-//     let max_area = document.getElementById('max_area_input').value
-
-    
-//     if (max_area != "" ){
-//         document.getElementById('area_modal_btn').innerHTML = min_area + " - " + max_area
-//     }else{
-//         document.getElementById('area_modal_btn').innerHTML = "Area"
-//     }
-// })
-
-
-
-
-
-
-
-
 jQuery("#id_buy_rent option").each(function(i, e) {
     (jQuery("<input type='radio' name='r' />")
       .attr("value", jQuery(this).val())
@@ -69,119 +23,63 @@ for (const div of document.getElementById('r').getElementsByTagName('label')) {
 
 
 
-// tab 
-(function() {
-    $(function() {
-      var toggle;
-      return toggle = new Toggle('.toggle');
-    });
-  
-    this.Toggle = (function() {
-      Toggle.prototype.el = null;
-  
-      Toggle.prototype.tabs = null;
-  
-      Toggle.prototype.panels = null;
-  
-      function Toggle(toggleClass) {
-        this.el = $(toggleClass);
-        this.tabs = this.el.find(".tab");
-        this.panels = this.el.find(".panel");
-        this.bind();
-      }
-  
-      Toggle.prototype.show = function(index) {
-        var activePanel, activeTab;
-        this.tabs.removeClass('active');
-        activeTab = this.tabs.get(index);
-        $(activeTab).addClass('active');
-        this.panels.hide();
-        activePanel = this.panels.get(index);
-        return $(activePanel).show();
-      };
-  
-      Toggle.prototype.bind = function() {
-        var _this = this;
-        return this.tabs.unbind('click').bind('click', function(e) {
-          return _this.show($(e.currentTarget).index());
-        });
-      };
-  
-      return Toggle;
-  
-    })();
-  
-  }).call(this);
+for (const div of document.getElementById('id_property_type').getElementsByTagName('option')) {
+  if (div.textContent.includes(text)) {
+    div.innerHTML = 'All'
+  }
+}
+
+
+// modal 
+document.getElementById('price_modal_body').querySelectorAll('input').forEach((input)=>input.addEventListener('input', function(){
+    let min_value = document.getElementById('id_min_price').value
+    let max_value = document.getElementById('id_max_price').value
+    document.getElementById('price_modal_btn').innerHTML = min_value + ' - ' + max_value + ' AED '
+}))
+
+
+
+
+// modal 
+document.getElementById('bed_modal_body').querySelectorAll('input').forEach((input)=>input.addEventListener('input', function(){
+    let min_bed = document.getElementById('id_min_count_bedroom').value
+    let max_bed = document.getElementById('id_max_count_bedroom').value
+    let min_bath = document.getElementById('id_min_count_bathroom').value
+    let max_bath = document.getElementById('id_max_count_bathroom').value
+    if (max_bed != "" & max_bath !=0 ){
+        document.getElementById('bed_modal_btn').innerHTML = min_bed + " - " + max_bed + " | " + min_bath + " - " + max_bath
+    }else{
+        document.getElementById('bed_modal_btn').innerHTML = "Bed | Bath"
+    }
+}))
+
+
+
+
+
+// modal 
+document.getElementById('area_modal_body').querySelectorAll('input').forEach((input)=>input.addEventListener('input', function(){
+    let min_area = document.getElementById('id_min_count_area').value
+    let max_area = document.getElementById('id_max_count_area').value
+    if (max_area != "" ){
+        document.getElementById('area_modal_btn').innerHTML = min_area + " - " + max_area
+    }else{
+        document.getElementById('area_modal_btn').innerHTML = "Area"
+    }
+}))
+
 
 
 
 // owl carousel in property bbox 
 $('.img-box').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:false,
-    items:1,
-    autoplay:true,
-    autoplayTimeout:5000,
+  loop:true,
+  margin:10,
+  nav:false,
+  items:1,
+  autoplay:true,
+  autoplayTimeout:5000,
 })
-
-
-
-var swiper = new Swiper(".mySwiper1", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 5500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-
-var swiper = new Swiper(".mySwiper2", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 5500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-
-var swiper = new Swiper(".mySwiper3", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 5500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-
-
 
   
 
