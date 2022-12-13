@@ -31156,3 +31156,25 @@ div.tagsinput span.tag a {
 .b_o_x img{
   width: 75px;
 }
+.ad_p{
+  font-size: 18px;
+  margin-bottom: 21px;
+  font-weight: bold;
+}
+.ad_btn{
+  border: none;
+  outline: none;
+  background: #9caae9;
+  padding: 15px 59px;
+  color: white;
+}
+.h5_txt{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-left: 2%;
+}
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+}

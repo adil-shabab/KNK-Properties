@@ -127,3 +127,55 @@ class MessageForm(ModelForm):
         fields = '__all__'
 
 
+
+
+
+
+
+
+class MasterAdForm(ModelForm):
+    class Meta:
+        model = MasterAd
+        fields = '__all__'
+
+        widgets = {
+            'ad_one' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_two' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_three' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+        }
+
+
+class SecondAdForm(ModelForm):
+    class Meta:
+        model = SecondAd
+        fields = '__all__'
+
+        widgets = {
+            'ad_one' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_two' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_three' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+        }
+
+
+class ThirdAdForm(ModelForm):
+    class Meta:
+        model = ThirdAd
+        fields = '__all__'
+
+        widgets = {
+            'ad_one' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_two' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_three' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+        }
+
+
+class InnerAdForm(ModelForm):
+    class Meta:
+        model = InnerAd
+        fields = '__all__'
+
+        widgets = {
+            'ad_one' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_two' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+            'ad_three' : forms.FileInput(attrs={'class': 'image-field image-upload', 'accept': "image/*"}),
+        }

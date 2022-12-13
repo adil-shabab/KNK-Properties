@@ -29,6 +29,48 @@ urlpatterns = [
     path('account/messages', views.messages, name='messages'),
 
 
+
+    path('account/ads', views.ads, name='ads'),
+    path('account/innerad', views.inner_ad, name='inner_ad'),
+
+    path('account/form/ads/master', views.master_ad_form, name='master_ad_form'),
+    path('account/form/ads/master/<str:pk>', views.update_master_ad, name='update_master_ad'),
+    path('account/ads/delete/master/<str:pk>', views.delete_master_ad, name='delete_master_ad'),
+
+    path('account/ads/master/delete/image/two/<str:pk>', views.delete_two_of_master, name='delete_master_ad_two'),
+    path('account/ads/master/delete/image/three/<str:pk>', views.delete_three_of_master, name='delete_master_ad_three'),
+
+
+    path('account/form/ads/second', views.second_ad_form, name='second_ad_form'),
+    path('account/form/ads/second/<str:pk>', views.update_second_ad, name='update_second_ad'),
+    path('account/ads/delete/second/<str:pk>', views.delete_second_ad, name='delete_second_ad'),
+
+    path('account/ads/second/delete/image/two/<str:pk>', views.delete_two_of_second, name='delete_second_ad_two'),
+    path('account/ads/second/delete/image/three/<str:pk>', views.delete_three_of_second, name='delete_second_ad_three'),
+
+
+    path('account/form/ads/third', views.third_ad_form, name='third_ad_form'),
+    path('account/form/ads/third/<str:pk>', views.update_third_ad, name='update_third_ad'),
+    path('account/ads/delete/third/<str:pk>', views.delete_third_ad, name='delete_third_ad'),
+    
+    path('account/ads/third/delete/image/two/<str:pk>', views.delete_two_of_third, name='delete_third_ad_two'),
+    path('account/ads/third/delete/image/three/<str:pk>', views.delete_three_of_third, name='delete_third_ad_three'),
+
+
+    path('account/form/ads/inner', views.inner_ad_form, name='inner_ad_form'),
+    path('account/form/ads/inner/<str:pk>', views.update_inner_ad, name='update_inner_ad'),
+    path('account/ads/delete/inner/<str:pk>', views.delete_inner_ad, name='delete_inner_ad'),
+
+    path('account/ads/inner/delete/image/two/<str:pk>', views.delete_two_of_inner, name='delete_inner_ad_two'),
+    path('account/ads/inner/delete/image/three/<str:pk>', views.delete_three_of_inner, name='delete_inner_ad_three'),
+
+
+
+
+
+
+
+
     path('account/form/amenities', views.amenities_form, name='amenities-form'),
     path('account/form/amenities/<str:pk>', views.amenities_edit, name='amenities-edit'),
     path('account/delete/amenities/<str:pk>', views.amenities_delete, name='amenities-delete'),

@@ -1,0 +1,127 @@
+{% extends "backend/admin-base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Master Ad | Form </title>
+{% endblock title %}
+
+{% block style %}  
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/img.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+ 
+<div class="container">
+    <h4 class="text-center">Edit Inner Ad Form</h4>
+    <p class="text-center">Recommended Size for 1 image (380px * 450px)</p>
+    <p class="text-center">Recommended Size for 2 image (380px * 450px)</p>
+    <p class="text-center">Recommended Size for 3 image (380px * 450px)</p>
+    <form class="row d-flex justify-content-center align-items-center" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+  
+      <div class="col-md-4 col-12 mt-2">
+          <div class="containers">
+            <div class="imageWrapper">
+              <img class="image" src="{{ad.ad_one.url}}">
+            </div>
+          </div>
+          <button class="p-1 file-upload">            
+  
+            {{form.ad_one}}
+          </button>
+          <div class="mt-4">
+            <p>Redirect Link</p>
+            {{form.ad_one_link}}
+          </div>
+      </div>
+  
+      <div style="position: relative;" class="col-md-4 col-12 mt-2">
+          {% if ad.ad_two %}
+              <a style="position: absolute; right: 32px; top: 18px; color: black;background: white; border-radius: 50%; padding: 6px 9px;" href="{% url 'delete_inner_ad_two' ad.id %}"><i class="fa-solid fa-trash"></i></a>
+          {% endif %}
+          <div class="containers">
+            <div class="imageWrapper">
+              {% if ad.ad_two %}
+              <img class="image" src="{{ad.ad_two.url}}">
+              {% else %}
+              <img style="max-height: 240px;" src="https://img.freepik.com/premium-photo/3d-rendering-3d-illustration-mountains-sun-landscape-gallery-symbol-minimal-image-photo-jpg-file-icon_640106-486.jpg?w=900" class="image" alt="">
+              {% endif %}
+              
+            </div>
+          </div>
+          <button class="p-1 file-upload">            
+  
+            {{form.ad_two}}
+          </button>
+          <div class="mt-4">
+            <p>Redirect Link</p>
+            {{form.ad_two_link}}
+          </div>
+      </div>
+  
+      <div style="position: relative;" class="col-md-4 col-12 mt-2">
+          {% if ad.ad_three %}
+          <a style="position: absolute; right: 32px; top: 18px; color: black;background: white; border-radius: 50%; padding: 6px 9px;" href="{% url 'delete_inner_ad_three' ad.id %}"><i class="fa-solid fa-trash"></i></a>
+          {% endif %}
+          <div class="containers">
+            <div class="imageWrapper">
+              {% if ad.ad_three %}
+              <img class="image" src="{{ad.ad_three.url}}">
+              {% else %}
+              <img style="max-height: 240px;" src="https://img.freepik.com/premium-photo/3d-rendering-3d-illustration-mountains-sun-landscape-gallery-symbol-minimal-image-photo-jpg-file-icon_640106-486.jpg?w=900" class="image" alt="">
+              {% endif %}
+            </div>
+          </div>
+          <button class="p-1 file-upload">            
+  
+            {{form.ad_three}}
+          </button>
+          <div class="mt-4">
+            <p>Redirect Link</p>
+            {{form.ad_three_link}}
+          </div>
+      </div>
+  
+  
+      <button type="submit" style="width: 150px; height: 60px;" class="mt-3">Edit</button>
+      
+  </form>
+  </div>
+  
+  
+{% endblock content %}
+
+
+
+{% block script %}
+
+
+    <script>
+        let image1 = document.getElementById('id_ad_one')
+        let image2 = document.getElementById('id_ad_two')
+        let image3 = document.getElementById('id_ad_three')
+        image1.classList.add('file-input')
+        image2.classList.add('file-input')
+        image3.classList.add('file-input')
+    </script>
+
+    <script>
+        document.querySelector('.ads-nav').classList.add('active')
+    </script>
+
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/chart.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+
+    <script src="{% static 'js/image.js' %}"></script>
+
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+
+{% endblock script %}

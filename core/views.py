@@ -871,6 +871,317 @@ def property_delete(request, pk):
 
 
 
+# desktop ad 
+
+
+# ads 
+@login_required(login_url='login')
+def ads(request):
+    master_ad = MasterAd.objects.all()
+    master_ad_count = MasterAd.objects.all().count()
+    second_ad = SecondAd.objects.all()
+    second_ad_count = SecondAd.objects.all().count()
+    third_ad = ThirdAd.objects.all()
+    third_ad_count = ThirdAd.objects.all().count()
+    inner_ad = InnerAd.objects.all()
+    inner_ad_count = InnerAd.objects.all().count()
+
+    context = {
+        'master_ad': master_ad,
+        'master_ad_count': master_ad_count,
+        'second_ad': second_ad,
+        'second_ad_count': second_ad_count,
+        'third_ad': third_ad,
+        'third_ad_count': third_ad_count,
+        'inner_ad': inner_ad,
+        'inner_ad_count': inner_ad_count
+    }
+    return render(request, 'backend/ads.html', context)
+    # return render(request, 'propertyForm.html)
+
+
+
+# ads 
+@login_required(login_url='login')
+def inner_ad(request):
+    inner_ad = InnerAd.objects.all()
+    inner_ad_count = InnerAd.objects.all().count()
+
+    context = {
+        'inner_ad': inner_ad,
+        'inner_ad_count': inner_ad_count
+    }
+    return render(request, 'backend/innerad.html', context)
+    # return render(request, 'propertyForm.html)
+
+
+
+
+
+# create 
+@login_required(login_url='login')
+def master_ad_form(request):
+    form = MasterAdForm()
+
+    if request.method == 'POST':
+        form = MasterAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            mp.success(request, "Master Ad Added")
+
+            return redirect('ads')
+        else:
+            return redirect('master_ad_form')
+    context = {'form':form}
+    return render(request, 'backend/forms/masterad-form.html', context)
+
+
+
+# update 
+@login_required(login_url='login')
+def update_master_ad(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    form = MasterAdForm(instance=ad)
+    if request.method == 'POST':
+        form = MasterAdForm(request.POST, request.FILES, instance=ad)
+        if form.is_valid():
+            form.save()
+            mp.success(request, "Master Ad Updated")
+
+            
+            return redirect('ads')
+    
+    context = {'form':form, 'ad': ad}
+    return render(request, 'backend/forms/masterad-edit.html', context)
+
+
+def delete_two_of_master(request,pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_two = None
+    ad.save()
+    mp.success(request, "Master Ad Image Deleted")
+    return redirect('update_master_ad' ,pk)
+
+def delete_three_of_master(request,pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_three = None
+    ad.save()
+    mp.success(request, "Master Ad Image Deleted")
+    return redirect('update_master_ad' ,pk)
+
+
+# delete 
+@login_required(login_url='login')
+def delete_master_ad(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.delete()
+    mp.success(request, "Master Ad Deleted")
+    return redirect('ads')
+
+
+
+
+
+# create 
+@login_required(login_url='login')
+def second_ad_form(request):
+    form = SecondAdForm()
+
+    if request.method == 'POST':
+        form = SecondAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('ads')
+
+        else:
+            return redirect('second_ad_form')
+    context = {'form':form}
+    return render(request, 'backend/forms/secondad-form.html', context)
+
+
+
+# update 
+@login_required(login_url='login')
+def update_second_ad(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    form = SecondAdForm(instance=ad)
+    if request.method == 'POST':
+        form = SecondAdForm(request.POST, request.FILES, instance=ad)
+        if form.is_valid():
+            form.save()
+            return redirect('ads')
+
+    
+    context = {'form':form, 'ad': ad}
+    return render(request, 'backend/forms/secondad-edit.html', context)
+
+
+
+def delete_two_of_second(request,pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_two = None
+    ad.save()
+    return redirect('update_second_ad' ,pk)
+
+def delete_three_of_second(request,pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_three = None
+    ad.save()
+    return redirect('update_second_ad' ,pk)
+
+
+
+
+
+# delete 
+@login_required(login_url='login')
+def delete_second_ad(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.delete()
+    return redirect('second_ad')
+
+
+
+
+
+
+
+
+
+# create 
+@login_required(login_url='login')
+def third_ad_form(request):
+    form = ThirdAdForm()
+
+    if request.method == 'POST':
+        form = ThirdAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('ads')
+    context = {'form':form}
+    return render(request, 'backend/forms/thirdad-form.html', context)
+
+
+
+# update 
+@login_required(login_url='login')
+def update_third_ad(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    form = ThirdAdForm(instance=ad)
+    if request.method == 'POST':
+        form = ThirdAdForm(request.POST, request.FILES, instance=ad)
+        if form.is_valid():
+            form.save()
+            
+            return redirect('ads')
+    
+    context = {'form':form, 'ad': ad}
+    return render(request, 'backend/forms/thirdad-edit.html', context)
+
+
+
+
+
+def delete_two_of_third(request,pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_two = None
+    ad.save()
+    return redirect('update_third_ad' ,pk)
+
+def delete_three_of_third(request,pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_three = None
+    ad.save()
+    return redirect('update_third_ad' ,pk)
+
+
+
+
+# delete 
+@login_required(login_url='login')
+def delete_third_ad(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.delete()
+    return redirect('ads')
+
+
+
+
+# create 
+@login_required(login_url='login')
+def inner_ad_form(request):
+    form = InnerAdForm()
+
+    if request.method == 'POST':
+        form = InnerAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+
+            return redirect('inner_ad')
+        else:
+            return redirect('inner_ad_form')
+    context = {'form':form}
+    return render(request, 'backend/forms/innerad-form.html', context)
+
+
+
+# update 
+@login_required(login_url='login')
+def update_inner_ad(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    form = InnerAdForm(instance=ad)
+    if request.method == 'POST':
+        form = InnerAdForm(request.POST, request.FILES, instance=ad)
+        if form.is_valid():
+            form.save()
+            
+            return redirect('inner_ad')
+    
+    context = {'form':form, 'ad': ad}
+    return render(request, 'backend/forms/innerad-edit.html', context)
+
+
+
+def delete_two_of_inner(request,pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_two = None
+    ad.save()
+    return redirect('update_inner_ad' ,pk)
+
+def delete_three_of_inner(request,pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_three = None
+    ad.save()
+    return redirect('update_inner_ad' ,pk)
+
+
+
+
+# delete 
+@login_required(login_url='login')
+def delete_inner_ad(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.delete()
+    return redirect('inner_ad')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # delete images 
 @login_required(login_url='login')
 def delete_two_of_ten(request,pk):
