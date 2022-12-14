@@ -229,43 +229,48 @@ About | KNK
 
 
 
+<p class="d-none" id="csrf_token">{{csrf_token}}</p>
+
+
+
 
 <!-- cta section  -->
 <div class="cta-section">
-   <div class="container">
-    <div class="main-div">
-        <div class="row">
-            <div class="col-lg-6 col-12 px-0">
-                <div class="left-box">
-                    <img src="https://img.freepik.com/premium-photo/home-house-exterior-design-showing-tropical-pool-villa-with-greenery-garden-sun-bed-umbrella-pool-towels_41487-361.jpg?w=996" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-6 col-12 px-0">
-                <div class="right-box">
-                    <h4>Get listed your home <br class="cta-br"/> as a owner</h4>
-                    <p>Subscribe and Get In Touch</p>
-                    <div class="email-box m-lg-0 m-auto row d-flex align-items-center">
-                        <i class="col-2 fa-solid fa-envelope"></i>
-                        <input class="col-6  input" placeholder="Enter Email" type="text">
-                        <button class="col-4 button">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+   <div class="main-div">
+       <div class="row">
+           <div class="col-lg-6 col-12 px-0">
+               <div class="left-box">
+                   <img src="https://img.freepik.com/premium-photo/home-house-exterior-design-showing-tropical-pool-villa-with-greenery-garden-sun-bed-umbrella-pool-towels_41487-361.jpg?w=996" alt="" class="img-fluid">
+               </div>
+           </div>
+           <div class="col-lg-6 col-12 px-0">
+               <div class="right-box">
+                   <h4>Get listed your home <br class="cta-br"/> as a owner</h4>
+                   <p>Subscribe and Get In Touch</p>
+                   <form id="subscription__form" class="email-box m-lg-0 m-auto row d-flex align-items-center">
+                       <i class="col-2 fa-solid fa-envelope"></i>
+                       <input required class="col-6  input" placeholder="Enter Email" id="subscription__email" type="email">
+                       <button class="col-4 button" type="submit">Subscribe</button>
+                   </form>
+               </div>
+           </div>
+       </div>
    </div>
+  </div>
 </div>
-
 
 {% include "backend/alert.html" %}
 {% endblock content %}
 
 
 {% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     document.querySelectorAll('.about-nav').forEach(element => {
         element.classList.add('active')
     });
 </script>
 <script src="{% static 'js/frontend/about.js' %}"></script>
+<script src="{% static 'js/frontend/subscription.js' %}"></script>
 {% endblock script %}

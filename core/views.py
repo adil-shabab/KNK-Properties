@@ -321,6 +321,28 @@ MessageView = MessageView.as_view()
 
 
 
+class SubscriptionView(APIView):
+    def post(self, request):
+        response = {}
+        response['status'] = 500
+        response['message'] = "Something Went Wrong"
+
+        try:
+            data = request.data
+            Subscription.objects.create(email=data.get('email'))
+            response['status'] = 200
+            response['message'] = "Subscription Added"
+
+        except Exception as e:
+            print(e)
+
+        return Response(response)
+
+SubscriptionView = SubscriptionView.as_view()
+
+
+
+
 
 
 
@@ -413,6 +435,32 @@ def places(request):
         'places_count': places_count
     }
     return render(request, 'backend/places.html', context)
+
+
+
+
+
+@login_required(login_url='login')
+def subscriptions(request):
+    subscriptions = Subscription.objects.all()
+    subscription_count = Subscription.objects.all().count
+    context = {
+        'subscription': subscriptions,
+        'subscription_count': subscription_count
+    }
+    return render(request, 'backend/subscriptions.html', context)
+
+
+# delete subscription 
+@login_required(login_url='login')
+def subscription_delete(request, pk):
+    subscription = Subscription.objects.get(id=pk)
+    subscription.delete()
+    mp.success(request, "Subscription deleted Successfully")
+    return redirect('subscriptions')
+
+
+
 
 
 @login_required(login_url='login')

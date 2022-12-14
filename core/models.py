@@ -218,3 +218,9 @@ class Request(models.Model):
     property_image_two = models.ImageField(upload_to='media', null=True, blank=True)
     property_image_three = models.ImageField(upload_to='media', null=True, blank=True)
     country_code = models.CharField(max_length=150, null=True , blank=True)
+
+
+
+
+class Subscription(models.Model):
+    email = models.EmailField()

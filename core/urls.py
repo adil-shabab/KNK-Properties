@@ -29,6 +29,10 @@ urlpatterns = [
     path('account/testimonials', views.testimonials, name='testimonials'),
     path('account/messages', views.messages, name='messages'),
 
+    
+    path('account/subscriptions', views.subscriptions, name='subscriptions'),
+    path('account/delete/subscription/<str:pk>', views.subscription_delete, name='subscription-delete'),
+
 
 
     path('account/ads/desktop', views.ads, name='ads'),
@@ -149,4 +153,5 @@ urlpatterns = [
     # api route 
     path('account/create/message', views.MessageView, name='create-message'),
     path('account/api/places', views.PlaceView, name='place-view'),
+    path('account/create/subscription', views.SubscriptionView, name='create-subscription'),
 ]

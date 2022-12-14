@@ -118,11 +118,11 @@ Contact | KNK
                <div class="right-box">
                    <h4>Get listed your home <br class="cta-br"/> as a owner</h4>
                    <p>Subscribe and Get In Touch</p>
-                   <div class="email-box m-lg-0 m-auto row d-flex align-items-center">
+                   <form id="subscription__form" class="email-box m-lg-0 m-auto row d-flex align-items-center">
                        <i class="col-2 fa-solid fa-envelope"></i>
-                       <input class="col-6  input" placeholder="Enter Email" type="text">
-                       <button class="col-4 button">Subscribe</button>
-                   </div>
+                       <input required class="col-6  input" placeholder="Enter Email" id="subscription__email" type="email">
+                       <button class="col-4 button" type="submit">Subscribe</button>
+                   </form>
                </div>
            </div>
        </div>
@@ -145,5 +145,6 @@ Contact | KNK
 <script src="{% static 'js/frontend/jquery.waypoints.min.js.js' %}"></script>
 <script src="{% static 'js/frontend/jquery.countup.js' %}"></script>
 <script src="{% static 'js/frontend/contact.js' %}"></script>
+<script src="{% static 'js/frontend/subscription.js' %}"></script>
 
 {% endblock script %}
