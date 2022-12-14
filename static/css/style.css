@@ -31178,3 +31178,49 @@ div.tagsinput span.tag a {
   display: flex;
   justify-content: space-between;
 }
+
+
+
+
+
+
+.loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 11111;
+    right: 0px;
+    background: white;
+}
+.left-div{
+    width: 50%;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1111;
+    transition: 0.8s;
+}
+.right-div{
+    width: 50%;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1111;
+    transition: 1.5s;
+}
+.left-div.active{
+    width: 0%;
+}
+.right-div.active{
+    width: 0%;
+}
