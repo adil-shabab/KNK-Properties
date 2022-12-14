@@ -70,6 +70,17 @@
 
 {% block script %}
 <!-- jquery cdn   -->
+<script>
+    {% if buy %}    
+    document.querySelectorAll('.buy-nav').forEach(element => {
+        element.classList.add('active')
+    });
+    {% else %}
+    document.querySelectorAll('.rent-nav').forEach(element => {
+        element.classList.add('active')
+    });
+    {% endif %}
+</script>
 <script src="{% static 'js/frontend/buy.js' %}"></script>
 {% endblock script %}
 

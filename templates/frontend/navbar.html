@@ -9,19 +9,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a class="nav-link home-nav" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+                <a class="nav-link about-nav" aria-current="page" href="{% url 'about' %}">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'buy' %}">Buy</a>
+                <a class="nav-link buy-nav" aria-current="page" href="{% url 'buy' %}">Buy</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'rent' %}">Rent</a>
+                <a class="nav-link rent-nav" aria-current="page" href="{% url 'rent' %}">Rent</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact</a>
+                <a class="nav-link list-nav" aria-current="page" href="{% url 'list' %}">List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link contact-nav" aria-current="page" href="{% url 'contact' %}">Contact</a>
               </li>
               <a class="enquire-btn" href="{% url 'contact' %}"><button class="button">Enquire</button></a>
             </ul>
@@ -40,11 +43,12 @@
         </div>
         <div class="offcanvas-body">
           <ul>
-            <li><a class="active" href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'buy' %}">Buy</a></li>
-            <li><a href="{% url 'rent' %}">Rent</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'home' %}" class="home-nav">Home</a></li>
+            <li><a href="{% url 'about' %}" class="about-nav">About</a></li>
+            <li><a href="{% url 'buy' %}" class="buy-nav">Buy</a></li>
+            <li><a href="{% url 'rent' %}" class="rent-nav">Rent</a></li>
+            <li><a href="{% url 'list' %}" class="list-nav">List</a></li>
+            <li><a href="{% url 'contact' %}" class="contact-nav">Contact</a></li>
           </ul>
 
           <div class="social-media-icons">

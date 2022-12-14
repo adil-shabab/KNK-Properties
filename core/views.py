@@ -111,11 +111,13 @@ def buy(request):
     title = 'Buy'
     txt = 'Properties For'
     span = "Buy"
+    buy = True
     context = {
         'properties' : properties,
         'title': title,
         'span': span,
-        'txt': txt
+        'txt': txt,
+        'buy': buy
     }
     return render(request, 'frontend/buy.html', context)
 
@@ -181,11 +183,13 @@ def rent(request):
     title = 'Rent'
     txt = 'Properties For'
     span = "Rent"
+    buy = False
     context = {
         'properties' : properties,
         'title': title,
         'span': span,
-        'txt': txt
+        'txt': txt,
+        'buy': buy
     }
     return render(request, 'frontend/buy.html', context)
 
@@ -718,6 +722,7 @@ def property_form(request):
 
 
 
+
             latest_property = Property.objects.order_by('-upload_date')[:1]
             print(latest_property)
             
@@ -726,7 +731,9 @@ def property_form(request):
                     reference_id = x.id + 1
                     start = 1000
                     ref_id = start + reference_id 
+                    print(ref_id)
                     form1.ref_id = (f"{'KNK'}{ref_id}")
+
             else:
                 start = 1000
                 ref_id = start

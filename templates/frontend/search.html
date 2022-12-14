@@ -9,7 +9,7 @@ Search | KNK
 <div class="search-section">
     <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
     <div class="container px-lg-5">
-        <form action="" method="get" class="row search-box">
+        <form autocomplete="off" action="" method="get" class="row search-box">
             {{myFilter.form.buy_rent}}
             <div id="r"></div>
             <div class="mt-3 location px-0 px-md-2 col-md-5">
@@ -121,69 +121,72 @@ Search | KNK
 
 
 
+{% if properties %}
 
-
-<!-- <div class="container no-match">
-  <h4 class="mt-5 heading text-center"><span>Oops, </span> No Such Properties Found</h4>
-</div> -->
 <div class="container no-match">
-  <h4 class="mt-5 heading text-center"><span>Matched </span> Properties</h4>
-</div>
-
-
-<div class="searched-properties mt-md-5 mt-2">
-  <div class="container">
-    <div class="property-box">
-      <div class="row">
-        {% for x in properties  %}
-            <div class="mb-3 col-sm-6 col-lg-4 col-12 px-md-3">
-                <a href="{% url 'single' x.slug %}">
-                    <div class="box mt-3">
-                        <div class="owl-carousel owl-theme img-box">
-                            <div class="item">
-                                <img class="img-fluid w-100 property-img" src="{{x.property_image.url}}" alt="">    
-                            </div>
-                            {% if x.property_image_two %}
-                            <div class="item">
-                                <img class="img-fluid w-100 property-img" src="{{x.property_image_two.url}}" alt="">    
-                            </div>
-                            {% endif %}
-                            {% if x.property_image_three %}
-                            <div class="item">
-                                <img class="img-fluid w-100 property-img" src="{{x.property_image_three.url}}" alt="">    
-                            </div>
-                            {% endif %}
-                        </div>
-                        <span class="buy-rent">{{x.buy_rent}}</span>
-                        <span class="circle"></span>
-                        <div class="txt-section">
-                            <h3>{{x.property_name}}</h3>
-                            <p class="location"><i class="fa-solid fa-location-dot"></i> {{x.property_location}}</p>
-                            <span class="price">{{x.property_price}} AED</span>
-                            <div class="mt-3 d-flex align-items-center">
-                                <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                    <img class="icon" src="{% static 'img/frontend/double-bed.png' %}" alt="">
-                                    <p class="m-0">{{x.total_bedroom}}</p>
-                                </div>
-                                <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
-                                    <img class="icon" src="{% static 'img/frontend/bathtub.png' %}" alt="">
-                                    <p class="m-0">{{x.total_bathroom}}</p>
-                                </div>
-                                <div class="d-flex">
-                                    <img class="icon" src="{% static 'img/frontend/area.png' %}" alt="">
-                                    <p class="m-0">{{x.property_area}}</p>
-                                </div>
-                            </div>
-                            <p class="ref-id">{{x.ref_id}}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-      </div>                
+    <h4 class="mt-5 heading text-center"><span>Matched </span> Properties</h4>
   </div>
+  
+  
+  <div class="searched-properties mt-md-5 mt-2">
+    <div class="container">
+      <div class="property-box">
+        <div class="row">
+          {% for x in properties  %}
+              <div class="mb-3 col-sm-6 col-lg-4 col-12 px-md-3">
+                  <a href="{% url 'single' x.slug %}">
+                      <div class="box mt-3">
+                          <div class="owl-carousel owl-theme img-box">
+                              <div class="item">
+                                  <img class="img-fluid w-100 property-img" src="{{x.property_image.url}}" alt="">    
+                              </div>
+                              {% if x.property_image_two %}
+                              <div class="item">
+                                  <img class="img-fluid w-100 property-img" src="{{x.property_image_two.url}}" alt="">    
+                              </div>
+                              {% endif %}
+                              {% if x.property_image_three %}
+                              <div class="item">
+                                  <img class="img-fluid w-100 property-img" src="{{x.property_image_three.url}}" alt="">    
+                              </div>
+                              {% endif %}
+                          </div>
+                          <span class="buy-rent">{{x.buy_rent}}</span>
+                          <span class="circle"></span>
+                          <div class="txt-section">
+                              <h3>{{x.property_name}}</h3>
+                              <p class="location"><i class="fa-solid fa-location-dot"></i> {{x.property_location}}</p>
+                              <span class="price">{{x.property_price}} AED</span>
+                              <div class="mt-3 d-flex align-items-center">
+                                  <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
+                                      <img class="icon" src="{% static 'img/frontend/double-bed.png' %}" alt="">
+                                      <p class="m-0">{{x.total_bedroom}}</p>
+                                  </div>
+                                  <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
+                                      <img class="icon" src="{% static 'img/frontend/bathtub.png' %}" alt="">
+                                      <p class="m-0">{{x.total_bathroom}}</p>
+                                  </div>
+                                  <div class="d-flex">
+                                      <img class="icon" src="{% static 'img/frontend/area.png' %}" alt="">
+                                      <p class="m-0">{{x.property_area}}</p>
+                                  </div>
+                              </div>
+                              <p class="ref-id">{{x.ref_id}}</p>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          {% endfor %}
+        </div>                
+    </div>
+    </div>
   </div>
-</div>
+{% else %}
+    <div class="container no-match">
+      <h4 class="mt-5 heading text-center"><span>Oops, </span> No Such Properties Found</h4>
+    </div>
+{% endif %}
+
 
 {% endblock content %}
 
@@ -191,7 +194,13 @@ Search | KNK
 
 {% block script %}
   <!-- custom js  -->
+  <script>
+    document.querySelectorAll('.home-nav').forEach(element => {
+        element.classList.add('active')
+    });
+  </script>
   <script src="{% static 'js/frontend/search.js' %}"></script>
+  <script src="{% static 'js/frontend/autocomplete.js' %}"></script>
 {% endblock script %}
 
 

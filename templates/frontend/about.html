@@ -262,5 +262,10 @@ About | KNK
 
 
 {% block script %}
+<script>
+    document.querySelectorAll('.about-nav').forEach(element => {
+        element.classList.add('active')
+    });
+</script>
 <script src="{% static 'js/frontend/about.js' %}"></script>
 {% endblock script %}

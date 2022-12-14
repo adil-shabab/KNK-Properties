@@ -121,5 +121,10 @@
 
 
 {% block script %}
+<script>
+    document.querySelectorAll('.list-nav').forEach(element => {
+        element.classList.add('active')
+    });
+</script>
 <script src="{% static 'js/frontend/listing.js' %}"></script>
 {% endblock script %}

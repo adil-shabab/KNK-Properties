@@ -7,7 +7,7 @@
 
 {% block content %}
  <!-- hero section  -->
-    <form  action="{% url 'search' %}" method='get' class="hero-section">
+    <form autocomplete="off" action="{% url 'search' %}" method='get' class="hero-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 order-md-1 order-2">
@@ -18,14 +18,14 @@
                         <div class="input-box row">
                             {{myFilter.form.buy_rent}}
                             <div id="r"></div>
-                            <div class="px-0 px-md-1 col-md-4" style="position: relative;">
+                            <div class="px-0 px-md-1 col-md-5" style="position: relative;">
                                 {{myFilter.form.property_location}}
                                 <i class="location-icon fa-solid fa-location-crosshairs"></i>
                             </div>
                             <div class="px-1 px-md-1 col-6 col-md-3">
                                 {{myFilter.form.property_type}}
                             </div>
-                            <div class="px-1 px-md-1 col-md-3 col-6">
+                            <div class="px-1 px-md-1 col-md-2 col-6">
                                 <div id="price_modal_btn" class="input" data-bs-toggle="modal" data-bs-target="#exampleModal">Price</div>
                             </div>
                             <div id="ref-div" class="px-1 px-md-1 col-md-2 col-6 d-none">
@@ -482,5 +482,11 @@
 
 
 {% block script %}
+<script>
+    document.querySelectorAll('.home-nav').forEach(element => {
+        element.classList.add('active')
+    });
+</script>
 <script src="{% static 'js/frontend/script.js' %}"></script>
+<script src="{% static 'js/frontend/autocomplete.js' %}"></script>
 {% endblock script %}

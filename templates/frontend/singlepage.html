@@ -44,13 +44,13 @@ Properties | KNK
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-5 col-12 d-flex align-items-center">
                 <div class="right-box">
                     <p class="rent-buy">{{property.buy_rent}}</p>
                     <h3 class="property-name">{{property.property_name}}</h3>
                     <p class="location"><i class="location-icon fa-solid fa-location-crosshairs"></i>Juffair, Manama, Bahrain</p>
                     <p class="price mb-4">{{property.property_price}} AED</p>
-                    <p class="type">{{property.property_type}}</p>
+                    <p class="type">Property Type: {{property.property_type}}</p>
                     <p class="furnished-type">Furnished Type: {{property.furnished_type}}</p>
                     <div class="row">
                         <div class="col-md-4 col-12">
@@ -212,6 +212,11 @@ Properties | KNK
 {% endblock content %}
 
 {% block script %}
+<script>
+    document.querySelectorAll('.home-nav').forEach(element => {
+        element.classList.add('active')
+    });
+</script>
 <script src="{% static 'js/frontend/single.js' %}"></script>
 {% endblock script %}
  
