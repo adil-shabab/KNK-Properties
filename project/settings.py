@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-m)$ro&-iw=px**vn&18(jng$-av+70^h)*8zwn6$z%!h&en*&@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['64.227.132.81']
 
 
 # Application definition
@@ -112,16 +112,27 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'knkproperties',
+#         'USER': 'adil',
+#         'PASSWORD': 'HACKER@3197',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#      }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'knkproperties',
-        'USER': 'adil',
+        'NAME': 'knkdb',
+        'USER': 'knkdbuser',
         'PASSWORD': 'HACKER@3197',
         'HOST': 'localhost',
         'PORT': '',
-     }
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
