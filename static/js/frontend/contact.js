@@ -41,7 +41,6 @@ document.querySelector('#contact-form').addEventListener('submit',function(e){
     .then(res => {
     return res.json()
     })
-    .then(data => console.log(data))
     .then(data => popup())
     .catch(error => console.log(error))
 

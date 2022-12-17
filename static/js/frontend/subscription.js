@@ -19,13 +19,13 @@ document.querySelector('#subscription__form').addEventListener('submit',function
     return res.json()
     })
     .then(data => console.log(data))
-    .then(data => popup())
+    .then(data => popups())
     .catch(error => console.log(error))
 })
 
 
 
-function popup(){
+function popups(){
     document.getElementById('subscription__email').value = ""
     swal(
         'Success',
