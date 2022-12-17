@@ -8,10 +8,11 @@
 {% block content %}
  <!-- hero section  -->
     <form autocomplete="off" action="{% url 'search' %}" method='get' class="hero-section">
-        <div class="container">
+        <div class="container" style="position:relative">
             <div class="row">
                 <div class="col-lg-5 col-12 order-md-1 order-2">
-                    <div class="left-box">
+                    <div class="left-box">                    
+                        <img class="grid" src="{% static 'img/frontend/grid.png' %}" alt="">
                         <img class="dots" src="{% static 'img/frontend/gray-dots.png' %}" alt="">
                         <h1>Find your dream property quickly and easily</h1>
                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam veritatis unde explicabo fugit </p>
@@ -144,8 +145,8 @@
 
     <!-- Featured properties  -->
     <div class="featured-properties">
-        <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
-        <div class="container">
+        <div class="container" style="position:relative">
+            <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
             <a href="{% url 'premium' %}"><button class="button show-more-btn">Show More</button></a>
             <h4><span>Premium </span> Listing</h4>
             <div class="property-box">
@@ -254,8 +255,8 @@
 
     <!-- Featured properties  -->
     <div class="featured-properties">
-        <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
-        <div class="container">
+        <div class="container" style="position:relative">
+            <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
             <a href="{% url 'featured' %}"><button class="button show-more-btn">Show More</button></a>
             <h4><span>Featured </span> Listing</h4>
             <div class="property-box">
@@ -364,8 +365,8 @@
 
     <!-- Featured properties  -->
     <div class="featured-properties">
-        <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
-        <div class="container">
+        <div class="container" style="position:relative">
+            <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
             <a href="{% url 'standard' %}"><button class="button show-more-btn">Show More</button></a>
             <h4><span>Standard </span> Listing</h4>
             <div class="property-box">

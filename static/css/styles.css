@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zilla+Slab:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zilla+Slab:wght@400;500&display=swap?family=Lato:wght@400;700&display=swap');
 
 
 /* variable  */
@@ -7,7 +7,7 @@
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
     --gray: rgb(245, 245, 245);
-    --body-font: 'Tenor Sans', sans-serif;
+    --body-font: 'Lato', sans-serif;
     --head-font: 'Zilla Slab', serif;
     --sm-shadow: rgba(0, 0, 0, 0.086) 0px 0px 0px 1px;
     --shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
@@ -272,7 +272,7 @@ li{
 }
 .hero-section .right-box .hero-img{
     z-index: 2;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: var(--sm-shadow);
 }
 .hero-section .right-box .dots{
@@ -283,6 +283,13 @@ li{
     /* transform: rotate(148deg); */
     opacity: 0.5;
     z-index: 1;
+}
+.hero-section .left-box .grid{
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: -66px;
+    opacity: 0.8;
 }
 .hero-section  .search-btn{
     display: flex;
@@ -391,6 +398,9 @@ li{
     .hero-section .left-box .dots{
         display: none;
     }
+    .hero-section .left-box .grid{
+        display: none;
+    }
     .hero-section .right-box{
         margin-top: 50px;
     }
@@ -449,8 +459,8 @@ li{
 .featured-properties .dots{
     position: absolute;
     width: 130px;
-    bottom: 15px;
-    left: -30px;
+    top: 50px;
+    left: -131px;
 }
 .featured-properties .show-more-btn{
     position: absolute;
@@ -491,20 +501,16 @@ li{
 }
 .property-box .box .circle{
     position: absolute;
-    width: 20%;
-    height: 16%;
-    right: -15px;
+    width: 150px;
+    height: 150px;
+    right: -40px;
     border-radius: 50%;
-    bottom: -15px;
+    bottom: -45px;
     background: var(--gray);
-    transition: 0.8s ease;
+    transition: 0.5s ease;
 }
 .property-box .box:hover .circle{
-    border-radius: 1px;
-    right: 0px;
-    bottom: 0px;
-    height: 100%;
-    width: 100%;
+    transform: scale(6);
 }
 .property-box .box .buy-rent{
     position: absolute;
@@ -533,9 +539,9 @@ li{
     color: var(--red);
 }
 .property-box .box .icon{
-    width: 24px;
+    width: 20px;
     margin-right: 10px;
-    height: 24px;
+    height: 20px;
 }
 .property-box .box .icon-box{
     margin-right: 15px;
@@ -551,7 +557,8 @@ li{
     transform: rotate(270deg);
     right: -25px;
     bottom: 25px;
-    font-size: 14px;
+    font-size: 15px;
+    color: var(--red);
 }
 /* owl css  */
 .img-box .owl-nav.disabled+.owl-dots{

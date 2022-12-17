@@ -6,11 +6,21 @@
 
 {% block content %}
 
+
+
+{% if properties %}
 <div class="property-section">
     <div class="container">
         <h4 class="mt-5 heading text-center mb-md-4 mb-2">{{txt}} <span>{{span}}</span></h4>
     </div>
 </div>
+{% else %}
+<div class="property-section">
+    <div class="container">
+        <h4 class="mt-5 heading text-center mb-md-4 mb-2">Oops, <span>No Properties to Dispay</span></h4>
+    </div>
+</div>
+{% endif %}
 
   <div class="sample-section container mt-3">
     <div class="property-box">

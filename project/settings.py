@@ -112,26 +112,26 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'knkproperties',
-#         'USER': 'adil',
-#         'PASSWORD': 'HACKER@3197',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#      }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'knkdb',
-        'USER': 'knkdbuser',
+        'NAME': 'knkproperties',
+        'USER': 'adil',
         'PASSWORD': 'HACKER@3197',
         'HOST': 'localhost',
         'PORT': '',
-    }
+     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'knkdb',
+#         'USER': 'knkdbuser',
+#         'PASSWORD': 'HACKER@3197',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
