@@ -127,15 +127,17 @@ Properties | KNK
                     <div class="innerad">
                         <div data-aos="fade-left" class="py-3 swiper mySwiper">
                             <div class="swiper-wrapper">
+                              { % for x in inner_ad %}
                               <div class="swiper-slide">
-                                <a href=""><img src="https://rightmovebh.com/media/media/inner-2.jpeg" alt=""></a>
+                                <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt=""></a>
                               </div>
                               <div class="swiper-slide">
-                                <a href=""><img src="https://rightmovebh.com/media/media/inner-5_LgTW4Ge.jpeg" alt=""></a>
+                                <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt=""></a>
                               </div>
                               <div class="swiper-slide">
-                                <a href=""><img src="https://rightmovebh.com/media/media/inner-6.jpeg" alt=""></a>
+                                <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt=""></a>
                               </div>
+                              {% endfor %}
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>

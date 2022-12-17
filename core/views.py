@@ -198,10 +198,13 @@ def single(request,slug):
     property = Property.objects.get(slug=slug)
     field_object = property._meta.get_field('buy_rent')
     field_value = getattr(property, field_object.attname)
+
+    inner_ad = InnerAd.objects.all()
     properties = Property.objects.filter(is_international_property=False).filter(buy_rent = field_value)[:6]
     context = {
         'property': property,
-        'properties':properties
+        'properties':properties,
+        'inner_ad': inner_ad
     }
     return render(request, 'frontend/singlepage.html', context)
 
