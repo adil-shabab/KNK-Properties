@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zilla+Slab:wght@400;500&display=swap?family=Lato:wght@400;700&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zilla+Slab:wght@400;500&display=swap?family=Lato:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600&display=swap&family=Zilla+Slab:wght@400;500&display=swap');
 
 /* variable  */
 :root {
@@ -8,7 +8,7 @@
     --black: rgb(0, 0, 0);
     --gray: rgb(245, 245, 245);
     --body-font: 'Lato', sans-serif;
-    --head-font: 'Zilla Slab', serif;
+    --head-font: 'Poppins', sans-serif;
     --sm-shadow: rgba(0, 0, 0, 0.086) 0px 0px 0px 1px;
     --shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
     --md-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -262,7 +262,8 @@ li{
 }
 .hero-section .left-box h1{
     font-family: var(--head-font);
-    font-size: 60px;
+    font-size: 51px;
+    font-weight: 600;
     width: 85%;
 }
 .hero-section .left-box .description{
@@ -448,12 +449,13 @@ li{
     position: relative;
 }
 .featured-properties h4{
-    font-size: 33px;
+    font-size: 29px;
     font-family: var(--head-font);
     margin-left: 30px;
 }
 .featured-properties h4 span{
     color: var(--red);
+    font-size: 29px;
     font-family: var(--head-font);
 }
 .featured-properties .dots{
@@ -487,9 +489,11 @@ li{
     position: relative;
 }
 .property-box .box h3{
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 10px;
     font-family: var(--head-font);
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 .property-box .box{
     box-shadow: var(--sm-shadow);
