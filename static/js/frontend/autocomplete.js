@@ -118,7 +118,7 @@ let array = []
     // API for get requests
     function callapi(){
         let fetchRes = fetch(
-            "http://127.0.0.1:8000/account/api/places");
+            "http://139.59.32.134/account/api/places");
             // fetchRes is the promise to resolve
             // it by using.then() method
             fetchRes.then(res =>

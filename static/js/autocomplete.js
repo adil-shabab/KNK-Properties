@@ -166,7 +166,7 @@ function sweetalert(){
 // API for get requests
 function callapi(){
     let fetchRes = fetch(
-        "http://127.0.0.1:8000/account/api/places");
+        "http://139.59.32.134/account/api/places");
         fetchRes.then(res =>
             res.json()).then(d => {
             console.log(d.data)

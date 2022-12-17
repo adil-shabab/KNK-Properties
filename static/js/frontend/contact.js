@@ -16,7 +16,7 @@ document.querySelector('#contact-form').addEventListener('submit',function(e){
 
     console.log(number)
     var csrftoken = document.getElementById('csrf_token').innerText
-    fetch('http://127.0.0.1:8000/account/create/message', {
+    fetch('http://139.59.32.134/account/create/message', {
     method: 'POST',
     headers:{
         'Content-Type': 'application/json',

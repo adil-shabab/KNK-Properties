@@ -5,7 +5,7 @@ document.querySelector('#subscription__form').addEventListener('submit',function
      
     let email = document.getElementById('subscription__email').value
     var csrftoken = document.getElementById('csrf_token').innerText
-    fetch('http://127.0.0.1:8000/account/create/subscription', {
+    fetch('http://139.59.32.134/account/create/subscription', {
     method: 'POST',
     headers:{
         'Content-Type': 'application/json',
