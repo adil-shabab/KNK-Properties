@@ -820,6 +820,8 @@ footer .social-icons i:hover{
     margin-top: 80px;
     margin-bottom: 50px;
     max-height: auto;
+    display: flex;
+    align-items: center;
 }
 .about-us .left-box{
     display: flex;
