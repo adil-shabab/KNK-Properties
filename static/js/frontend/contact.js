@@ -7,11 +7,7 @@ $('.counter').countUp(
 
 
 $("#phone").intlTelInput({
-    initialCountry: "bh",
-    separateDialCode: true,
-});
-$("#mobile_codes").intlTelInput({
-    initialCountry: "bh",
+    initialCountry: "AE",
     separateDialCode: true,
 });
 
