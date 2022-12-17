@@ -1774,6 +1774,29 @@ footer .social-icons i:hover{
 .single-property .mainImg{
     width: 100%;
 }
+.single-property .left-box{
+    position: relative;
+}
+.single-property .left-box i.youtube{
+    position: absolute;
+    bottom: 18%;
+    left: 20px;
+    color: black;
+    background: white;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 50%;
+}
+.single-property .left-box i.location{
+    position: absolute;
+    bottom: 18%;
+    left: 72px;
+    color: black;
+    background: white;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 50%;
+}
 .single-property .right-box{
     padding: 0px 15px;
 }

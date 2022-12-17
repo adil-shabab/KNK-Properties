@@ -19,12 +19,26 @@
 {% endblock meta %}
 
 
+
+
+
+
 {% block content %}
 <div class="mt-lg-0 mt-4 single-property">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-12">
                 <div class="left-box">
+                    {% if property.property_map_location %}  
+                        <a class="text-dark" href="{{property.property_map_location}}" target="_blank">
+                            <i class="fa-solid fa-location-crosshairs location"></i>
+                        </a>
+                    {% endif %}
+                    {% if property.property_video_link %}  
+                        <a href="{{property.property_video_link}}" class="popup text-dark" target="_blank">
+                            <i class="fa-brands fa-youtube youtube"></i>
+                        </a>
+                    {% endif %}
                     <img src="{{property.property_image.url}}" alt="" class="mainImg img-fluid">
                     <div class="mt-2 d-flex property-slider">
                         <img src="{{property.property_image.url}}" alt="" class="smallImg me-1">
