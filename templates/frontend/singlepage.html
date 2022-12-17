@@ -1,13 +1,15 @@
 {% extends "frontend/base.html" %}
 {% load static %}
 
-
-{% block meta %}
-    {% if property.meta_title %}
+{% block title %}
+{% if property.meta_title %}
         <title>{{property.meta_title}}</title>
     {% else %}
         <title>Property | KNK</title>
     {% endif %}
+{% endblock title %}
+
+{% block meta %}
     {% if property.meta_description %}
         <meta name="description" content="{{property.meta_description}}">
     {% endif %}
