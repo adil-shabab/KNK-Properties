@@ -1,10 +1,22 @@
 {% extends "frontend/base.html" %}
 {% load static %}
 
-{% block title %}
-Properties | KNK
-{% endblock title %}
-   
+
+{% block meta %}
+    {% if property.meta_title %}
+        <title>{{property.meta_title}}</title>
+    {% else %}
+        <title>Property | KNK</title>
+    {% endif %}
+    {% if property.meta_description %}
+        <meta name="description" content="{{property.meta_description}}">
+    {% endif %}
+    {% if property.meta_keyword %}
+        <meta name="keywords" content="{{property.meta_keyword}}">
+    {% endif %}
+{% endblock meta %}
+
+
 {% block content %}
 <div class="mt-lg-0 mt-4 single-property">
     <div class="container">
