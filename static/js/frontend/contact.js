@@ -6,13 +6,25 @@ $('.counter').countUp(
 );
 
 
+$("#phone").intlTelInput({
+    initialCountry: "bh",
+    separateDialCode: true,
+});
+$("#mobile_codes").intlTelInput({
+    initialCountry: "bh",
+    separateDialCode: true,
+});
+
 document.querySelector('#contact-form').addEventListener('submit',function(e){
+
     e.preventDefault()
-     
+    txt = document.querySelector('.iti__selected-dial-code').innerHTML
+
+
     let name = document.getElementById('name').value
     let email = document.getElementById('email').value
     let message = document.getElementById('message').value
-    let number = document.getElementById('phone').value
+    let number = txt + document.getElementById('phone').value
 
     console.log(number)
     var csrftoken = document.getElementById('csrf_token').innerText
@@ -26,7 +38,8 @@ document.querySelector('#contact-form').addEventListener('submit',function(e){
         'number': number,
         'name': name,
         'email': email,
-        'message': message
+        'message': message,
+
     })
     })
     .then(res => {

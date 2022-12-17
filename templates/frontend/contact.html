@@ -4,6 +4,11 @@
 Contact | KNK
 {% endblock title %}
 
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+{% endblock style %}
+
+
 {% block content %}
 <div class="contact-section">
     <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
@@ -16,7 +21,7 @@ Contact | KNK
                   <h1>CONTACT</h1>
 
                   <form id="contact-form" class="row">
-                      <div class="col-md-4 col-sm-6 col-12">
+                      <div class="col-md-3 col-sm-6 col-12">
                           <label for="">Name</label>
                           <input required id="name" type="text">
                       </div>
@@ -24,7 +29,7 @@ Contact | KNK
                           <label for="">Email</label>
                           <input required id="email" type="email">
                       </div>
-                      <div class="col-md-4 col-12">
+                      <div class="col-md-5 col-12">
                           <label for="">Phone</label>
                           <input required id="phone" type="tel">
                       </div>
@@ -32,6 +37,7 @@ Contact | KNK
                           <label for="">Message</label>
                           <input required id="message" type="text">
                       </div>
+                      
                       <div class="col-12 mt-3 btn-div">
                           <button type="submit" class="button">Submit</button>
                       </div>
@@ -142,6 +148,7 @@ Contact | KNK
 <!-- jquery cdn   -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
 <script src="{% static 'js/frontend/jquery.waypoints.min.js.js' %}"></script>
 <script src="{% static 'js/frontend/jquery.countup.js' %}"></script>
 <script src="{% static 'js/frontend/contact.js' %}"></script>

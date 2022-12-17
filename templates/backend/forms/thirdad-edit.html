@@ -64,7 +64,7 @@
           </div>
       </div>
   
-      <div class="col-md-4 col-12 mt-2">
+      <div style="position: relative;"  class="col-md-4 col-12 mt-2">
           {% if ad.ad_three %}
           <a style="position: absolute; right: 32px; top: 18px; color: black;background: white; border-radius: 50%; padding: 6px 9px;" href="{% url 'delete_third_ad_three' ad.id %}"><i class="fa-solid fa-trash"></i></a>
           {% endif %}
