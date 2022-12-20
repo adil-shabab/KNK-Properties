@@ -8,7 +8,7 @@
 .listing_property .legend span{
     font-family: var(--head-font);
     margin-right: 19px;
-    padding: 2px 12px;
+    padding: 2px 15px;
     background: var(--red);
     color: white;
     border-radius: 50%;
@@ -189,7 +189,7 @@
   .heading_list{
     margin-top: 30px;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     font-family: var(--head-font);
   }
   .heading_list span{

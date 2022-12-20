@@ -182,7 +182,7 @@ li{
     background: var(--red);
 }
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
-    bottom: -7px;
+    bottom: -5px;
 }
 
 
@@ -578,8 +578,11 @@ li{
 
 @media screen and (max-width: 992px) {
     .featured-properties h4{
-        font-size: 24px;
+        font-size: 21px;
         margin-left: 10px;
+    }
+    .featured-properties h4 span{
+        font-size: 21px;
     }
     .featured-properties .show-more-btn{
         top: 0px;
@@ -733,7 +736,7 @@ footer .container{
 footer h4{
     font-family: var(--head-font);
     margin-bottom: 30px;
-    font-size: 28px;
+    font-size: 25px;
 }
 footer ul{
     padding-left: 0px !important;
@@ -792,7 +795,7 @@ footer .social-icons i:hover{
 @media screen and (max-width: 992px) {
     footer h4{
         margin-top: 35px;
-        font-size: 24px;
+        font-size: 20px;
     }
     footer{
         padding: 10px;
@@ -864,7 +867,7 @@ footer .social-icons i:hover{
 .about-us .right-box h2{
     font-family: var(--head-font);
     margin-top: 15px;
-    font-size: 39px;
+    font-size: 33px;
 }
 .about-us .right-box .step span{
     background: var(--red);
@@ -875,11 +878,12 @@ footer .social-icons i:hover{
     border-radius: 4px;
 }
 .about-us .right-box .step h4{
-    font-size: 25px;
+    font-size: 21px;
     font-family: var(--head-font);
 }
 .about-us .right-box .step p{
-    font-size: 15px;
+    font-size: 16px;
+    width: 85%;
 }
 .about-us .left-box .arrow{
     display: none;
@@ -888,14 +892,18 @@ footer .social-icons i:hover{
     .about-us{
         margin-top: 35px;
     }
+    .about-us .right-box .step p{
+        width: 100%;
+        font-size: 14px;
+    }
     .about-us .right-box{
         margin-top: 75px;
     }
     .about-us .right-box h2{
-        font-size: 34px;
+        font-size: 25px;
     }
     .about-us .right-box .step h4{
-        font-size: 24px;
+        font-size: 17px;
     }
     .about-us .right-box .arrow{
         display: none;
@@ -920,7 +928,7 @@ footer .social-icons i:hover{
     margin-bottom: 150px;
 }
 .why-us .heading{
-    font-size: 39px;
+    font-size: 33px;
     font-family: var(--head-font);
     margin-bottom: 60px;
     position: relative;
@@ -955,13 +963,15 @@ footer .social-icons i:hover{
         margin-bottom: 70px;
     }
     .why-us .heading{
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 0px;
     }
     .why-us .heading::after{
         width: 25%;
     }
-    
+    .why-us .box h6{
+        font-size: 18px;
+    }
 }
 /* why us css end  */
 
@@ -974,12 +984,13 @@ footer .social-icons i:hover{
 
 /* service section css start  */
 .our-services .heading{
-    font-size: 39px;
+    font-size: 33px;
     font-family: var(--head-font);
     margin-bottom: 50px;
 }
 .our-services .heading span{
     color: var(--red);
+    font-size: 33px;
     font-family: var(--head-font);
 }
 .our-services .box{
@@ -993,7 +1004,7 @@ footer .social-icons i:hover{
     flex-direction: column;
 }
 .our-services .box h4{
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 20px;
     text-align: center;
     font-family: var(--head-font);
@@ -1008,7 +1019,10 @@ footer .social-icons i:hover{
 }
 @media screen and (max-width: 992px) {
     .our-services .heading{
-        font-size: 30px;
+        font-size: 23px;
+    }
+    .our-services .heading span{
+        font-size: 23px;
     }
 }
 /* service section css end  */
@@ -1029,13 +1043,14 @@ footer .social-icons i:hover{
     margin-top: 100px;
 }
 .faq-section .heading{
-    font-size: 39px;
+    font-size: 33px;
     font-family: var(--head-font);
     margin-top: 10px;
     margin-bottom: 40px;
 }
 .faq-section .heading span{
     color: var(--red);
+    font-size: 33px;
     font-family: var(--head-font);
 }
 .faq-title p {
@@ -1121,7 +1136,10 @@ footer .social-icons i:hover{
 } 
 @media screen and (max-width: 992px) {
     .faq-section .heading{
-        font-size: 30px;
+        font-size: 24px;
+    }
+    .faq-section .heading span{
+        font-size: 24px;
     }
     .faq-section{
         margin-top: 80px;
@@ -1160,7 +1178,7 @@ footer .social-icons i:hover{
     top: 15%;
 }
 .testimonial-section .left-box h3{
-    font-size: 42px;
+    font-size: 34px;
     font-family: var(--head-font);
     width: 80%;
     margin-left: 35%;
@@ -1218,10 +1236,11 @@ footer .social-icons i:hover{
         top: 80px;
     }
     .testimonial-section .left-box h3{
-        font-size: 28px;
+        font-size: 24px;
         width: 100%;
         margin-left: 5%;
         text-align: center;
+        font-weight: 600;
     }
     .testimonial-section .left-box{
         background: transparent;
@@ -1398,7 +1417,7 @@ footer .social-icons i:hover{
         padding: 25px;
     }
     .cta-section .right-box h4{
-        font-size: 30px;
+        font-size: 24px;
     }
     .cta-section .right-box h4 .cta-br{
         display: none;
@@ -1757,10 +1776,11 @@ footer .social-icons i:hover{
 /* ------------------------------------------ Buy / Rent / International / Premium / Standard / Featured css start ---------------------------------- */
 .property-section .heading{
     font-family: var(--head-font);
-    font-size: 32px;
+    font-size: 28px;
 }
 .property-section .heading span{
     color: var(--red);
+    font-size: 28px;
     font-family: var(--head-font);
 }
 .sample-section a{
@@ -1821,7 +1841,7 @@ footer .social-icons i:hover{
 }
 .single-property .right-box .property-name{
     font-family: var(--head-font);
-    font-size: 32px;
+    font-size: 30px;
 }
 .single-property .right-box .location i{
     color: var(--red);
@@ -1889,7 +1909,7 @@ footer .social-icons i:hover{
         padding: 0px 0px;
     }
     .single-property .right-box .property-name{
-        font-size: 23px;
+        font-size: 21px;
     }
     .single-property .right-box .call{
         width: 45%;
@@ -1916,7 +1936,7 @@ footer .social-icons i:hover{
 }
 .content-section h4{
     font-family: var(--head-font);
-    font-size: 25px;
+    font-size: 24px;
     margin-bottom: 30px;
 }
 .content-section p.para{
@@ -1944,7 +1964,7 @@ footer .social-icons i:hover{
     margin-top: 105px;
 }
 .related-properties h4{
-    font-size: 30px;
+    font-size: 24px;
     margin-left: 25px;
     font-family: var(--head-font);
     margin-bottom: 25px;
@@ -1960,6 +1980,7 @@ footer .social-icons i:hover{
         text-align: center;
         margin-bottom: 10px;
         margin-left: 0px;
+        font-size: 21px;
     }
 }
 /* ------------------------------------------ Buy / Rent / International / Premium / Standard / Featured css end ---------------------------------- */
