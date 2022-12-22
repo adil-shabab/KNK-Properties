@@ -1912,12 +1912,12 @@ footer .social-icons i:hover{
 .single-property .right-box .call{
     margin-right: 10px;
     width: 100%;
-    padding: 5px 44px;
-    margin-left: 11px;
+    /* padding: 5px 44px; */
+    /* margin-left: 11px; */
 }
 .single-property .right-box .whatsapp{
     width: 100%;
-    padding: 5px 23px;
+    /* padding: 5px 23px; */
     background: rgb(5, 87, 5);
     border: 1px solid rgb(5, 87, 5);
 }
