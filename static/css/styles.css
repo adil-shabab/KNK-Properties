@@ -573,17 +573,18 @@ li{
     padding-right: 15px;
 }
 .property-box .box .txt-section{
-    padding: 15px;
+    padding: 20px;
     padding-bottom: 20px;
     position: relative;
 }
 .property-box .box .txt-section .ref-id{
     position: absolute;
     transform: rotate(270deg);
-    right: -25px;
+    right: -9px;
     bottom: 35%;
     font-size: 15px;
     color: var(--red);
+    font-family: var(--head-font);
 }
 /* owl css  */
 .img-box .owl-nav.disabled+.owl-dots{
@@ -1949,7 +1950,8 @@ footer .social-icons i:hover{
     margin-bottom: 30px;
 }
 .content-section p.para{
-    font-weight: bold;
+    font-weight: 500;
+    font-family: var(--head-font);
 }
 .content-section p{
     margin: 0px;
@@ -1964,6 +1966,10 @@ footer .social-icons i:hover{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+}
+.content-section .left-box .amenities-box span{
+    font-size: 15px;
+    font-family: var(--head-font);
 }
 .content-section .right-box .innerad img{
     border-radius: 15px;
