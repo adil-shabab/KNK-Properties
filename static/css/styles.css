@@ -518,7 +518,7 @@ li{
 }
 .property-box .box{
     box-shadow: var(--sm-shadow);
-    padding: 12px;
+    /* padding: 12px; */
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -1813,7 +1813,7 @@ footer .social-icons i:hover{
 }
 .single-property{
     /* min-height: 90vh; */
-    padding-top: 5%;
+    padding-top: 4%;
     display: flex;
     justify-content: center;
     align-items: center;

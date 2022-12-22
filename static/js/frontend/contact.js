@@ -1,9 +1,3 @@
-$('.counter').countUp(
-    {
-    delay: 5,
-    time: 1500
-    }
-);
 
 
 $("#phone").intlTelInput({
@@ -60,3 +54,12 @@ function popup(){
         'success'
     )
 }
+
+
+
+$('.counter').countUp(
+    {
+    delay: 5,
+    time: 1500
+    }
+);
