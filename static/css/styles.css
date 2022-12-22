@@ -1911,11 +1911,13 @@ footer .social-icons i:hover{
 }
 .single-property .right-box .call{
     margin-right: 10px;
-    width: 30%;
+    width: 100%;
+    padding: 5px 44px;
+    margin-left: 11px;
 }
 .single-property .right-box .whatsapp{
-    width: 30%;
-    padding: 4px;
+    width: 100%;
+    padding: 5px 23px;
     background: rgb(5, 87, 5);
     border: 1px solid rgb(5, 87, 5);
 }
@@ -1932,21 +1934,6 @@ footer .social-icons i:hover{
     .single-property .right-box .property-name{
         font-size: 21px;
     }
-    .single-property .right-box .call{
-        width: 45%;
-    }
-    .single-property .right-box .whatsapp{
-        width: 45%;
-    }
-}
-@media only screen and (min-width:768px) and (max-width:992px){
-    .single-property .right-box .call{
-        width: 32%;
-    }
-    .single-property .right-box .whatsapp{
-        width: 32%;
-    }
-	
 }
 
 
