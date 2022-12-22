@@ -440,6 +440,27 @@ li{
 
 
 /* Featured section css start  */
+.property-box .msg_btn{
+    padding: 5px 4px;
+    border: none;
+    outline: none;
+    width: 100%;
+    border: 0.4px solid var(--red);
+    background: white;
+    color: var(--red);
+    border-radius: 3px;
+    font-size: 14px;
+}
+.property-box .msg_btn_parent{
+    margin-top: 25px;
+}
+.property-box .msg_btn i{
+    margin-right: 10px;
+    font-size: 14px;
+}
+/* .featured-properties .whatsapp{
+    background: #0a7d2d;
+} */
 .featured-properties{
     margin-top: 100px;
     margin-bottom: 80px;
@@ -560,7 +581,7 @@ li{
     position: absolute;
     transform: rotate(270deg);
     right: -25px;
-    bottom: 25px;
+    bottom: 35%;
     font-size: 15px;
     color: var(--red);
 }
