@@ -27,7 +27,7 @@
 <div class="mt-lg-0 mt-4 single-property">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-12">
+            <div class="col-lg-8 col-12">
                 <div class="left-box">
                     {% if property.property_map_location %}  
                         <a class="text-dark" href="{{property.property_map_location}}" target="_blank">
@@ -72,28 +72,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-12 d-flex align-items-center">
+            <div class="col-lg-4 col-12 d-flex align-items-center">
                 <div class="right-box">
                     <p class="rent-buy">{{property.buy_rent}}</p>
                     <h3 class="property-name">{{property.property_name}}</h3>
                     <p class="location"><i class="location-icon fa-solid fa-location-crosshairs"></i>Juffair, Manama, Bahrain</p>
                     <p class="price mb-4">{{property.property_price}} AED</p>
                     <p class="type">Property Type: {{property.property_type}}</p>
-                    <p class="furnished-type">Furnished Type: {{property.furnished_type}}</p>
+                    <p class="furnished-type">Property ID: {{property.ref_id}}</p>
                     <div class="row">
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-4 col-12 px-1">
                             <div class="bedroom">
                                 <img src="{% static 'img/frontend/double-bed.png' %}" alt="">
                                 <p>{{property.total_bedroom}} Bed</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-4 col-12 px-1">
                             <div class="bathroom">
                                 <img src="{% static 'img/frontend/bathtub.png' %}" alt="">
                                 <p>{{property.total_bathroom}} Bath</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-4 col-12 px-1">
                             <div class="area">
                                 <img src="{% static 'img/frontend/area.png' %}" alt="">
                                 <p>{{property.property_area}} sqft</p>

@@ -57,7 +57,8 @@ def watermark_image(input_image_path,output_path, watermark_image_path):
     return output_path
 
 
-
+def property_management(request):
+    return render(request, 'frontend/property-management.html')
 
 
 def home(request):

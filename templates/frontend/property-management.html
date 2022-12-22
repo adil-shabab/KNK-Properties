@@ -1,0 +1,23 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}
+ Property | management
+{% endblock title %}
+
+{% block content %}
+
+{% endblock content %}
+
+
+
+
+
+
+{% block script %}
+<script>
+    document.querySelectorAll('.management-nav').forEach(element => {
+        element.classList.add('active')
+    });
+</script>
+{% endblock script %}

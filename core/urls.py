@@ -14,6 +14,7 @@ urlpatterns = [
     path('featured', views.featured, name='featured'),
     path('property/<slug:slug>', views.single, name='single'),
     path('listing/porperty', views.list, name='list'),
+    path('property-management', views.property_management, name='property-management'),
 
 
 

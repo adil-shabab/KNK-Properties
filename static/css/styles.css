@@ -1812,7 +1812,8 @@ footer .social-icons i:hover{
     color: black;
 }
 .single-property{
-    min-height: 90vh;
+    /* min-height: 90vh; */
+    padding-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1862,7 +1863,7 @@ footer .social-icons i:hover{
 }
 .single-property .right-box .property-name{
     font-family: var(--head-font);
-    font-size: 30px;
+    font-size: 26px;
 }
 .single-property .right-box .location i{
     color: var(--red);
@@ -1886,7 +1887,7 @@ footer .social-icons i:hover{
 .single-property .right-box .bedroom img,
 .single-property .right-box .area img,
 .single-property .right-box .bathroom img{
-    width: 28px;
+    width: 18px;
 }
 .single-property .right-box .bedroom p,
 .single-property .right-box .bathroom p,
