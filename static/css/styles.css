@@ -1864,7 +1864,7 @@ footer .social-icons i:hover{
 }
 .single-property .right-box .property-name{
     font-family: var(--head-font);
-    font-size: 26px;
+    font-size: 24px;
 }
 .single-property .right-box .location i{
     color: var(--red);
