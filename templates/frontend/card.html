@@ -22,7 +22,7 @@
             <div class="txt-section">
                 <h3>{{x.property_name}}</h3>
                 <p class="location"><i class="fa-solid fa-location-dot"></i> {{x.property_location}}</p>
-                <span class="price">{{x.property_price}} AED</span>
+                <span class="price">{{x.property_price}} AED {% if x.buy_rent == 'Rent' %} - Yearly{% endif %}</span>
                 <div class="mt-3 d-flex align-items-center">
                     <div class="d-flex icon-box" style="border-right: 1px solid var(--red);">
                         <img class="icon" src="{% static 'img/frontend/double-bed.png' %}" alt="">
