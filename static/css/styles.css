@@ -2172,3 +2172,149 @@ footer .social-icons i:hover{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.property_management{
+    min-height: 100vh;
+}
+.property_management h3{
+    font-size: 35px;
+    font-family: var(--body-font);
+}
+.property_management p.para{
+    font-size: 15px;
+    font-family: var(--head-font);
+    margin-top: 20px;
+}
+.property_management .right-box{
+    background: var(--gray);
+    padding: 35px 60px;
+    box-shadow: var(--sm-shadow);
+    position: relative;
+}
+.property_management .left-box .key{
+    position: absolute;
+    right: 15px;
+    opacity: 0.6;
+    top: 35px;
+}
+.property_management .right-box h5{
+    font-synthesis: 25px;
+    font-family: var(--head-font);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.property_management .right-box p{
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+.property_management .right-box a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+.property_management .right-box a::after{
+    content: '';
+    background: url('../img/frontend/right-top.png');
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: -20px;
+    top: 2px;
+}
+.property_management .right-box .map{
+    font-weight: bold;
+}
+
+
+.property_management .left-box{
+    position: relative;
+}
+.property_management .dots{
+    position: absolute;
+    top: 20px;
+    opacity: 0.3;
+    left: -15px;
+}
+.property_management .left-box .star{
+    position: absolute;
+    right: 40px;
+    opacity: 0.4;
+    bottom: -50px;
+}
+.property_management .left-box span{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.property_management .left-box h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 29px;
+    font-family: var(--head-font);
+    margin-top: 30px;
+}
+.property_management .left-box input{
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid rgb(143, 143, 143);
+    margin-bottom: 28px;
+    padding: 8px;
+    padding-top: 5px;
+}
+.property_management .right-box{
+    background: var(--gray);
+    padding: 35px 60px;
+    box-shadow: var(--sm-shadow);
+    position: relative;
+}
+.property_management .left-box .iti{
+    width: 100%;
+    margin-bottom: 28px;
+}
+.property_management .left-box label{
+    display: block !important;
+}
+
+
+
+
+
+@media screen and (max-width: 992px) {
+    .property_management h3{
+        font-size: 25px;
+    }
+    .property_management p.para{
+        font-size: 13px;
+    }
+    .property_management .right-box{
+        margin-top: 30px;
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .property_management .left-box h1{
+        font-size: 20px;
+    }
+    .property_management .right-box{
+        margin-top: 30px;
+        padding: 15px;
+    }
+}
+

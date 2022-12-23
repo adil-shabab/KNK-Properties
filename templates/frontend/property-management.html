@@ -1,67 +1,74 @@
 {% extends "frontend/base.html" %}
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+{% endblock style %}
+
+
 {% block title %}
  Property | management
 {% endblock title %}
 
 {% block content %}
-<div class="contact-section">
-    <img src="{% static 'img/frontend/gray-dots.png' %}" alt="" class="dots">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-8">
-              <div class="left-box">
-                  <!-- <img src="stars.png" class="star" alt=""> -->
-                  <span>Let's Meet Over Coffee</span>
-                  <h1>CONTACT</h1>
-
-                  <form id="contact-form" class="row">
-                      <div class="col-md-3 col-sm-6 col-12">
-                          <label for="">Name</label>
-                          <input required id="name" type="text">
-                      </div>
-                      <div class="col-md-4 col-sm-6 col-12">
-                          <label for="">Email</label>
-                          <input required id="email" type="email">
-                      </div>
-                      <div class="col-md-5 col-12">
-                          <label for="">Phone</label>
-                          <input required id="phone" type="tel">
-                      </div>
-                      <div class="col-12">
-                          <label for="">Message</label>
-                          <input required id="message" type="text">
-                      </div>
-                      
-                      <div class="col-12 mt-3 btn-div">
-                          <button type="submit" class="button">Submit</button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-          <div class="px-md-0 px-sm-5 px-3 col-lg-4">
-              <div class="right-box">
-                  <h5>Talk to Us</h5>
-                  <p class="email">info@knkproperties.com</p>
-                  <p class="phone">+91 9876543210</p>
-
-                  <a class="mt-3" href="">Facebook </a>
-                  <a href="">Instagram</a>
-                  <a href="">Twitter </a>
-
-                  <h5 class="mt-5">Visit Us</h5>
-                  <p class="mb-3 location">Building #533 Block #905 <br> riffa - Kingdom of Bahrain</p>
-
-                  <a class="mt-4 map" href="">View On Map</a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-
 
 <p class="d-none" id="csrf_token">{{csrf_token}}</p>
+
+
+<div class="pt-4 property_management">
+    <div class="mt-4 container">
+        <img src="{% static 'img/frontend/property-management.png' %}" alt="" class="d-md-block d-none img-fluid">
+        <img src="{% static 'img/frontend/property-management-mobile.png' %}" alt="" class="d-md-none d-block img-fluid">
+        <div class="mt-5 row">
+            <div class="col-lg-8 col-12">
+                <h3 class="head_txt">Property Management</h3>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ex atque, nisi porro, quo illum laudantium sint aperiam consectetur quam incidunt consequatur eveniet dignissimos et id reprehenderit obcaecati beatae impedit, aspernatur deleniti totam. Sunt, delectus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tenetur quae earum? Provident facilis ea neque unde distinctio ipsam! Pariatur!</p>
+                <div class="left-box">
+                    <h1>CONTACT</h1>
+  
+                    <form id="contact-form" class="row">
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <label for="">Name</label>
+                            <input required id="name" type="text">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <label for="">Email</label>
+                            <input required id="email" type="email">
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <label for="">Phone</label>
+                            <input required id="phone" type="tel">
+                        </div>
+                        <div class="col-12">
+                            <label for="">Message</label>
+                            <input required id="message" type="text">
+                        </div>
+                        
+                        <div class="col-12 mt-3 btn-div">
+                            <button type="submit" class="button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="right-box">
+                    <h5>Talk to Us</h5>
+                    <p class="email">info@knkproperties.com</p>
+                    <p class="phone">+91 9876543210</p>
+  
+                    <a class="mt-3" href="">Facebook </a>
+                    <a href="">Instagram</a>
+                    <a href="">Twitter </a>
+  
+                    <h5 class="mt-5">Visit Us</h5>
+                    <p class="mb-3 location">Building #533 Block #905 <br> riffa - Kingdom of Bahrain</p>
+  
+                    <a class="mt-4 map" href="">View On Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 
@@ -76,5 +83,8 @@
         element.classList.add('active')
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
 <script src="{% static 'js/frontend/contact.js' %}"></script>
 {% endblock script %}
