@@ -10,12 +10,15 @@ from django.contrib.auth.forms import UserCreationForm
 
 Type = [
     ('Apartment', 'Apartment'),
-    ('Short Term & Hotel', 'Short Term & Hotel'),
     ('Villa', 'Villa'),
     ('Commercial Spaces ', 'Commercial Spaces '),
-    ('Hotel Apartment', 'Hotel Apartment'),
-    ('Staff Accommodation ', 'Staff Accommodation '),
+    ('Townhouse', 'Townhouse'),
     ('Duplex', 'Duplex'),
+    ('Penthouse', 'Penthouse'),
+    ('Full floor', 'Full floor'),
+    ('Bunglow', 'Bunglow'),
+    ('Office Space', 'Office Space'),
+    ('Hotel and Hotel Apartment', 'Hotel and Hotel Apartment'),
     ('Whole building', 'Whole building'),
 ]
 
