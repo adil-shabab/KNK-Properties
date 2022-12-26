@@ -26,22 +26,22 @@ About | KNK
                     <div class="mt-5 step d-flex">
                         <span>01</span>
                         <div>
-                            <h4>Work with the best local agents</h4>
-                            <p>Lorem praesentium consequatur mollitia at, itaque odio ab, quisquam consectetur</p>
+                            <h4>Better occupancy rate</h4>
+                            <p>With an occupancy rate averaging at 95%, we attract only high-quality tenants for your property.</p>
                         </div>
                     </div>
                     <div class="mt-2 step d-flex">
                         <span>02</span>
                         <div>
-                            <h4>Work with the best local agents</h4>
-                            <p>Lorem praesentium consequatur mollitia at, itaque odio ab, quisquam consectetur</p>
+                            <h4>Higher rentals</h4>
+                            <p>Units managed by our property management team yielded on average 6.14% higher rental prices than non-managed residential units leased.</p>
                         </div>
                     </div>
                     <div class="mt-2 step d-flex">
                         <span>03</span>
                         <div>
-                            <h4>Work with the best local agents</h4>
-                            <p>Lorem praesentium consequatur mollitia at, itaque odio ab, quisquam consectetur</p>
+                            <h4>Happy tenants</h4>
+                            <p>A well-managed property means happy tenants. Our happy tenants stay longer, which reduces the vacant periods between tenancies.</p>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ About | KNK
 
 
 
-
+{% if faq %}
 <!-- faq section  -->
 <div class="faq-section">
     <div class="container">
@@ -182,11 +182,12 @@ About | KNK
         </div>
     </div>
 </div>
+{% endif %}
 
 
 
 
-
+{% if testimonials %}
 <div class="testimonial-section">
     <div class="container">
         <div class="row">
@@ -226,7 +227,7 @@ About | KNK
         </div>
     </div>
 </div>
-
+{% endif %}
 
 
 <p class="d-none" id="csrf_token">{{csrf_token}}</p>

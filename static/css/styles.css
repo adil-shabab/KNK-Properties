@@ -748,6 +748,7 @@ footer .description{
     margin-top: 25px;
     text-align: left;
     width: 95%;
+    font-size: 15px;
 }
 footer .container{
     border-top: 1px solid var(--red);
@@ -889,7 +890,7 @@ footer .social-icons i:hover{
 .about-us .right-box h2{
     font-family: var(--head-font);
     margin-top: 15px;
-    font-size: 33px;
+    font-size: 30px;
 }
 .about-us .right-box .step span{
     background: var(--red);
@@ -2301,11 +2302,13 @@ footer .social-icons i:hover{
     box-shadow: var(--sm-shadow);
     flex-direction: column;
     min-height: 250px;
+    border-left: 4px solid var(--red);
 }
 .property_management .b_o_x h5{
     color: var(--red);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 .building_section h3{
     font-size: 30px;
@@ -2313,8 +2316,13 @@ footer .social-icons i:hover{
     color: var(--red);
     margin-bottom: 30px;
 }
-
-
+.h2__tag{
+    font-size: 33px;
+}
+.h2__tag span{
+    color: var(--red);
+    font-size: 33px;
+}
 @media screen and (max-width: 992px) {
     .property_management h3{
         font-size: 25px;
@@ -2341,6 +2349,9 @@ footer .social-icons i:hover{
         margin-bottom: 15px;
     }
     .h2__tag{
+        font-size: 21px;
+    }
+    .h2__tag span{
         font-size: 21px;
     }
 }
