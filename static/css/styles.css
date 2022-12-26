@@ -2190,8 +2190,10 @@ footer .social-icons i:hover{
     min-height: 100vh;
 }
 .property_management h3{
-    font-size: 35px;
+    font-size: 27px;
     font-family: var(--body-font);
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .property_management p.para{
     font-size: 15px;
@@ -2292,8 +2294,25 @@ footer .social-icons i:hover{
     display: block !important;
 }
 
-
-
+.property_management .b_o_x{
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    box-shadow: var(--sm-shadow);
+    flex-direction: column;
+    min-height: 250px;
+}
+.property_management .b_o_x h5{
+    color: var(--red);
+    font-size: 22px;
+    font-weight: bold;
+}
+.building_section h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--red);
+    margin-bottom: 30px;
+}
 
 
 @media screen and (max-width: 992px) {
@@ -2315,6 +2334,14 @@ footer .social-icons i:hover{
     .property_management .right-box{
         margin-top: 30px;
         padding: 15px;
+    }
+    .building_section h3{
+        font-size: 23px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .h2__tag{
+        font-size: 21px;
     }
 }
 
