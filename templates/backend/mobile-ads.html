@@ -17,7 +17,7 @@
 {% if master_ad %} 
 {% for x in master_ad %}
 <div class="px-5 mt-5 pr-5 d-flex justify-content-between">
-    <h5 class="h5_txt">MObile Master Ads</h5>
+    <h5 class="h5_txt">Mobile Master Ads</h5>
     <div style="padding-right: 2%;">
         <a class="text-dark" href="{% url 'update_master_ad_mobile' x.id  %}"><i style="font-size: 20px;" class="me-2 fa-solid fa-pen-to-square"></i></a>
         <a class="text-dark" href="{% url 'delete_master_ad_mobile' x.id %}"><i style="font-size: 20px;" class="fa-solid fa-trash"></i></a>

@@ -2356,3 +2356,34 @@ footer .social-icons i:hover{
     }
 }
 
+
+.about_me{
+    margin-bottom: 70px !important;
+    position: relative;
+}
+.about_me .dots{
+    position: absolute;
+    right: 6%;
+    opacity: 0.7;
+    bottom: 2%;
+    z-index: 0;
+}
+.about_me span{
+    color: var(--red);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.about_me .left_box,
+.about_me .right_box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.about_me .right_box{
+    align-items: center;
+}
+.about_me .right_box img{
+    max-width: 85%;
+    z-index: 11;
+}
