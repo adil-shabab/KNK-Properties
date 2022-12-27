@@ -853,8 +853,8 @@ footer .social-icons i:hover{
 
 /* about us section css start  */
 .about-us{
-    min-height: 80vh;
-    margin-top: 80px;
+    min-height: 70vh;
+    margin-top: 45px;
     margin-bottom: 50px;
     max-height: auto;
     display: flex;
