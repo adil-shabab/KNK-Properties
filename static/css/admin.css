@@ -198,7 +198,7 @@ a:hover{
 }
 .main-panel .toggle .panel .search-icon{
     position: absolute;
-    right: 27%;
+    right: 60px;
     top: -10px;
 }
 .main-panel .toggle .panel .search-icon i{
