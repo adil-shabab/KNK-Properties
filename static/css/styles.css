@@ -945,6 +945,43 @@ footer .social-icons i:hover{
 
 
 
+
+/* golden visa    */
+.golden__visa::after{
+    content: '';
+    background: url('https://www.creditoptimize.com/wp-content/uploads/2017/06/cropped-white-background-image-7.jpg');
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.2;
+    display: block;
+}
+.golden__visa{
+    position: relative;
+    padding: 50px 0px;
+    margin-bottom: 70px;
+}
+.golden__visa .right_box h3{
+    color: goldenrod;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.golden__visa .right_box p{
+    font-size: 18px;
+    color: gray;
+}
+
+
+
+
+
+
+
 /* why us css start  */
 .why-us{
     margin-top: 50px;
@@ -2358,7 +2395,6 @@ footer .social-icons i:hover{
 
 
 .about_me{
-    margin-bottom: 70px !important;
     position: relative;
 }
 .about_me .dots{
