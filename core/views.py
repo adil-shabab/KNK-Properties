@@ -99,10 +99,14 @@ def home(request):
 
 def about(request):
     testimonials = Testimonial.objects.all()
+    testimonial_status = TestimonialStatus.objects.all()
+    faq_satus = FaqStatus.objects.all()
     faq = Faq.objects.all()
     context = {
         'testimonials' : testimonials,
-        'faq': faq
+        'faq': faq,
+        'testimonial_status':testimonial_status,
+        'faq_status':faq_satus,
     }
     return render(request, 'frontend/about.html',context)
 
@@ -367,6 +371,9 @@ def dashboard(request):
     faq_count = Faq.objects.all().count()
     message_count = Messages.objects.all().count()
 
+    faq_status = FaqStatus.objects.all()
+    testimonial_status = TestimonialStatus.objects.all()
+
     context = {
                 'message_count': message_count,
                 'faq_count': faq_count,
@@ -379,8 +386,51 @@ def dashboard(request):
                 'totalCount':totalCount,
                 'amenities_count':amenities_count,
                 'places_count':places_count,
+                'faq_status' : faq_status,
+                'testimonial_status' : testimonial_status,
                }
     return render(request, 'backend/dashboard.html', context)
+
+
+
+
+
+@login_required(login_url='login')
+def enable_faq(request, pk):
+    faq = FaqStatus.objects.get(id=pk)
+    faq.status = True
+    faq.save()
+    mp.success(request, "Faq Enabled Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def disable_faq(request, pk):
+    faq = FaqStatus.objects.get(id=pk)
+    faq.status = False
+    faq.save()
+    mp.success(request, "Faq Disabled Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_testimonial(request, pk):
+    testimonial = TestimonialStatus.objects.get(id=pk)
+    testimonial.status = True
+    testimonial.save()
+    mp.success(request, "Testimonial Enabled Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def disable_testimonial(request, pk):
+    testimonial = TestimonialStatus.objects.get(id=pk)
+    testimonial.status = False
+    testimonial.save()
+    mp.success(request, "Testimonial Disabled Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
 
 
 @login_required(login_url='login')
@@ -471,9 +521,12 @@ def subscription_delete(request, pk):
 def faq(request):
     faq = Faq.objects.all()
     count = Faq.objects.all().count()
+    faq_status = FaqStatus.objects.all()
+
     context = {
         'faq': faq,
-        'count' : count
+        'count' : count,
+        'faq_status':faq_status,
     }
     return render(request, 'backend/faq.html',context)
 
@@ -482,9 +535,11 @@ def faq(request):
 def testimonials(request):
     testimonials = Testimonial.objects.all()
     count = Testimonial.objects.all().count()
+    testimonial_status = TestimonialStatus.objects.all()
     context={
         'testimonials':testimonials,
-        'count': count
+        'count': count,
+        'testimonial_status':testimonial_status,
     }
     return render(request, 'backend/testimonials.html', context)
 

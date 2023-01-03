@@ -19,6 +19,13 @@
   <div class="panels">
       <div class="panel">
           <h4 class="panel-head">FAQ</h4>
+          {% for x in faq_status %}
+              {% if x.status == True %}
+                <a href="{% url 'disable_faq' x.id %}"><button style="position: absolute; top: -12px; right: 5%;" class="btn_status">Disable Faq</button></a>
+              {% else %}
+                 <a href="{% url 'enable_faq' x.id %}"><button style="position: absolute; top: -12px; right: 5%;" class="btn_status">Enable Faq</button></a>
+              {% endif %}
+          {% endfor %}
           <div class="search-icon">
               <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
               <input type="text" placeholder="Search here" class="search-input" id="search__input">

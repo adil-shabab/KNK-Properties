@@ -155,4 +155,12 @@ urlpatterns = [
     path('account/create/message', views.MessageView, name='create-message'),
     path('account/api/places', views.PlaceView, name='place-view'),
     path('account/create/subscription', views.SubscriptionView, name='create-subscription'),
+
+
+    path('account/enable/faq/<str:pk>', views.enable_faq, name='enable_faq'),
+    path('account/disable/faq/<str:pk>', views.disable_faq, name='disable_faq'),
+
+    path('account/enable/testimonial/<str:pk>', views.enable_testimonial, name='enable_testimonial'),
+    path('account/disable/testimonial/<str:pk>', views.disable_testimonial, name='disable_testimonial'),
+
 ]

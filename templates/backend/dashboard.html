@@ -19,6 +19,22 @@
         <div class="home-tab">
           <div class="tab-content tab-content-basic">
             <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+              <div class="d-flex mb-5">
+                {% for x in faq_status %}
+                  {% if x.status %}
+                    <a href="{% url 'disable_faq' x.id %}"><button class="btn_status">Disable Faq</button></a>
+                  {% else %}
+                    <a href="{% url 'enable_faq' x.id %}"><button class="btn_status">Enable Faq</button></a>
+                  {% endif %}
+                {% endfor %}
+                {% for x in testimonial_status %}
+                  {% if x.status == True %}
+                    <a href="{% url 'disable_testimonial' x.id %}"><button class="btn_status">Disable Testimonial</button></a>
+                  {% else %}
+                    <a href="{% url 'enable_testimonial' x.id %}"><button class="btn_status">Enable Testimonial</button></a>
+                  {% endif %}
+                {% endfor %}
+              </div>
               <div class="row">
                 <div class="col-sm-12">
                   <div class="row b_o_x_parent">

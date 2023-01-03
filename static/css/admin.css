@@ -198,7 +198,7 @@ a:hover{
 }
 .main-panel .toggle .panel .search-icon{
     position: absolute;
-    right: 60px;
+    right: 23%;
     top: -10px;
 }
 .main-panel .toggle .panel .search-icon i{
@@ -293,5 +293,13 @@ a:hover{
 #id_buy_rent{
     list-style: none;
 }
-
+.btn_status{
+    background: #8c8ce3;
+    border: none;
+    outline: none;
+    color: white;
+    margin-right: 35px;
+    border-radius: 5px;
+    padding: 10px 47px;
+}
 

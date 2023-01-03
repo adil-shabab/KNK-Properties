@@ -25,7 +25,7 @@ for (const div of document.getElementById('r').getElementsByTagName('label')) {
 
 for (const div of document.getElementById('id_property_type').getElementsByTagName('option')) {
   if (div.textContent.includes(text)) {
-    div.innerHTML = 'All'
+    div.innerHTML = 'Property Type'
   }
 }
 

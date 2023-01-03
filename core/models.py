@@ -224,3 +224,13 @@ class Request(models.Model):
 
 class Subscription(models.Model):
     email = models.EmailField()
+
+
+
+
+class FaqStatus(models.Model):
+    status = models.BooleanField(default=False)
+
+
+class TestimonialStatus(models.Model):
+    status = models.BooleanField(default=False)
