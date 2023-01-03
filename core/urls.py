@@ -130,6 +130,8 @@ urlpatterns = [
     path('account/form/property', views.property_form, name='property-form'),
     path('account/form/property/<str:pk>', views.property_edit, name='property-edit'),
     path('account/delete/property/<str:pk>', views.property_delete, name='property-delete'),
+    path('account/suspend/property/<str:pk>', views.suspend_property, name='suspend_property'),
+    path('account/enable/property/<str:pk>', views.enable_property, name='enable_property'),
 
     path('account/delete/messages/<str:pk>', views.message_delete, name='message-delete'),
 

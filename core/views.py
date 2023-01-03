@@ -437,18 +437,18 @@ def disable_testimonial(request, pk):
 
 @login_required(login_url='login')
 def properties(request):
-    nationalCount = Property.objects.filter(property_status = True).filter(is_international_property = False).count()
-    internationalCount = Property.objects.filter(property_status = True).filter(is_international_property = True).count()
-    totalCount = Property.objects.filter(property_status = True).count()
-    national = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_international_property = False)
-    allProperty = Property.objects.order_by('-upload_date').filter(property_status = True)
-    international = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_international_property = True)
-    premium_list = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_premium = True)
-    standard_list = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_standard = True)
-    featured_list = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_featured = True)
-    premium_list_count = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_premium = True).count()
-    standard_list_count = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_standard = True).count()
-    featured_list_count = Property.objects.order_by('-upload_date').filter(property_status = True).filter(is_featured = True).count()
+    nationalCount = Property.objects.filter(is_international_property = False).count()
+    internationalCount = Property.objects.filter(is_international_property = True).count()
+    totalCount = Property.objects.count()
+    national = Property.objects.order_by('-upload_date').filter(is_international_property = False)
+    allProperty = Property.objects.order_by('-upload_date')
+    international = Property.objects.order_by('-upload_date').filter(is_international_property = True)
+    premium_list = Property.objects.order_by('-upload_date').filter(is_premium = True)
+    standard_list = Property.objects.order_by('-upload_date').filter(is_standard = True)
+    featured_list = Property.objects.order_by('-upload_date').filter(is_featured = True)
+    premium_list_count = Property.objects.order_by('-upload_date').filter(is_premium = True).count()
+    standard_list_count = Property.objects.order_by('-upload_date').filter(is_standard = True).count()
+    featured_list_count = Property.objects.order_by('-upload_date').filter(is_featured = True).count()
     # result_list = list(chain(national, international))
     context = {'start':0,
                 # 'result': result_list,
@@ -469,6 +469,32 @@ def properties(request):
                 'allProperty': allProperty,
                }
     return render(request, 'backend/properties.html', context)
+
+
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_property(request, pk):
+    property = Property.objects.get(id=pk)
+    property.property_status = False
+    property.save()
+    mp.success(request, "Property Suspended Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_property(request, pk):
+    property = Property.objects.get(id=pk)
+    property.property_status = True
+    property.save()
+    mp.success(request, "Property Enabled Successfully")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
 
 
 @login_required(login_url='login')

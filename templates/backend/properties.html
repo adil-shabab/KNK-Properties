@@ -69,6 +69,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -117,6 +122,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -165,6 +175,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -213,6 +228,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -262,6 +282,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -310,6 +335,11 @@
                     <div class="col-2 d-flex">
                         <a href="{% url 'property-edit' x.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{% url 'property-delete' x.id %}"><i class="fa-solid fa-trash"></i></a>
+                        {% if x.property_status %}
+                            <a href="{% url 'suspend_property' x.id %}"><i class="fa-solid fa-eye"></i></a>
+                        {% else %}
+                            <a href="{% url 'enable_property' x.id %}"><i class="fa-solid fa-eye-slash"></i></a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
