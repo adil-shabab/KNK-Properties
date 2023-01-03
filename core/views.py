@@ -370,6 +370,7 @@ def dashboard(request):
     testimonial_count = Testimonial.objects.all().count()
     faq_count = Faq.objects.all().count()
     message_count = Messages.objects.all().count()
+    client_request_count = Request.objects.all().count()
 
     faq_status = FaqStatus.objects.all()
     testimonial_status = TestimonialStatus.objects.all()
@@ -388,6 +389,7 @@ def dashboard(request):
                 'places_count':places_count,
                 'faq_status' : faq_status,
                 'testimonial_status' : testimonial_status,
+                'client_request_count':client_request_count,
                }
     return render(request, 'backend/dashboard.html', context)
 
