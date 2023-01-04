@@ -165,4 +165,85 @@ urlpatterns = [
     path('account/enable/testimonial/<str:pk>', views.enable_testimonial, name='enable_testimonial'),
     path('account/disable/testimonial/<str:pk>', views.disable_testimonial, name='disable_testimonial'),
 
+
+
+
+
+
+    path('account/ads/suspend/one/master/<str:pk>', views.suspend_master_ad_one, name='suspend_master_ad_one'),
+    path('account/ads/suspend/two/master/<str:pk>', views.suspend_master_ad_two, name='suspend_master_ad_two'),
+    path('account/ads/suspend/three/master/<str:pk>', views.suspend_master_ad_three, name='suspend_master_ad_three'),
+
+    path('account/ads/enable/one/master/<str:pk>', views.enable_master_ad_one, name='enable_master_ad_one'),
+    path('account/ads/enable/two/master/<str:pk>', views.enable_master_ad_two, name='enable_master_ad_two'),
+    path('account/ads/enable/three/master/<str:pk>', views.enable_master_ad_three, name='enable_master_ad_three'),
+
+
+
+    path('account/ads/suspend/one/second/<str:pk>', views.suspend_second_ad_one, name='suspend_second_ad_one'),
+    path('account/ads/suspend/two/second/<str:pk>', views.suspend_second_ad_two, name='suspend_second_ad_two'),
+    path('account/ads/suspend/three/second/<str:pk>', views.suspend_second_ad_three, name='suspend_second_ad_three'),
+
+    path('account/ads/enable/one/second/<str:pk>', views.enable_second_ad_one, name='enable_second_ad_one'),
+    path('account/ads/enable/two/second/<str:pk>', views.enable_second_ad_two, name='enable_second_ad_two'),
+    path('account/ads/enable/three/second/<str:pk>', views.enable_second_ad_three, name='enable_second_ad_three'),
+
+
+
+    path('account/ads/suspend/one/third/<str:pk>', views.suspend_third_ad_one, name='suspend_third_ad_one'),
+    path('account/ads/suspend/two/third/<str:pk>', views.suspend_third_ad_two, name='suspend_third_ad_two'),
+    path('account/ads/suspend/three/third/<str:pk>', views.suspend_third_ad_three, name='suspend_third_ad_three'),
+
+    path('account/ads/enable/one/third/<str:pk>', views.enable_third_ad_one, name='enable_third_ad_one'),
+    path('account/ads/enable/two/third/<str:pk>', views.enable_third_ad_two, name='enable_third_ad_two'),
+    path('account/ads/enable/three/third/<str:pk>', views.enable_third_ad_three, name='enable_third_ad_three'),
+
+
+
+
+
+
+
+
+
+
+    path('account/ads/mobile/suspend/one/master/<str:pk>', views.suspend_mobile_master_ad_one, name='suspend_mobile_master_ad_one'),
+    path('account/ads/mobile/suspend/two/master/<str:pk>', views.suspend_mobile_master_ad_two, name='suspend_mobile_master_ad_two'),
+    path('account/ads/mobile/suspend/three/master/<str:pk>', views.suspend_mobile_master_ad_three, name='suspend_mobile_master_ad_three'),
+
+    path('account/ads/mobile/enable/one/master/<str:pk>', views.enable_mobile_master_ad_one, name='enable_mobile_master_ad_one'),
+    path('account/ads/mobile/enable/two/master/<str:pk>', views.enable_mobile_master_ad_two, name='enable_mobile_master_ad_two'),
+    path('account/ads/mobile/enable/three/master/<str:pk>', views.enable_mobile_master_ad_three, name='enable_mobile_master_ad_three'),
+
+
+
+    path('account/ads/mobile/suspend/one/second/<str:pk>', views.suspend_mobile_second_ad_one, name='suspend_mobile_second_ad_one'),
+    path('account/ads/mobile/suspend/two/second/<str:pk>', views.suspend_mobile_second_ad_two, name='suspend_mobile_second_ad_two'),
+    path('account/ads/mobile/suspend/three/second/<str:pk>', views.suspend_mobile_second_ad_three, name='suspend_mobile_second_ad_three'),
+
+    path('account/ads/mobile/enable/one/second/<str:pk>', views.enable_mobile_second_ad_one, name='enable_mobile_second_ad_one'),
+    path('account/ads/mobile/enable/two/second/<str:pk>', views.enable_mobile_second_ad_two, name='enable_mobile_second_ad_two'),
+    path('account/ads/mobile/enable/three/second/<str:pk>', views.enable_mobile_second_ad_three, name='enable_mobile_second_ad_three'),
+
+
+
+    path('account/ads/mobile/suspend/one/third/<str:pk>', views.suspend_mobile_third_ad_one, name='suspend_mobile_third_ad_one'),
+    path('account/ads/mobile/suspend/two/third/<str:pk>', views.suspend_mobile_third_ad_two, name='suspend_mobile_third_ad_two'),
+    path('account/ads/mobile/suspend/three/third/<str:pk>', views.suspend_mobile_third_ad_three, name='suspend_mobile_third_ad_three'),
+
+    path('account/ads/mobile/enable/one/third/<str:pk>', views.enable_mobile_third_ad_one, name='enable_mobile_third_ad_one'),
+    path('account/ads/mobile/enable/two/third/<str:pk>', views.enable_mobile_third_ad_two, name='enable_mobile_third_ad_two'),
+    path('account/ads/mobile/enable/three/third/<str:pk>', views.enable_mobile_third_ad_three, name='enable_mobile_third_ad_three'),
+
+
+
+
+    path('account/ads/inner/suspend/one/third/<str:pk>', views.suspend_inner_ad_one, name='suspend_inner_ad_one'),
+    path('account/ads/inner/suspend/two/third/<str:pk>', views.suspend_inner_ad_two, name='suspend_inner_ad_two'),
+    path('account/ads/inner/suspend/three/third/<str:pk>', views.suspend_inner_ad_three, name='suspend_inner_ad_three'),
+
+    path('account/ads/inner/enable/one/third/<str:pk>', views.enable_inner_ad_one, name='enable_inner_ad_one'),
+    path('account/ads/inner/enable/two/third/<str:pk>', views.enable_inner_ad_two, name='enable_inner_ad_two'),
+    path('account/ads/inner/enable/three/third/<str:pk>', views.enable_inner_ad_three, name='enable_inner_ad_three'),
+
 ]

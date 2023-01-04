@@ -1138,6 +1138,8 @@ def master_ad_form(request):
 
 
 
+
+
 # update 
 @login_required(login_url='login')
 def update_master_ad(request, pk):
@@ -1602,6 +1604,455 @@ def delete_inner_ad(request, pk):
     mp.success(request, "Inner Ad Deleted")
 
     return redirect('inner_ad')
+
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_master_ad_one(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_master_ad_two(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_master_ad_three(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_master_ad_one(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_master_ad_two(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_master_ad_three(request, pk):
+    ad = MasterAd.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_second_ad_one(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_second_ad_two(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_second_ad_three(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_second_ad_one(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_second_ad_two(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_second_ad_three(request, pk):
+    ad = SecondAd.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_third_ad_one(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_third_ad_two(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_third_ad_three(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_third_ad_one(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_third_ad_two(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_third_ad_three(request, pk):
+    ad = ThirdAd.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+# mobile     
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_master_ad_one(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_master_ad_two(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_mobile_master_ad_three(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Master Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_master_ad_one(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_master_ad_two(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_mobile_master_ad_three(request, pk):
+    ad = MasterAdMobile.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Master Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_second_ad_one(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_second_ad_two(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_mobile_second_ad_three(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Second Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_second_ad_one(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_second_ad_two(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_mobile_second_ad_three(request, pk):
+    ad = SecondAdMobile.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Second Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_third_ad_one(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def suspend_mobile_third_ad_two(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_mobile_third_ad_three(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Third Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_third_ad_one(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_mobile_third_ad_two(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_mobile_third_ad_three(request, pk):
+    ad = ThirdAdMobile.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Third Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+
+
+@login_required(login_url='login')
+def suspend_inner_ad_one(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_one_status = False
+    ad.save()
+    mp.success(request, "Inner Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_inner_ad_two(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_two_status = False
+    ad.save()
+    mp.success(request, "Inner Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def suspend_inner_ad_three(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_three_status = False
+    ad.save()
+    mp.success(request, "Inner Ad Suspended")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+@login_required(login_url='login')
+def enable_inner_ad_one(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_one_status = True
+    ad.save()
+    mp.success(request, "Inner Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_inner_ad_two(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_two_status = True
+    ad.save()
+    mp.success(request, "Inner Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='login')
+def enable_inner_ad_three(request, pk):
+    ad = InnerAd.objects.get(id=pk)
+    ad.ad_three_status = True
+    ad.save()
+    mp.success(request, "Inner Ad Enabled")
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+
+
+
+
 
 
 

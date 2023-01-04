@@ -23,16 +23,31 @@
     </div>
 </div>
 <div class="pb-5 mb-5 px-5 flex-container">
-    <div>
+    <div style="position:relative">
+        {% if x.ad_one_status %}
+        <a href="{% url 'suspend_inner_ad_one' x.id %}"><button class="btn__suspend">Suspend</button></a>
+        {% else %}
+        <a href="{% url 'enable_inner_ad_one' x.id %}"><button class="btn__suspend">Enable</button></a>
+        {% endif %}
         <img class="img-fluid rounded shadow" src="{{x.ad_one.url}}" alt="" />
     </div>
     {% if x.ad_two %}
     <div style="position: relative;">
+        {% if x.ad_two_status %}
+        <a href="{% url 'suspend_inner_ad_two' x.id %}"><button class="btn__suspend">Suspend</button></a>
+        {% else %}
+        <a href="{% url 'enable_inner_ad_two' x.id %}"><button class="btn__suspend">Enable</button></a>
+        {% endif %}
         <img class="img-fluid rounded shadow" src="{{x.ad_two.url}}" alt="" />
     </div>
     {% endif %} 
     {% if x.ad_three %}
     <div style="position: relative;">
+        {% if x.ad_three_status %}
+        <a href="{% url 'suspend_inner_ad_three' x.id %}"><button class="btn__suspend">Suspend</button></a>
+        {% else %}
+        <a href="{% url 'enable_inner_ad_three' x.id %}"><button class="btn__suspend">Enable</button></a>
+        {% endif %}
         <img class="img-fluid rounded shadow" src="{{x.ad_three.url}}" alt="" />
     </div>
     {% endif %} 

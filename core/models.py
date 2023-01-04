@@ -124,6 +124,12 @@ class MasterAd(models.Model):
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
 
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
+
+
+
 
 
 class SecondAd(models.Model):
@@ -135,6 +141,9 @@ class SecondAd(models.Model):
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
 
 
 
@@ -147,6 +156,9 @@ class ThirdAd(models.Model):
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
 
 
 
@@ -158,6 +170,12 @@ class InnerAd(models.Model):
     ad_one_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
+
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
+
+
 
 
 
@@ -174,7 +192,9 @@ class MasterAdMobile(models.Model):
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
-
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
 
 
 class SecondAdMobile(models.Model):
@@ -186,7 +206,9 @@ class SecondAdMobile(models.Model):
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
-
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
 
 
 class ThirdAdMobile(models.Model):
@@ -198,7 +220,9 @@ class ThirdAdMobile(models.Model):
     ad_two_link =  models.CharField(null=True, blank=True, max_length=200)
     ad_three_link =  models.CharField(null=True, blank=True, max_length=200)
 
-
+    ad_one_status = models.BooleanField(default=True)
+    ad_two_status = models.BooleanField(default=True)
+    ad_three_status = models.BooleanField(default=True)
 
 
 

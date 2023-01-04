@@ -159,15 +159,21 @@
                         <div data-aos="fade-left" class="py-3 swiper mySwiper">
                             <div class="swiper-wrapper">
                               {% for x in inner_ad %}
+                              {% if x.ad_one_status %}
                               <div class="swiper-slide">
                                 <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt=""></a>
                               </div>
+                              {% endif %}
+                              {% if x.ad_two_status %}
                               <div class="swiper-slide">
                                 <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt=""></a>
                               </div>
+                              {% endif %}
+                              {% if x.ad_three_status %}
                               <div class="swiper-slide">
                                 <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt=""></a>
                               </div>
+                              {% endif %}
                               {% endfor %}
                             </div>
                             <div class="swiper-pagination"></div>

@@ -164,24 +164,30 @@
 
     <div class="mb-5 d-md-flex d-none flex-container ad-one container">
         {% for x in master_ad %}        
+        {% if x.ad_one_status %}
         <div>
             <a href="{{x.ad_one_link}}" target="_blank">
                 <img src="{{x.ad_one.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% if x.ad_two %}
+        {% if x.ad_two_status %}
         <div>
             <a href="{{x.ad_two_link}}" target="_blank">
                 <img src="{{x.ad_two.url}}" class="img-fluid" alt="">
             </a>
         </div>
         {% endif %}
+        {% endif %}
         {% if x.ad_three %}
+        {% if x.ad_three_status %}
         <div>
             <a href="{{x.ad_three_link}}" target="_blank">
                 <img src="{{x.ad_three.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% endif %}
         {% endfor %}
     </div>
@@ -192,18 +198,24 @@
         <div class="w-100 pb-3 swiper mySwiper1">
             <div class="swiper-wrapper">
               {% for x in master_ad_mobile %}  
+              {% if x.ad_one_status %}
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                 <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
               </div>
+              {% endif %}
               {% if x.ad_two %}
+              {% if x.ad_two_status %}
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                 <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
               </div>
               {% endif %}
+              {% endif %}
               {% if x.ad_three %}
+              {% if x.ad_three_status %}
               <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                 <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
               </div>
+              {% endif %}
               {% endif %}
               {% endfor %}     
             </div>
@@ -231,24 +243,30 @@
 
     <div class="mb-5 d-md-flex d-none flex-container ad-one container">
         {% for x in second_ad %}
+        {% if x.ad_one_status %}
         <div class="px-md-3">
             <a href="{{x.ad_one_link}}">
                 <img src="{{x.ad_one.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% if x.ad_two %}
+        {% if x.ad_two_status %}
         <div class="px-md-3">
             <a href="{{x.ad_two_link}}">
                 <img src="{{x.ad_two.url}}" class="img-fluid" alt="">
             </a>
         </div>
         {% endif %}
+        {% endif %}
         {% if x.ad_three %}
+        {% if x.ad_three_status %}
         <div class="px-md-3">
             <a href="{{x.ad_three_link}}">
                 <img src="{{x.ad_three.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% endif %}
         {% endfor %}
     </div>
@@ -259,18 +277,24 @@
         <div class="w-100 pb-3 swiper mySwiper2">
             <div class="swiper-wrapper">
                 {% for x in second_ad_mobile %}  
+                {% if x.ad_one_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
                 </div>
+                {% endif %}
                 {% if x.ad_two %}
+                {% if x.ad_two_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
                 </div>
                 {% endif %}
+                {% endif %}
                 {% if x.ad_three %}
+                {% if x.ad_three_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
                 </div>
+                {% endif %}
                 {% endif %}
                 {% endfor %}    
             </div>
@@ -299,24 +323,30 @@
 
     <div class="mb-5 d-md-flex d-none flex-container container">
         {% for x in third_ad %}
+        {% if x.ad_one_status %}
         <div class="px-md-3">
             <a href="{{x.ad_one_link}}">
                 <img src="{{x.ad_one.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% if x.ad_two %}
+        {% if x.ad_two_status %}
         <div class="px-md-3">
             <a href="{{x.ad_two_link}}">
                 <img src="{{x.ad_two.url}}" class="img-fluid" alt="">
             </a>
         </div>
         {% endif %}
+        {% endif %}
         {% if x.ad_three %}
+        {% if x.ad_three_status %}
         <div class="px-md-3">
             <a href="{{x.ad_three_link}}">
                 <img src="{{x.ad_three.url}}" class="img-fluid" alt="">
             </a>
         </div>
+        {% endif %}
         {% endif %}
         {% endfor %}
     </div>
@@ -328,18 +358,24 @@
         <div class="w-100 pb-3 swiper mySwiper3">
             <div class="swiper-wrapper">
                 {% for x in third_ad_mobile %}  
+                {% if x.ad_one_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_one_link}}"><img src="{{x.ad_one.url}}" alt="" class="br-3" /></a>
                 </div>
+                {% endif %}
                 {% if x.ad_two %}
+                {% if x.ad_two_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_two_link}}"><img src="{{x.ad_two.url}}" alt="" class="br-3" /></a>
                 </div>
                 {% endif %}
+                {% endif %}
                 {% if x.ad_three %}
+                {% if x.ad_three_status %}
                 <div class="swiper-slide w-100 d-flex justify-content-center align-items-center">
                   <a href="{{x.ad_three_link}}"><img src="{{x.ad_three.url}}" alt="" class="br-3" /></a>
                 </div>
+                {% endif %}
                 {% endif %}
                 {% endfor %}    
             </div>

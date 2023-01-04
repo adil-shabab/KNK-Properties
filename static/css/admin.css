@@ -303,3 +303,13 @@ a:hover{
     padding: 10px 47px;
 }
 
+.btn__suspend{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    padding: 9px 20px;
+    border: none;
+    outline: none;
+    background: #8c8ce3;
+    color: white;
+}
