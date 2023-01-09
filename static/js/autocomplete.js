@@ -3,7 +3,7 @@ document.querySelector('.plus-icon').addEventListener('click',function(){
 
     let txt = document.getElementById('id_property_location').value
     var csrftoken = document.getElementById('csrf_token').innerText
-    fetch('http://127.0.0.1:8000/account/api/places', {
+    fetch('http://139.59.32.134/account/api/places', {
     method: 'POST',
     headers:{
         'Content-Type': 'application/json',
