@@ -114,7 +114,7 @@ CORS_ALLOW_METHODS = [
 
 
 
-database
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
