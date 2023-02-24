@@ -112,6 +112,22 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
+
+
+database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'knkdb',
+        'USER': 'knkdbuser',
+        'PASSWORD': 'HACKER@3197',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
