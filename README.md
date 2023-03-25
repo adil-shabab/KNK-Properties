@@ -10,4 +10,4 @@
 ![image](https://user-images.githubusercontent.com/101416092/210785494-a647196b-b51d-4f7c-b288-1f9817921802.png)
 ![image](https://user-images.githubusercontent.com/101416092/210785654-7798987d-e5d9-4268-ac85-2c50b788bbfb.png)
 ![image](https://user-images.githubusercontent.com/101416092/210785803-0f6dbb23-8d9f-4e9c-986c-052439f9acc3.png)
-![happy-doctor-holding-clipboard-with-patients](https://user-images.githubusercontent.com/101416092/227700796-b2a99c43-e826-4fe5-98bb-64a3e5508e74.jpg)
+
