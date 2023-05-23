@@ -117,16 +117,16 @@ CORS_ALLOW_METHODS = [
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'knkproperties',
-#         'USER': 'adil',
-#         'PASSWORD': 'HACKER@3197',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#      }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'knkproperties',
+        'USER': 'adil',
+        'PASSWORD': 'HACKER@3197',
+        'HOST': 'localhost',
+        'PORT': '',
+     }
+}
 
 
 # Password validation
